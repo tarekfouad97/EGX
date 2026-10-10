@@ -1,6 +1,7 @@
 """Live data from TradingView's Egypt screener (daily timeframe)."""
 
 import json
+import urllib.parse
 import urllib.request
 
 SCAN_URL = "https://scanner.tradingview.com/egypt/scan"
@@ -26,8 +27,8 @@ COLUMNS = {
     "MACD.signal": "macd_signal",
     "Stoch.K": "stoch_k",
     "Stoch.D": "stoch_d",
-    "Stoch.K[1]": "stoch_k_prev",
-    "Stoch.D[1]": "stoch_d_prev",
+    # Stoch.K[1]/Stoch.D[1] are deliberately NOT used: the screener's values are inconsistent
+    # with its own %D (=SMA3 of %K). Previous-bar Stoch comes from candle history instead.
     "BB.lower": "bb_lower",
     "ADX": "adx",
     "ADX+DI": "di_plus",
@@ -92,3 +93,33 @@ def fetch_index(ticker="EGX:EGX30"):
     payload = {"symbols": {"tickers": [ticker]}, "columns": list(INDEX_COLUMNS)}
     rows = _rows(_post(payload), INDEX_COLUMNS)
     return rows[0] if rows else {}
+
+
+# ───────────────────── fallback: Yahoo Finance daily candles ─────────────────────
+
+YAHOO_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=13mo&interval=1d"
+YAHOO_INDEX = "^CASE30"
+
+
+def fetch_history(symbol, timeout=20):
+    """Daily candles for an EGX ticker (or the EGX30 index), oldest first, dated in Cairo time."""
+    from datetime import datetime, timedelta, timezone
+    sym = symbol if symbol.startswith("^") else f"{symbol}.CA"
+    req = urllib.request.Request(YAHOO_URL.format(sym=urllib.parse.quote(sym)),
+                                 headers={"User-Agent": "Mozilla/5.0 (EGX-Swing/1.0)"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        data = json.loads(resp.read().decode())
+    res = (data.get("chart") or {}).get("result") or []
+    if not res:
+        return []
+    r = res[0]
+    offset = timedelta(seconds=r.get("meta", {}).get("gmtoffset", 7200))
+    q = r["indicators"]["quote"][0]
+    out = []
+    for i, ts in enumerate(r.get("timestamp") or []):
+        bar = {k: q[k][i] for k in ("open", "high", "low", "close", "volume")}
+        if None in (bar["open"], bar["high"], bar["low"], bar["close"]):
+            continue                                    # holiday/suspension gap
+        bar["date"] = (datetime.fromtimestamp(ts, timezone.utc) + offset).date()
+        out.append(bar)
+    return out

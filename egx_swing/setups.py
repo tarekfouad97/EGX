@@ -61,7 +61,7 @@ def market_regime(index):
     close, ema20, ema50 = index.get("close"), index.get("ema20"), index.get("ema50")
     if not _num(close, ema20, ema50):
         return {"regime": "UNKNOWN", "risk_mult": 0.5,
-                "note": "EGX30 data unavailable - risk halved"}
+                "note": "EGX30 data unavailable - risk halved, breakouts suppressed"}
     if close > ema20 > ema50:
         return {"regime": "RISK-ON", "risk_mult": 1.0,
                 "note": "EGX30 above rising 20/50 EMAs"}
@@ -242,7 +242,7 @@ def scan(stocks, index, cfg=None):
             hit = detect(s)
             if not hit:
                 continue
-            if hit["setup"] == "BREAKOUT" and regime["regime"] == "RISK-OFF":
+            if hit["setup"] == "BREAKOUT" and regime["regime"] in ("RISK-OFF", "UNKNOWN"):
                 continue
             plan = plan_trade(s, hit, cfg, regime["risk_mult"])
             if not plan or plan["shares"] == 0:

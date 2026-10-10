@@ -8,6 +8,29 @@ each one. It only suggests trades. It never places orders.
 It uses only the Python standard library (3.9+), so there is nothing to install. On Windows without the `tzdata`
 package it falls back to built-in Egypt DST rules.
 
+Full requirements, including the error-handling state machine, are in
+[docs/REQUIREMENTS.md](docs/REQUIREMENTS.md).
+
+## Always a report
+
+A run never stops on bad data, and every run ends with a report on disk.
+
+- If a stock's TradingView data is missing or stale, the scanner fetches its daily candles from Yahoo Finance and
+  computes the indicators itself.
+- If that data isn't fresh for the session either, the stock is **dropped**, and the report lists it with the reason.
+- If TradingView is down entirely, the universe comes from `data/universe.json`, which is refreshed on every
+  successful run. Every stock then goes through the Yahoo fallback.
+
+Each report carries a run status:
+
+| Status | Meaning |
+|--------|---------|
+| OK | All data came from TradingView and nothing was dropped. |
+| DEGRADED | A fallback was used, or some stocks were dropped. The report is still usable. |
+| FAILED | No usable data. The report says no trades. |
+
+The **Data quality** section lists recovered and dropped stocks and the full run log.
+
 ## Run it on demand
 
 ```bash
@@ -31,9 +54,10 @@ live reports.
 `.github/workflows/swing-scan.yml` runs Sunday to Thursday at 13:00 UTC, which is after the close in both summer and
 winter time. Each run:
 
-1. runs the unit tests,
+1. runs the unit tests (a failure is flagged in the summary, but never blocks the report),
 2. runs the scan and writes the report to the job summary,
-3. commits `reports/<session-date>.md`, `reports/<session-date>.json` and `reports/latest.md`.
+3. commits `reports/<session-date>.md`, `reports/<session-date>.json`, `reports/latest.md` and
+   `data/universe.json`.
 
 You can also start it by hand from the **Actions** tab ("Run workflow") with your own capital and risk %.
 
@@ -55,6 +79,7 @@ average daily value traded ≥ 5M EGP, and daily ATR between 1% and 8% of price.
 | RISK-ON | close > EMA20 > EMA50 | full risk |
 | NEUTRAL | anything else | 75% risk |
 | RISK-OFF | close and EMA20 both below EMA50 | 50% risk and no breakouts |
+| UNKNOWN | EGX30 data unavailable | 50% risk and no breakouts |
 
 **Trade plan:**
 

@@ -6,7 +6,8 @@ import os
 import sys
 from datetime import datetime, timedelta, timezone
 
-from . import fetch, report
+from . import report
+from .pipeline import Run
 from .setups import DEFAULTS, scan
 
 try:
@@ -36,14 +37,6 @@ def to_cairo(utc):
     return utc.astimezone(timezone(timedelta(hours=_cairo_offset(utc))))
 
 
-def session_date(stocks):
-    """Date (Cairo) of the most recent trade across the universe = the bar being analysed."""
-    times = [s["update_time"] for s in stocks if isinstance(s.get("update_time"), (int, float))]
-    if not times:
-        return None
-    return to_cairo(datetime.fromtimestamp(max(times), timezone.utc)).strftime("%Y-%m-%d")
-
-
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="egx_swing", description="EGX swing-trade setup scanner")
     ap.add_argument("--top", type=int, default=100, help="universe size by market cap (default 100)")
@@ -55,46 +48,41 @@ def main(argv=None):
     ap.add_argument("--out-dir", help="write <session-date>.md, <session-date>.json and latest.md here")
     ap.add_argument("--input", help="offline: JSON file with {\"stocks\": [...], \"index\": {...}}")
     ap.add_argument("--json", action="store_true", help="print JSON instead of markdown")
+    ap.add_argument("--cache", default=os.path.join("data", "universe.json"),
+                    help="universe list kept for when the screener is down (default data/universe.json)")
     args = ap.parse_args(argv)
 
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
-    if args.input:
-        with open(args.input, encoding="utf-8") as f:
-            snap = json.load(f)
-        stocks, index = snap["stocks"], snap.get("index", {})
-    else:
-        try:
-            stocks = fetch.fetch_universe(args.top)
-        except Exception as e:
-            print(f"ERROR fetching TradingView data: {e}", file=sys.stderr)
-            return 1
-        if not stocks:
-            print("ERROR: screener returned no stocks", file=sys.stderr)
-            return 1
-        try:
-            index = fetch.fetch_index()
-        except Exception as e:      # regime falls back to UNKNOWN (risk halved)
-            print(f"WARNING: EGX30 fetch failed ({e}); regime UNKNOWN", file=sys.stderr)
-            index = {}
-
     cfg = {"capital": args.capital, "risk_pct": args.risk_pct, "min_adv_egp": args.min_adv}
-    result = scan(stocks, index, cfg)
-
     now = to_cairo(datetime.now(timezone.utc))
-    as_of = session_date(stocks)
-    result["as_of"] = as_of
-    result["intraday"] = (not args.input and as_of == now.strftime("%Y-%m-%d")
+    index = {}
+    try:
+        if args.input:
+            with open(args.input, encoding="utf-8") as f:
+                snap = json.load(f)
+            index = snap.get("index", {})
+            result = scan(snap["stocks"], index, cfg)
+            result.update(as_of=snap.get("as_of"), run_status="OFFLINE", events=[], data_status={})
+        else:
+            result, index = Run(cache_path=args.cache, to_cairo=to_cairo).run(args.top, cfg)
+    except Exception as e:      # last resort: a bug, not a data problem - still publish a report
+        result = scan([], {}, cfg)
+        result.update(as_of=None, run_status="FAILED", data_status={},
+                      events=[{"stage": "RUN", "outcome": "FAILED", "detail": f"{type(e).__name__}: {e}"}])
+    result["intraday"] = (not args.input and result.get("as_of") == now.strftime("%Y-%m-%d")
                           and (now.hour, now.minute) < (14, 45))
     md = report.render(result, index, now.strftime("%Y-%m-%d %H:%M Cairo"))
+    print(f"run status: {result['run_status']}", file=sys.stderr)
 
     if args.out_dir:
         if args.input:
             print("ERROR: --out-dir with --input would overwrite live reports; use --json or stdout",
                   file=sys.stderr)
             return 2
-        day = as_of or now.strftime("%Y-%m-%d")
+        # a run with no known session must not overwrite a good dated report
+        day = result.get("as_of") or now.strftime("%Y-%m-%d") + "-FAILED"
         os.makedirs(args.out_dir, exist_ok=True)
         for name in (f"{day}.md", "latest.md"):
             with open(os.path.join(args.out_dir, name), "w", encoding="utf-8") as f:

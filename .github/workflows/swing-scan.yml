@@ -32,22 +32,32 @@ jobs:
         with:
           python-version: "3.12"
 
+      # A failing test is surfaced in the report but never blocks it.
       - name: Unit tests
+        id: tests
+        continue-on-error: true
         run: python -m unittest -v
 
+      # The scanner always writes a report (status OK / DEGRADED / FAILED) and exits 0 when it did.
       - name: Run scan
+        if: always()
         env:
           CAPITAL: ${{ inputs.capital || '100000' }}
           RISK_PCT: ${{ inputs.risk_pct || '1' }}
+          TESTS: ${{ steps.tests.outcome }}
         run: |
           python -m egx_swing --capital "$CAPITAL" --risk-pct "$RISK_PCT" --out-dir reports > scan.md
+          if [ "$TESTS" != "success" ]; then
+            echo "> ⛔ Unit tests failed on this commit - treat this report with suspicion." >> "$GITHUB_STEP_SUMMARY"
+          fi
           cat scan.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit report
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports
+          git add reports data
           git diff --cached --quiet && exit 0
           git commit -m "Swing scan $(TZ=Africa/Cairo date +%Y-%m-%d)"
           git pull --rebase origin "$GITHUB_REF_NAME"

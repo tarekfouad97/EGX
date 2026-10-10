@@ -1,0 +1,1 @@
+anthropic>=1.13,<2   # optional: only the AI news & fundamentals review uses it

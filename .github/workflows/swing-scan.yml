@@ -32,6 +32,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Only the optional AI review needs this; if the install fails the review is skipped, not the scan.
+      - name: Install dependencies
+        continue-on-error: true
+        run: pip install -r requirements.txt
+
       # A failing test is surfaced in the report but never blocks it.
       - name: Unit tests
         id: tests
@@ -42,6 +47,7 @@ jobs:
       - name: Run scan
         if: always()
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # unset -> AI review skipped
           CAPITAL: ${{ inputs.capital || '100000' }}
           RISK_PCT: ${{ inputs.risk_pct || '1' }}
           TESTS: ${{ steps.tests.outcome }}

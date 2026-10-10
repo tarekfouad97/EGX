@@ -60,7 +60,7 @@ INDEX = {"close": 110, "ema20": 105, "ema50": 100, "perf_1m": 0.0}
 
 
 def run(fetch, cache=None):
-    r = Run(fetch=fetch, cache_path=cache, sleep=lambda s: None, workers=2)
+    r = Run(fetch=fetch, cache_path=cache, sleep=lambda s: None, workers=2, ai=False)   # never call the API
     return r.run(100, dict(DEFAULTS))
 
 

@@ -9,11 +9,11 @@ The EGX Swing Trader scans the largest stocks on the Egyptian Exchange (EGX) aft
 long-only swing trades, meant to be held for about 2–10 sessions. Each suggestion comes with an entry, stop, targets
 and a position size.
 
-**In scope:** data collection, setup detection, trade planning, position sizing, a daily report, and scheduled
-automation.
+**In scope:** data collection, setup detection, trade planning, position sizing, a fundamentals and news review of
+each pick (rule-based checks plus an AI review by Claude), a daily report, and scheduled automation.
 
-**Out of scope:** placing or managing orders, short selling, intraday trading, fundamentals and news, and portfolio
-tracking of trades that were actually taken.
+**Out of scope:** placing or managing orders, short selling, intraday trading, using fundamentals or news to
+*generate* picks (they can only demote or veto them), and portfolio tracking of trades that were actually taken.
 
 The output is analytical only and is not financial advice. Every report must say so.
 
@@ -71,7 +71,25 @@ The output is analytical only and is not financial advice. Every report must say
 | FR-23 | Ranking = setup quality ± relative strength vs EGX30 (±10 beyond ±3 points) − 5 per warning. Sizing caps are notes and must not affect the ranking. |
 | FR-24 | Warnings: resistance (1-month or 52-week high) between the entry and T1, and a 1-month gain above 25%. |
 
-### 3.5 Outputs
+### 3.5 Fundamentals and news review
+
+Picks come only from the technical setups (section 3.2). This layer can lower a pick's rank or remove it, but it can
+never add a pick or raise its rank (FR-37).
+
+| ID | Requirement |
+|----|-------------|
+| FR-30 | For every stock, fetch from the screener: P/E, P/B, EPS TTM, ROE, dividend yield, D/E, market cap, net income, revenue and the next earnings date. Missing values are shown as `n/a` and are never a filter. Recovered stocks keep the screener's fundamentals (EH-10 covers price data only). |
+| FR-31 | Rule-based check: a loss-making company (negative EPS, ROE or net income) gets a warning (−5). |
+| FR-32 | Rule-based check: an earnings release within 16 calendar days of the session (the holding window) gets a warning (−5). |
+| FR-33 | AI review: each pick, up to `--ai-max` (default 8) in rank order, is sent to Claude (`claude-opus-5-5`, adaptive thinking, effort `high`) with the server-side web search tool (up to 5 searches per pick). Claude checks company news from the last 60 days, upcoming corporate actions, and the fundamentals. |
+| FR-34 | The AI must return JSON matching `ai_review.REVIEW_SCHEMA` (structured outputs): verdict `CONFIRM`/`CAUTION`/`AVOID`, confidence, summary, news items (each with date, headline, source, URL and impact), upcoming events, a fundamentals view and risks. |
+| FR-35 | `CONFIRM` leaves the pick unchanged. `CAUTION` adds a warning and −10 quality. `AVOID` moves the pick to a "Vetoed by AI review (do not trade)" section. |
+| FR-36 | The report shows, under each pick, its fundamentals line and the AI verdict, with up to 5 linked headlines, upcoming events and risks. |
+| FR-37 | The AI cannot add picks or raise quality. A wrong, hallucinated or manipulated answer can at worst cost a trade, never create one. |
+| FR-38 | Offline replays (`--input`) and `--no-ai` runs never call the API. The fundamentals rules (FR-31, FR-32) still apply. |
+| FR-39 | Server-side refusal fallback (`fallbacks: "default"`) is enabled. A refusal that remains after fallback counts as a failed review, not a verdict. |
+
+### 3.6 Outputs
 
 | ID | Requirement |
 |----|-------------|
@@ -102,8 +120,11 @@ stateDiagram-v2
     VALIDATE --> ENRICH: all stocks ready
     RECOVER --> ENRICH
     ENRICH --> SCAN
-    SCAN --> REPORT: signals
-    SCAN --> REPORT: scan error -> zero signals, logged
+    SCAN --> AI_REVIEW: signals
+    SCAN --> AI_REVIEW: scan error -> zero signals, logged
+    AI_REVIEW --> REPORT: reviewed (CONFIRM / CAUTION / AVOID per pick)
+    AI_REVIEW --> REPORT: no API key -> skipped
+    AI_REVIEW --> REPORT: per-pick failure -> warning on that pick
     REPORT --> [*]
 ```
 
@@ -117,6 +138,7 @@ stateDiagram-v2
 | EH-6 | ENRICH | previous-bar Stoch from candles for PULLBACK candidates | - | Stoch prev stays unknown; the "rising" check is skipped and the reason says "above %D" |
 | EH-7 | SCAN | `setups.scan` | - | zero signals, error logged |
 | EH-8 | CLI | the whole pipeline | - | emergency report, status FAILED, with the exception in the run log |
+| EH-8a | AI_REVIEW | Claude review per pick; the SDK retries 2 times, and a paused search turn (`pause_turn`) is resumed up to 3 times | - | no key or SDK: SKIPPED (status unaffected). Per-pick error, refusal or invalid JSON: that pick keeps the warning "AI review unavailable - check news manually" and the others continue (PARTIAL). |
 | EH-9 | Workflow | unit tests | a test failure is flagged in the job summary and never blocks the scan | the scan and commit steps run `if: always()` |
 
 ### 4.2 Per-stock state machine
@@ -156,7 +178,11 @@ stateDiagram-v2
 | NFR-3 | Network calls have timeouts (20–30 seconds) and bounded retries. Nothing may hang the workflow. |
 | NFR-4 | Workflow inputs reach the shell only through environment variables, never through `${{ }}` inside `run:`. |
 | NFR-5 | Unit tests must cover every setup condition, so that removing any one condition fails a test (checked by mutation runs), and every fallback path in sections 4.1 and 4.2. |
-| NFR-6 | Reports are deterministic for the same input data. |
+| NFR-6 | Reports are deterministic for the same input data, except for the AI review section. |
+| NFR-7 | `ANTHROPIC_API_KEY` is passed only to the scan step as a repository secret, never to the unit tests. Tests use a fake client and must never call the API. |
+| NFR-8 | AI cost is bounded: at most `--ai-max` picks × 5 web searches per run, and nothing on days with no picks. |
+| NFR-9 | Search results are untrusted. The system prompt tells Claude to ignore instructions found in them, and FR-37 limits the impact of any that get through. |
+| NFR-10 | The only third-party dependency is `anthropic` (`requirements.txt`). It is optional: without it the AI review is skipped. |
 
 ## 6. Schedule and automation
 
@@ -174,3 +200,8 @@ stateDiagram-v2
   averages, about 0.2 points for RSI and about 2% for ADX and ATR. Yahoo can also have gaps in thinly traded names.
 - Newly listed stocks with fewer than 210 sessions of history cannot be scored and are dropped.
 - The rules have not been backtested, so the win rate is unknown.
+- TradingView fundamentals are often partly missing for EGX names, for example P/E is null for loss-makers. The AI
+  review may fill gaps from news sources, but its figures are not verified.
+- News coverage of smaller EGX companies is thin. "No recent company-specific news" is common and is not a red flag
+  by itself.
+- AI verdicts are judgements and can be wrong. They are bounded by FR-37, but a CONFIRM is not a guarantee.

@@ -11,6 +11,8 @@ Run stages (each one either succeeds, falls back, or degrades - never aborts):
     RECOVER   Yahoo candles -> own indicators -> fresh and complete? -> RECOVERED, else DROPPED
     ENRICH    previous-bar Stoch for PULLBACK candidates from candles (optional)
     SCAN      setups.scan(); an unexpected error yields zero signals, not a crash
+    AI_REVIEW fundamentals checks + Claude news/fundamentals verdict per pick;
+              skipped without an API key, per-pick failures only add a warning
 
 Per-stock states:  READY | RECOVERED | DROPPED(reason)
 
@@ -24,6 +26,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
+from . import ai_review
 from . import fetch as _fetch
 from . import indicators
 from .setups import _num, pullback, scan
@@ -31,9 +34,12 @@ from .setups import _num, pullback, scan
 REQUIRED = ("close", "high", "low", "atr", "vol_avg_10d", "volume", "ema20", "ema50", "sma200",
             "rsi", "rsi_prev", "stoch_k", "stoch_d", "bb_lower", "adx", "di_plus", "di_minus", "high_1m")
 META = ("symbol", "name", "sector", "currency", "pricescale")
+# not price-derived, so kept from the screener row when price data is recovered elsewhere
+CARRY = META + ai_review.FUNDAMENTAL_KEYS
 INDEX_REQUIRED = ("close", "ema20", "ema50")
 
 READY, RECOVERED, DROPPED = "READY", "RECOVERED", "DROPPED"
+
 
 
 def _retry(fn, attempts=3, delay=2.0, sleep=time.sleep):
@@ -62,8 +68,10 @@ def bar_date(s, to_cairo):
 
 
 class Run:
-    def __init__(self, fetch=_fetch, cache_path=None, to_cairo=None, sleep=time.sleep, workers=8):
+    def __init__(self, fetch=_fetch, cache_path=None, to_cairo=None, sleep=time.sleep, workers=8,
+                 ai=True, ai_client=None, ai_max=8):
         self.fetch, self.cache_path, self.sleep, self.workers = fetch, cache_path, sleep, workers
+        self.ai, self.ai_client, self.ai_max = ai, ai_client, ai_max
         self.to_cairo = to_cairo or (lambda dt: dt)
         self.events = []
         self.status = {}           # symbol -> {"state": ..., "source": ..., "reason": ...}
@@ -173,7 +181,7 @@ class Run:
                 self.status[sym] = {"state": DROPPED,
                                     "reason": f"{why}; fallback also stale (last bar {ind['bar_date']})"}
                 continue
-            merged = {**{k: s.get(k) for k in META if s.get(k) is not None}, **ind}
+            merged = {**{k: s.get(k) for k in CARRY if s.get(k) is not None}, **ind}
             miss = missing_fields(merged)
             if miss:
                 self.status[sym] = {"state": DROPPED, "reason": f"{why}; fallback missing {', '.join(miss)}"}
@@ -221,12 +229,23 @@ class Run:
         except Exception as e:
             self.log("SCAN", "FAILED", f"{type(e).__name__}: {e}")
             result = scan([], index, cfg)
+        self.review(result, tradeable, session)
         result["as_of"] = session
         result["universe"] = len(stocks)
         result["data_status"] = self.status
         result["events"] = self.events
         result["run_status"] = self.run_status(tradeable)
         return result, index
+
+    def review(self, result, tradeable, session):
+        by_sym = {s.get("symbol"): s for s in tradeable}
+        try:
+            ai_review.apply(result, by_sym, session, self.log, client=self.ai_client,
+                            max_reviews=self.ai_max, enabled=self.ai)
+        except Exception as e:      # the review must never cost us the report
+            result.setdefault("vetoed", [])
+            result["ai_review"] = f"failed: {type(e).__name__}: {e}"
+            self.log("AI_REVIEW", "FAILED", result["ai_review"])
 
     def run_status(self, tradeable):
         if not tradeable:

@@ -39,6 +39,17 @@ COLUMNS = {
     "price_52_week_high": "high_52w",
     "volume": "volume",
     "average_volume_10d_calc": "vol_avg_10d",
+    # fundamentals (often partly null for EGX names) - context for the AI review, never a filter
+    "price_earnings_ttm": "pe_ratio",
+    "price_book_ratio": "pb_ratio",
+    "earnings_per_share_basic_ttm": "eps",
+    "return_on_equity": "roe",
+    "dividends_yield_current": "div_yield",
+    "debt_to_equity": "debt_to_equity",
+    "market_cap_calc": "market_cap",
+    "net_income": "net_income",
+    "total_revenue": "revenue",
+    "earnings_release_next_date": "next_earnings",
 }
 
 INDEX_COLUMNS = {

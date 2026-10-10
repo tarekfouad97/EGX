@@ -5,7 +5,8 @@ indicator data for the largest EGX stocks from TradingView's Egypt screener. It 
 too quiet or too volatile to swing. It then finds setups and gives an entry, stop, targets and position size for
 each one. It only suggests trades. It never places orders.
 
-It uses only the Python standard library (3.9+), so there is nothing to install. On Windows without the `tzdata`
+The scanner itself uses only the Python standard library (3.9+). The optional AI review needs the `anthropic`
+package (`pip install -r requirements.txt`). On Windows without the `tzdata`
 package it falls back to built-in Egypt DST rules.
 
 Full requirements, including the error-handling state machine, are in
@@ -31,6 +32,28 @@ Each report carries a run status:
 
 The **Data quality** section lists recovered and dropped stocks and the full run log.
 
+## Fundamentals and news review (AI)
+
+Picks come only from the chart setups. A second layer then checks each pick before it reaches the report:
+
+- **Fundamentals** (from TradingView): P/E, P/B, EPS, ROE, dividend yield, D/E, net income, market cap and the next
+  earnings date are shown under each pick. Two rules apply without any AI. A loss-making company gets a warning, and
+  so does an earnings release inside the holding window (16 days). Each warning lowers the rank.
+- **AI review** (Claude, with web search): Claude checks company news from the last 60 days, upcoming corporate
+  actions (earnings, dividends, rights issues, suspensions, deals) and the fundamentals. It returns a verdict:
+  - **CONFIRM:** no change.
+  - **CAUTION:** a warning and a lower rank.
+  - **AVOID:** the pick moves to a "Vetoed - do not trade" section.
+
+  The headlines it used are linked in the report. The AI can only demote or veto a pick, never add one or raise its
+  rank.
+
+**To turn on the AI review**, add a repository secret named `ANTHROPIC_API_KEY` (Settings → Secrets and variables →
+Actions). Without it the review is skipped and the report says so; everything else still runs. Locally, run
+`pip install -r requirements.txt` and export the key. Use `--no-ai` to skip the review, or `--ai-max N` to cap how many
+picks are reviewed (default 8). Cost scales with the number of picks: at most 5 web searches per pick, and nothing on
+days with no setups.
+
 ## Run it on demand
 
 ```bash
@@ -39,6 +62,7 @@ python -m egx_swing --capital 250000 --risk-pct 0.75
 python -m egx_swing --top 150 --min-adv 2000000      # wider universe, lower liquidity floor
 python -m egx_swing --out-dir reports                # also write reports/<session-date>.md, .json, latest.md
 python -m egx_swing --json                           # machine-readable output
+python -m egx_swing --no-ai                          # skip the Claude news & fundamentals review
 ```
 
 Run it after the 14:30 Cairo close. If you run it while the session is still open, the report warns that today's bar

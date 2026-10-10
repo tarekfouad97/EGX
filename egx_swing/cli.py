@@ -6,7 +6,7 @@ import os
 import sys
 from datetime import datetime, timedelta, timezone
 
-from . import report
+from . import ai_review, report
 from .pipeline import Run
 from .setups import DEFAULTS, scan
 
@@ -50,6 +50,9 @@ def main(argv=None):
     ap.add_argument("--json", action="store_true", help="print JSON instead of markdown")
     ap.add_argument("--cache", default=os.path.join("data", "universe.json"),
                     help="universe list kept for when the screener is down (default data/universe.json)")
+    ap.add_argument("--no-ai", action="store_true",
+                    help="skip the Claude news/fundamentals review (it also skips itself without ANTHROPIC_API_KEY)")
+    ap.add_argument("--ai-max", type=int, default=8, help="max picks sent to the AI review per run (default 8)")
     args = ap.parse_args(argv)
 
     if hasattr(sys.stdout, "reconfigure"):
@@ -65,8 +68,12 @@ def main(argv=None):
             index = snap.get("index", {})
             result = scan(snap["stocks"], index, cfg)
             result.update(as_of=snap.get("as_of"), run_status="OFFLINE", events=[], data_status={})
+            # replays never spend API credit: fundamentals checks only
+            ai_review.apply(result, {s.get("symbol"): s for s in snap["stocks"]}, result["as_of"],
+                            lambda *a: None, enabled=False)
         else:
-            result, index = Run(cache_path=args.cache, to_cairo=to_cairo).run(args.top, cfg)
+            result, index = Run(cache_path=args.cache, to_cairo=to_cairo, ai=not args.no_ai,
+                                ai_max=args.ai_max).run(args.top, cfg)
     except Exception as e:      # last resort: a bug, not a data problem - still publish a report
         result = scan([], {}, cfg)
         result.update(as_of=None, run_status="FAILED", data_status={},

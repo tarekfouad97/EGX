@@ -30,7 +30,7 @@
       "name": "Delta Sugar",
       "sector": "Process Industries",
       "setup": "PULLBACK",
-      "quality": 80,
+      "quality": 75,
       "reasons": [
         "Uptrend: EMA20 56.01 > EMA50 54.91 > SMA200 49.53",
         "Pulled back toward EMA20 56.01 (low 54.61)",
@@ -55,8 +55,22 @@
       "shares": 168,
       "position_egp": 9453,
       "risk_egp": 499,
-      "warnings": [],
-      "notes": []
+      "warnings": [
+        "Loss-making (negative EPS/ROE/net income)"
+      ],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 3.8699593709789135,
+        "eps": -9.7822,
+        "roe": -42.7042096770023,
+        "div_yield": 0,
+        "debt_to_equity": 2.26773981193912,
+        "market_cap": 7928960480,
+        "net_income": -526127247,
+        "revenue": 8829185517,
+        "next_earnings": "2026-12-02"
+      }
     },
     {
       "symbol": "ABUK",
@@ -91,7 +105,19 @@
       "warnings": [
         "1M high 96.29 sits below T1 - resistance"
       ],
-      "notes": []
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 3.534110052187025,
+        "eps": null,
+        "roe": null,
+        "div_yield": 9.22222222222222,
+        "debt_to_equity": null,
+        "market_cap": 113569200000,
+        "net_income": 7979617261,
+        "revenue": 22915657021,
+        "next_earnings": "2026-10-28"
+      }
     },
     {
       "symbol": "ATQA",
@@ -126,7 +152,19 @@
       "warnings": [
         "1M high 13.7 sits below T1 - resistance"
       ],
-      "notes": []
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "eps": null,
+        "roe": null,
+        "div_yield": 0,
+        "debt_to_equity": null,
+        "market_cap": 14700000000,
+        "net_income": null,
+        "revenue": null,
+        "next_earnings": null
+      }
     },
     {
       "symbol": "MOIN",
@@ -159,7 +197,19 @@
       "position_egp": 4266,
       "risk_egp": 499,
       "warnings": [],
-      "notes": []
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 6.157257287996211,
+        "eps": null,
+        "roe": null,
+        "div_yield": 0,
+        "debt_to_equity": 0,
+        "market_cap": 9227400000,
+        "net_income": 377703170,
+        "revenue": 2488632607,
+        "next_earnings": null
+      }
     }
   ],
   "excluded": [
@@ -245,6 +295,8 @@
     }
   ],
   "scanned": 98,
+  "vetoed": [],
+  "ai_review": "skipped - ANTHROPIC_API_KEY not set",
   "as_of": "2026-10-07",
   "universe": 100,
   "data_status": {
@@ -684,6 +736,11 @@
       "stage": "SCAN",
       "outcome": "OK",
       "detail": "4 setups from 98 stocks"
+    },
+    {
+      "stage": "AI_REVIEW",
+      "outcome": "SKIPPED",
+      "detail": "ANTHROPIC_API_KEY not set"
     }
   ],
   "run_status": "DEGRADED",

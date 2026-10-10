@@ -29,6 +29,8 @@ def render(result, index, when):
             f"(currency/liquidity/volatility), **{len(sig)} setups**. "
             f"Sizing: {cfg['capital']:,.0f} EGP capital, {cfg['risk_pct']}% risk/trade "
             f"x {reg['risk_mult']} regime multiplier.", ""]
+    if result.get("ai_review"):
+        out += [f"AI news & fundamentals review: {result['ai_review']}.", ""]
 
     if not sig:
         out += ["_No setups today. Cash is a position._", ""]
@@ -52,6 +54,14 @@ def render(result, index, when):
             out += [f"- ⚠ {w}" for w in s["warnings"]]
             out += [f"- ℹ {n}" for n in s.get("notes", [])]
             out.append("")
+            out += _fundamentals(s.get("fundamentals"))
+            out += _ai(s.get("ai"))
+
+    if result.get("vetoed"):
+        out += ["## Vetoed by AI review (do not trade)", ""]
+        for s in result["vetoed"]:
+            out += [f"### {s['symbol']} - {s['name']} ({s['setup']}) - AVOID", ""]
+            out += _ai(s.get("ai"))
 
     out += _data_quality(result)
     out += ["## How to use",
@@ -87,4 +97,39 @@ def _data_quality(result):
         out += ["<details><summary>Run log</summary>", "", "| Stage | Outcome | Detail |", "|---|---|---|"]
         out += [f"| {e['stage']} | {e['outcome']} | {e['detail'].replace('|', '/')} |" for e in events]
         out += ["", "</details>", ""]
+    return out
+
+
+def _fmt(v, pct=False, money=False):
+    if v is None:
+        return "n/a"
+    if money:
+        return f"{v / 1e9:,.2f}B"
+    return f"{v:.1f}%" if pct else f"{v:.2f}"
+
+
+def _fundamentals(f):
+    if not f:
+        return []
+    line = (f"**Fundamentals:** P/E {_fmt(f.get('pe_ratio'))} | P/B {_fmt(f.get('pb_ratio'))} | "
+            f"EPS {_fmt(f.get('eps'))} | ROE {_fmt(f.get('roe'), pct=True)} | "
+            f"Div yield {_fmt(f.get('div_yield'), pct=True)} | D/E {_fmt(f.get('debt_to_equity'))} | "
+            f"Net income {_fmt(f.get('net_income'), money=True)} | Mkt cap {_fmt(f.get('market_cap'), money=True)}")
+    if f.get("next_earnings"):
+        line += f" | Next earnings {f['next_earnings']}"
+    return [line, ""]
+
+
+def _ai(a):
+    if not a:
+        return []
+    if a.get("status") != "reviewed":
+        return [f"**AI review:** {a.get('status')}", ""]
+    out = [f"**AI review: {a['verdict']}** ({a['confidence']} confidence) - {a['summary']}", "",
+           f"- Fundamentals: {a['fundamentals_view']}"]
+    out += [f"- Upcoming: {e['type']} {e['date']} - {e['detail']}" for e in a.get("upcoming_events", [])]
+    out += [f"- Risk: {r}" for r in a.get("risks", [])]
+    for n in a.get("news", [])[:5]:
+        out.append(f"- News ({n['impact']}, {n['date']}): [{n['headline'].replace(']', ')')}]({n['url']}) - {n['source']}")
+    out.append("")
     return out

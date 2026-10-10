@@ -33,6 +33,7 @@ class Emergency(unittest.TestCase):
         self.assertIn("Run status: **FAILED**", md)
         self.assertIn("RuntimeError: unexpected bug", md)
         self.assertEqual(data["run_status"], "FAILED")
+        self.assertIn("latest.json", files)
 
 
 if __name__ == "__main__":

@@ -94,8 +94,10 @@ def main(argv=None):
         for name in (f"{day}.md", "latest.md"):
             with open(os.path.join(args.out_dir, name), "w", encoding="utf-8") as f:
                 f.write(md)
-        with open(os.path.join(args.out_dir, f"{day}.json"), "w", encoding="utf-8") as f:
-            json.dump({"date": day, "index": index, **result}, f, indent=2, ensure_ascii=False)
+        payload = {"date": day, "index": index, **result}
+        for name in (f"{day}.json", "latest.json"):     # latest.json: stable path for the review skill
+            with open(os.path.join(args.out_dir, name), "w", encoding="utf-8") as f:
+                json.dump(payload, f, indent=2, ensure_ascii=False)
 
     print(json.dumps(result, indent=2, ensure_ascii=False) if args.json else md)
     return 0

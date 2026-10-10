@@ -89,12 +89,22 @@ never add a pick or raise its rank (FR-37).
 | FR-38 | Offline replays (`--input`) and `--no-ai` runs never call the API. The fundamentals rules (FR-31, FR-32) still apply. |
 | FR-39 | Server-side refusal fallback (`fallbacks: "default"`) is enabled. A refusal that remains after fallback counts as a failed review, not a verdict. |
 
+### 3.5a Review skill (final answer in chat)
+
+| ID | Requirement |
+|----|-------------|
+| SK-1 | The Claude Code skill `.claude/skills/egx-swing-review` triggers the workflow (with the `gh` CLI, or the GitHub MCP tools if `gh` is unavailable) using the user's capital and risk %, waits for it to complete, and reads `reports/latest.json`. If no trigger is possible, it runs the scanner locally with `--no-ai`. |
+| SK-2 | It stops with "no trades" when `run_status` is FAILED, and warns when the run is DEGRADED, intraday, or from a stale session. |
+| SK-3 | For each pick (at most 8) it researches 60 days of company news, corporate actions inside about 3 weeks, and fundamentals, citing a dated link for every headline. |
+| SK-4 | Verdicts are TAKE / TAKE SMALLER (half shares) / SKIP, under the same only-demote rule as FR-37. It keeps the report's levels, never adds picks, never increases size, and keeps any vetoes from the workflow. |
+| SK-5 | It answers in chat with the market line, a final table, per-pick evidence, total risk if all picks fill (flagged above 5% of capital) and the execution rules. |
+
 ### 3.6 Outputs
 
 | ID | Requirement |
 |----|-------------|
 | FR-25 | A markdown report containing: session date, run status, regime, a signals table (with R:R), per-stock reasons, warnings and notes, a **Data quality** section and how-to-use rules. |
-| FR-26 | `--out-dir` writes `<session>.md`, `<session>.json` and `latest.md`, all UTF-8. A run with no known session writes `<run-date>-FAILED.*` so it never overwrites a good report. |
+| FR-26 | `--out-dir` writes `<session>.md`, `<session>.json`, `latest.md` and `latest.json`, all UTF-8. A run with no known session writes `<run-date>-FAILED.*` so it never overwrites a good report. |
 | FR-27 | The JSON contains signals, exclusions, `data_status` per stock, `events` (the run log), `run_status`, `as_of` and `intraday`. |
 | FR-28 | A run during an open session (before 14:45 Cairo on the session date) must be flagged `intraday`. |
 | FR-29 | `--input` replays a saved snapshot offline and must refuse `--out-dir`. |

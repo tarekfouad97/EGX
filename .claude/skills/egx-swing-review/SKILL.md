@@ -106,8 +106,34 @@ Rules for deciding:
 
 ## Step 5 - Final answer (in chat, this format)
 
+**Lead with plain instructions a non-trader can follow.** The first thing the user sees must be the "What to buy"
+table and the numbered "How to do it" steps, in plain words (no "R", "T1", "buy-stop" or setup jargon without an
+explanation). Put the analysis after that. Shares and money must match the verdicts: TAKE SMALLER means half the
+shares, and SKIP stocks don't appear in the buy table.
+
 ```
-## EGX swing picks for <next trading day> (data: session <session>)
+## What to buy on <next trading day> (only if the price gets there)
+
+| Stock | Buy this many shares | ...only once the price reaches | Money needed | Sell everything if it drops to | Sell half at | Sell the rest at |
+|---|---|---|---|---|---|---|
+| **TICKER** (Company) | n | entry | ~shares x entry | stop | T1 | T2 |
+
+**Total money used:** ~<sum> EGP of <capital>. **The most you can lose**, if every trade hits its stop: ~<sum risk> EGP (<%>).
+<If any SKIP: "**Don't buy:** TICKER - <one-line reason>.">
+
+### How to do it, step by step
+1. **Don't buy at the open.** Wait until the price *rises to* the "reaches" price. Use a stop-buy (buy-stop) order at
+   that price if your broker has one; otherwise set a price alert and buy when it triggers.
+2. **If it never reaches that price within 2 trading days, don't buy**, and cancel the order.
+3. **Right after buying, place a stop-loss sell order** at the "drops to" price.
+4. **At "sell half at", sell half your shares**, then move the stop-loss on the rest up to the price you paid.
+5. **Sell the rest at the final price**, or after about 10 trading days if neither the target nor the stop is hit.
+
+<One plain sentence per TAKE SMALLER stock explaining why it has fewer shares.>
+
+---
+
+### Details
 
 **Market:** <regime> - EGX30 <close> (<1M %>) | CBE rate <x>% | USD/EGP <y> - <one-line read>
 <Any data warnings: DEGRADED / intraday / stale session - one line each>
@@ -124,9 +150,6 @@ Rules for deciding:
 - **Verdict reason:** <one or two sentences>
 
 **Total risk if all TAKE / TAKE SMALLER picks fill:** <sum of risk EGP> (<% of capital>)
-
-**Before the open:** buy-stop orders only above the levels shown; cancel if not filled within 2 sessions; stops are
-hard; sell half at T1 and move the stop to entry.
 
 Report: <link to the GitHub run or reports/latest.md>
 _Analytical output only - not licensed financial advice._

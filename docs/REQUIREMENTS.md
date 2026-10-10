@@ -99,6 +99,15 @@ never add a pick or raise its rank (FR-37).
 | SK-4 | Verdicts are TAKE / TAKE SMALLER (half shares) / SKIP, under the same only-demote rule as FR-37. It keeps the report's levels, never adds picks, never increases size, and keeps any vetoes from the workflow. |
 | SK-5 | It answers in chat with the market line, a final table, per-pick evidence, total risk if all picks fill (flagged above 5% of capital) and the execution rules. |
 
+### 3.5b Email
+
+| ID | Requirement |
+|----|-------------|
+| EM-1 | After the report commit, the workflow emails the report (HTML plus a plain-text version, with `latest.md` attached) using `python -m egx_swing.notify`. |
+| EM-2 | The email leads with plain buy instructions per pick (shares, buy price, money, stop, both sell prices), then totals for money used, the most you can lose, and the best case. Vetoed picks are listed as "don't buy". |
+| EM-3 | SMTP credentials come only from repository secrets (`SMTP_USERNAME`, `SMTP_PASSWORD`). The recipient defaults to tare2fo2ad@gmail.com and can be overridden by a `MAIL_TO` secret. |
+| EM-4 | With no credentials the step is skipped. A send failure is logged and never fails the job (EH-0). |
+
 ### 3.6 Outputs
 
 | ID | Requirement |

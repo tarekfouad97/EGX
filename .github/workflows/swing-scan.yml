@@ -68,3 +68,13 @@ jobs:
           git commit -m "Swing scan $(TZ=Africa/Cairo date +%Y-%m-%d)"
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
+
+      # Optional: skipped unless the SMTP secrets are set; never fails the job.
+      - name: Email report
+        if: always()
+        continue-on-error: true
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO || 'tare2fo2ad@gmail.com' }}   # a MAIL_TO secret overrides this
+        run: python -m egx_swing.notify reports/latest.json --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

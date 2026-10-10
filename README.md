@@ -78,6 +78,23 @@ Like the in-workflow review, it can only demote or veto a pick. It needs no API 
 session. It triggers the workflow with the `gh` CLI or the GitHub connector; with neither, it runs the scanner
 locally.
 
+## Email
+
+Every workflow run emails the report: a plain "what to buy" table, money used, the most you could lose, the
+best-case profit and the warnings, with the full report attached. It goes to `tare2fo2ad@gmail.com` (set in the
+workflow; a `MAIL_TO` repository secret overrides it, comma-separated for several people).
+
+To turn it on, add two repository secrets (Settings → Secrets and variables → Actions → New repository secret):
+
+| Secret | Value |
+|--------|-------|
+| `SMTP_USERNAME` | the Gmail address that sends the email |
+| `SMTP_PASSWORD` | a Gmail **App Password** (Google Account → Security → 2-Step Verification → App passwords), not your normal password |
+
+Without them the email step is skipped; a failed email never fails the run. Other providers work too, via the
+`SMTP_HOST` / `SMTP_PORT` environment variables (SSL, default `smtp.gmail.com:465`). The email contains the scanner's
+picks; the news-checked TAKE / TAKE SMALLER / SKIP answer comes from the `/egx-swing-review` skill.
+
 ## Run it on demand
 
 ```bash

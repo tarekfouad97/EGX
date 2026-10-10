@@ -39,7 +39,8 @@ def to_cairo(utc):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="egx_swing", description="EGX swing-trade setup scanner")
-    ap.add_argument("--top", type=int, default=100, help="universe size by market cap (default 100)")
+    ap.add_argument("--top", type=int, default=500,
+                    help="largest N stocks by market cap (default 500 = every listed EGX stock, ~290)")
     ap.add_argument("--capital", type=float, default=float(DEFAULTS["capital"]), help="account size in EGP")
     ap.add_argument("--risk-pct", type=float, default=float(DEFAULTS["risk_pct"]),
                     help="%% of capital risked per trade")

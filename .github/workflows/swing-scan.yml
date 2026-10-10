@@ -12,6 +12,9 @@ on:
       risk_pct:
         description: "% of capital risked per trade"
         default: "1"
+      top:
+        description: "How many stocks to scan, largest first (500 = all listed)"
+        default: "500"
 
 permissions:
   contents: write
@@ -50,9 +53,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # unset -> AI review skipped
           CAPITAL: ${{ inputs.capital || '100000' }}
           RISK_PCT: ${{ inputs.risk_pct || '1' }}
+          TOP: ${{ inputs.top || '500' }}
           TESTS: ${{ steps.tests.outcome }}
         run: |
-          python -m egx_swing --capital "$CAPITAL" --risk-pct "$RISK_PCT" --out-dir reports > scan.md
+          python -m egx_swing --capital "$CAPITAL" --risk-pct "$RISK_PCT" --top "$TOP" --out-dir reports > scan.md
           if [ "$TESTS" != "success" ]; then
             echo "> ⛔ Unit tests failed on this commit - treat this report with suspicion." >> "$GITHUB_STEP_SUMMARY"
           fi

@@ -85,8 +85,8 @@ def _rows(data, columns):
     return out
 
 
-def fetch_universe(top=100):
-    """Primary common stocks on EGX, largest `top` by market cap."""
+def fetch_universe(top=500):
+    """Primary common stocks on EGX, largest `top` by market cap (500 covers the whole exchange)."""
     payload = {
         "filter": [
             {"left": "is_primary", "operation": "equal", "right": True},

@@ -69,7 +69,7 @@ Check before going further:
 
 ## Step 3 - Research each pick
 
-Work through the picks in report order, at most 8. For each one, use WebSearch (and WebFetch for the most relevant
+Work through the picks in report order, at most 12 (the full-market scan often gives 8-10). For each one, use WebSearch (and WebFetch for the most relevant
 page) to find:
 
 1. **Company news, last 60 days.** Results, profit warnings, guidance, big contracts, legal or regulatory action,

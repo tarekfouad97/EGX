@@ -1,7 +1,7 @@
 # EGX Swing Trader
 
 A scanner for long-only swing trades on the Egyptian Exchange, aimed at holds of about 2–10 sessions. Each day it pulls
-indicator data for the largest EGX stocks from TradingView's Egypt screener. It drops names that are illiquid or
+indicator data for every listed EGX stock (about 290) from TradingView's Egypt screener. It drops names that are illiquid or
 too quiet or too volatile to swing. It then finds setups and gives an entry, stop, targets and position size for
 each one. It only suggests trades. It never places orders.
 
@@ -100,7 +100,8 @@ picks; the news-checked TAKE / TAKE SMALLER / SKIP answer comes from the `/egx-s
 ```bash
 python -m egx_swing                                  # markdown report to stdout
 python -m egx_swing --capital 250000 --risk-pct 0.75
-python -m egx_swing --top 150 --min-adv 2000000      # wider universe, lower liquidity floor
+python -m egx_swing --top 100                        # only the 100 largest (default: all ~290 listed stocks)
+python -m egx_swing --min-adv 2000000                # lower liquidity floor (lets smaller names in)
 python -m egx_swing --out-dir reports                # also write reports/<session-date>.md, .json, latest.md
 python -m egx_swing --json                           # machine-readable output
 python -m egx_swing --no-ai                          # skip the Claude news & fundamentals review

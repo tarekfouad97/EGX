@@ -31,7 +31,7 @@ The output is analytical only and is not financial advice. Every report must say
 
 | ID | Requirement |
 |----|-------------|
-| FR-1 | The universe must be the top N (default 100) primary EGX common stocks by market cap. |
+| FR-1 | The universe must be every primary EGX common stock (about 290), ordered by market cap. `--top N` (and the workflow's `top` input) can limit it to the largest N. Illiquid names are still filtered by FR-9. |
 | FR-2 | The primary source must be TradingView's Egypt screener on the daily timeframe. |
 | FR-3 | The fallback source must be Yahoo Finance daily candles (`<TICKER>.CA`). Indicators are computed locally with TradingView's definitions (EMA seeded with an SMA, Wilder RSI/ATR/ADX, Stoch 14/3/3, MACD 12/26/9, BB 20/2, Perf.1M = close vs the last close before the same day one month earlier). |
 | FR-4 | The **session date** must be the date (Cairo time) of the newest trade in the data, not the date the scan ran. |

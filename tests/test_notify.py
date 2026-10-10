@@ -29,7 +29,9 @@ class Body(unittest.TestCase):
         h = notify.html_body(REPORT, "https://x/run")
         self.assertIn("Abou Kir &lt;Fert&gt;", h)
         self.assertNotIn("<Fert>", h)
-        for v in ("90.32", "83.38", "100.73", "111.14", "~6,503", "XYZ", "https://x/run"):
+        self.assertIn("@media only screen", h)            # responsive
+        self.assertNotIn("'Segoe UI'", h)                  # no quote clash inside style='...' 
+        for v in ("90.32", "83.38", "100.73", "111.14", "6,503", "+1,124", "XYZ", "https://x/run"):
             self.assertIn(v, h)
 
     def test_text_body_failed_run(self):

@@ -193,7 +193,7 @@ stateDiagram-v2
 | ID | Requirement |
 |----|-------------|
 | NFR-1 | Python 3.9+, standard library only. Must run without `tzdata` by falling back to built-in Egypt DST rules. |
-| NFR-2 | A normal run should take under 60 seconds. A full-fallback run (screener down) of 100 stocks should take under 2 minutes, using 8 parallel requests. |
+| NFR-2 | A normal run should take under 60 seconds. A full-fallback run (screener down) of the whole exchange (~300 stocks) should take under 4 minutes, using 8 parallel requests. |
 | NFR-3 | Network calls have timeouts (20–30 seconds) and bounded retries. Nothing may hang the workflow. |
 | NFR-4 | Workflow inputs reach the shell only through environment variables, never through `${{ }}` inside `run:`. |
 | NFR-5 | Unit tests must cover every setup condition, so that removing any one condition fails a test (checked by mutation runs), and every fallback path in sections 4.1 and 4.2. |

@@ -9,11 +9,13 @@ SCAN_URL = "https://scanner.tradingview.com/egypt/scan"
 COLUMNS = {
     "description": "name",
     "sector": "sector",
+    "currency": "currency",
+    "pricescale": "pricescale",        # tick = 1 / pricescale (0.01, or 0.001 under 1 EGP)
+    "update_time": "update_time",      # unix time of the last trade = which session the bar is
     "close": "close",
     "open": "open",
     "high": "high",
     "low": "low",
-    "change": "change_pct",
     "EMA10": "ema10",
     "EMA20": "ema20",
     "EMA50": "ema50",
@@ -24,21 +26,18 @@ COLUMNS = {
     "MACD.signal": "macd_signal",
     "Stoch.K": "stoch_k",
     "Stoch.D": "stoch_d",
-    "BB.upper": "bb_upper",
+    "Stoch.K[1]": "stoch_k_prev",
+    "Stoch.D[1]": "stoch_d_prev",
     "BB.lower": "bb_lower",
     "ADX": "adx",
     "ADX+DI": "di_plus",
     "ADX-DI": "di_minus",
     "ATR": "atr",
-    "Perf.W": "perf_1w",
     "Perf.1M": "perf_1m",
     "High.1M": "high_1m",
-    "Low.1M": "low_1m",
     "price_52_week_high": "high_52w",
-    "price_52_week_low": "low_52w",
     "volume": "volume",
     "average_volume_10d_calc": "vol_avg_10d",
-    "market_cap_calc": "market_cap",
 }
 
 INDEX_COLUMNS = {

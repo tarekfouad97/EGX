@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-07",
+  "index": {
+    "close": 53265.2,
+    "ema20": 53884.42712742098,
+    "ema50": 54113.08965074236,
+    "sma200": 50356.27000000004,
+    "perf_1w": 1.9289207994305093,
+    "perf_1m": -6.160790103272953,
+    "rsi": 42.593770728906506,
+    "symbol": "EGX30"
+  },
+  "regime": {
+    "regime": "RISK-OFF",
+    "risk_mult": 0.5,
+    "note": "EGX30 below 50 EMA with 20 < 50 - risk halved, breakouts suppressed"
+  },
+  "config": {
+    "min_adv_egp": 5000000.0,
+    "min_atr_pct": 1.0,
+    "max_atr_pct": 8.0,
+    "capital": 100000.0,
+    "risk_pct": 1.0,
+    "max_position_pct": 25.0,
+    "max_adv_pct": 10.0
+  },
+  "signals": [],
+  "excluded": [
+    {
+      "symbol": "SCTS",
+      "reason": "ADV 0.9M EGP < 5.0M"
+    },
+    {
+      "symbol": "GPPL",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
+      "symbol": "FERC",
+      "reason": "ADV 3.0M EGP < 5.0M"
+    },
+    {
+      "symbol": "VLMR",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
+      "symbol": "BIOC",
+      "reason": "ATR 9.8% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "GTHE",
+      "reason": "ADV 0.2M EGP < 5.0M"
+    },
+    {
+      "symbol": "EGSA",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
+      "symbol": "UBEE",
+      "reason": "ADV 0.9M EGP < 5.0M"
+    },
+    {
+      "symbol": "NBKE",
+      "reason": "ADV 0.1M EGP < 5.0M"
+    },
+    {
+      "symbol": "MOIL",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
+      "symbol": "EGBE",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
+      "symbol": "CICH",
+      "reason": "ADV 2.5M EGP < 5.0M"
+    },
+    {
+      "symbol": "AMES",
+      "reason": "ATR 12.2% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "FAIT",
+      "reason": "ADV 3.4M EGP < 5.0M"
+    },
+    {
+      "symbol": "ALEX",
+      "reason": "ADV 0.2M EGP < 5.0M"
+    },
+    {
+      "symbol": "MIPH",
+      "reason": "ADV 4.1M EGP < 5.0M"
+    },
+    {
+      "symbol": "CPCI",
+      "reason": "ADV 4.8M EGP < 5.0M"
+    },
+    {
+      "symbol": "PHTV",
+      "reason": "ADV 0.9M EGP < 5.0M"
+    },
+    {
+      "symbol": "DOMT",
+      "reason": "ADV 4.9M EGP < 5.0M"
+    },
+    {
+      "symbol": "SPHT",
+      "reason": "quoted in USD - EGP-only sizing"
+    }
+  ],
+  "scanned": 100,
+  "as_of": "2026-10-07",
+  "intraday": false
+}

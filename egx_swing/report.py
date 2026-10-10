@@ -9,7 +9,10 @@ def render(result, index, when):
     reg = result["regime"]
     cfg = result["config"]
     sig = result["signals"]
-    out = [f"# EGX Swing Scan - {when}", ""]
+    out = [f"# EGX Swing Scan - session {result.get('as_of') or 'unknown'}", "",
+           f"_Generated {when}._", ""]
+    if result.get("intraday"):
+        out += ["> ⚠ EGX session may still be open - this bar is not final.", ""]
 
     idx = ""
     if index.get("close") is not None:
@@ -18,34 +21,38 @@ def render(result, index, when):
             idx += f" ({index['perf_1m']:+.1f}% 1M)"
     out += [f"**Regime: {reg['regime']}**{idx} - {reg['note']}", ""]
     out += [f"Scanned {result['scanned']} stocks, {len(result['excluded'])} filtered out "
-            f"(liquidity/volatility), **{len(sig)} setups**. "
+            f"(currency/liquidity/volatility), **{len(sig)} setups**. "
             f"Sizing: {cfg['capital']:,.0f} EGP capital, {cfg['risk_pct']}% risk/trade "
             f"x {reg['risk_mult']} regime multiplier.", ""]
 
     if not sig:
         out += ["_No setups today. Cash is a position._", ""]
     else:
-        out += ["| # | Ticker | Setup | Q | Close | Entry (buy-stop) | Stop | T1 | T2 | Risk % | Shares | Position EGP |",
-                "|---|--------|-------|---|-------|------------------|------|----|----|--------|--------|--------------|"]
+        out += ["| # | Ticker | Setup | Q | Close | Entry (buy-stop) | Stop | T1 | T2 | R:R T1 | Risk % | Shares | Position EGP |",
+                "|---|--------|-------|---|-------|------------------|------|----|----|--------|--------|--------|--------------|"]
         for i, s in enumerate(sig, 1):
-            out.append(f"| {i} | **{s['symbol']}** | {s['setup']} | {s['quality']} | {s['close']:.2f} | "
-                       f"{s['entry']:.2f} | {s['stop']:.2f} | {s['t1']:.2f} | {s['t2']:.2f} | "
-                       f"{s['risk_pct_of_price']}% | {s['shares']:,} | {s['position_egp']:,} |")
+            d = s["decimals"]
+            out.append(f"| {i} | **{s['symbol']}** | {s['setup']} | {s['quality']} | {s['close']:.{d}f} | "
+                       f"{s['entry']:.{d}f} | {s['stop']:.{d}f} | {s['t1']:.{d}f} | {s['t2']:.{d}f} | "
+                       f"{s['rr_t1']:.1f}R | {s['risk_pct_of_price']}% | {s['shares']:,} | {s['position_egp']:,} |")
         out.append("")
         for i, s in enumerate(sig, 1):
+            d = s["decimals"] + 1
             rs = f" | RS vs EGX30 {s['rs_vs_egx30']:+.1f}pts" if s["rs_vs_egx30"] is not None else ""
+            ema10 = f" | EMA10 {s['ema10']:.{d}f}" if s.get("ema10") is not None else ""
             out += [f"### {i}. {s['symbol']} - {s['name']} ({s['setup']})",
-                    f"{s['sector']} | ATR {s['atr']} ({s['atr_pct']}%/day) | ADV {_m(s['adv_egp'])} EGP"
-                    f" | RSI {s['rsi']}{rs}", ""]
+                    f"{s['sector']} | ATR {s['atr']:.{d}f} ({s['atr_pct']}%/day) | ADV {_m(s['adv_egp'])} EGP"
+                    f" | RSI {s['rsi']}{ema10}{rs}", ""]
             out += [f"- {r}" for r in s["reasons"]]
             out += [f"- ⚠ {w}" for w in s["warnings"]]
+            out += [f"- ℹ {n}" for n in s.get("notes", [])]
             out.append("")
 
     out += ["## How to use",
-            "- **Entry** is a buy-stop above today's high: only trigger if price trades through it "
-            "next session. Cancel if not filled within 2 sessions.",
-            "- **Stop** is hard. Sell half at **T1** (1.5R), move stop to entry, trail the rest to **T2** (3R) "
-            "or exit on a close below EMA10.",
+            "- **Entry** is a buy-stop above the session's high: only trigger if price trades through it "
+            "in the next session. Cancel if not filled within 2 sessions.",
+            "- **Stop** is hard. Sell half at **T1** (R:R column; 1.5R, or EMA20 for bounces), move stop to entry, "
+            "trail the rest to **T2** (3R) or exit on a close below EMA10.",
             "- Time stop: exit after ~10 sessions if neither target nor stop is hit.",
             "", "_Analytical output only - not licensed financial advice._", ""]
     return "\n".join(out)

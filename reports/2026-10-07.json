@@ -19,7 +19,7 @@
     "min_adv_egp": 5000000.0,
     "min_atr_pct": 1.0,
     "max_atr_pct": 8.0,
-    "capital": 100000.0,
+    "capital": 20000.0,
     "risk_pct": 1.0,
     "max_position_pct": 25.0,
     "max_adv_pct": 10.0
@@ -52,9 +52,9 @@
       "risk_per_share": 0.75,
       "risk_pct_of_price": 8.2,
       "rr_t1": 1.49,
-      "shares": 666,
-      "position_egp": 6061,
-      "risk_egp": 500,
+      "shares": 133,
+      "position_egp": 1210,
+      "risk_egp": 100,
       "warnings": [
         "1M high 10.17 sits below T1 - resistance"
       ],
@@ -99,9 +99,9 @@
       "risk_per_share": 0.49,
       "risk_pct_of_price": 9.5,
       "rr_t1": 1.49,
-      "shares": 1020,
-      "position_egp": 5273,
-      "risk_egp": 500,
+      "shares": 204,
+      "position_egp": 1055,
+      "risk_egp": 100,
       "warnings": [
         "1M high 5.84 sits below T1 - resistance"
       ],
@@ -146,9 +146,9 @@
       "risk_per_share": 2.97,
       "risk_pct_of_price": 5.3,
       "rr_t1": 1.5,
-      "shares": 168,
-      "position_egp": 9453,
-      "risk_egp": 499,
+      "shares": 33,
+      "position_egp": 1857,
+      "risk_egp": 98,
       "warnings": [
         "Loss-making (negative EPS/ROE/net income)"
       ],
@@ -193,9 +193,9 @@
       "risk_per_share": 6.94,
       "risk_pct_of_price": 7.7,
       "rr_t1": 1.5,
-      "shares": 72,
-      "position_egp": 6503,
-      "risk_egp": 500,
+      "shares": 14,
+      "position_egp": 1264,
+      "risk_egp": 97,
       "warnings": [
         "1M high 96.29 sits below T1 - resistance"
       ],
@@ -240,9 +240,9 @@
       "risk_per_share": 0.96,
       "risk_pct_of_price": 7.8,
       "rr_t1": 1.5,
-      "shares": 520,
-      "position_egp": 6427,
-      "risk_egp": 499,
+      "shares": 104,
+      "position_egp": 1285,
+      "risk_egp": 100,
       "warnings": [
         "1M high 13.7 sits below T1 - resistance"
       ],
@@ -287,9 +287,9 @@
       "risk_per_share": 1.43,
       "risk_pct_of_price": 10.5,
       "rr_t1": 1.5,
-      "shares": 349,
-      "position_egp": 4732,
-      "risk_egp": 499,
+      "shares": 69,
+      "position_egp": 936,
+      "risk_egp": 99,
       "warnings": [
         "1M high 14.89 sits below T1 - resistance"
       ],
@@ -334,9 +334,9 @@
       "risk_per_share": 42.79,
       "risk_pct_of_price": 13.4,
       "rr_t1": 1.5,
-      "shares": 11,
-      "position_egp": 3523,
-      "risk_egp": 471,
+      "shares": 2,
+      "position_egp": 641,
+      "risk_egp": 86,
       "warnings": [
         "1M high 380 sits below T1 - resistance"
       ],
@@ -381,9 +381,9 @@
       "risk_per_share": 4.34,
       "risk_pct_of_price": 11.7,
       "rr_t1": 1.5,
-      "shares": 115,
-      "position_egp": 4266,
-      "risk_egp": 499,
+      "shares": 23,
+      "position_egp": 853,
+      "risk_egp": 100,
       "warnings": [],
       "notes": [],
       "fundamentals": {
@@ -426,9 +426,9 @@
       "risk_per_share": 0.59,
       "risk_pct_of_price": 9.1,
       "rr_t1": 1.51,
-      "shares": 847,
-      "position_egp": 5497,
-      "risk_egp": 500,
+      "shares": 169,
+      "position_egp": 1097,
+      "risk_egp": 100,
       "warnings": [],
       "notes": [],
       "fundamentals": {
@@ -771,36 +771,28 @@
       "reason": "ADV 0.1M EGP < 5.0M"
     },
     {
-      "symbol": "TOUR",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "EGS48271C018-EGP",
-      "reason": "ADV 0.1M EGP < 5.0M"
-    },
-    {
-      "symbol": "DGTZ",
-      "reason": "ADV 1.4M EGP < 5.0M"
-    },
-    {
-      "symbol": "UPMS",
-      "reason": "ADV 0.2M EGP < 5.0M"
-    },
-    {
-      "symbol": "NCGC",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "HBCO",
-      "reason": "ATR 12.1% outside 1.0-8.0%"
+      "symbol": "FTNS",
+      "reason": "ADV 0.4M EGP < 5.0M"
     },
     {
       "symbol": "SNFI",
       "reason": "ADV 0.1M EGP < 5.0M"
     },
     {
-      "symbol": "TORA",
-      "reason": "ADV 0.7M EGP < 5.0M"
+      "symbol": "PACH",
+      "reason": "ADV 0.1M EGP < 5.0M"
+    },
+    {
+      "symbol": "GTEX",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
+      "symbol": "HBCO",
+      "reason": "ATR 12.1% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "NCGC",
+      "reason": "ADV 0.0M EGP < 5.0M"
     },
     {
       "symbol": "LUTS",
@@ -811,11 +803,35 @@
       "reason": "ADV 0.0M EGP < 5.0M"
     },
     {
+      "symbol": "LKGP",
+      "reason": "ADV 0.9M EGP < 5.0M"
+    },
+    {
+      "symbol": "TORA",
+      "reason": "ADV 0.7M EGP < 5.0M"
+    },
+    {
+      "symbol": "SMPP",
+      "reason": "ADV 0.0M EGP < 5.0M"
+    },
+    {
+      "symbol": "EGS48271C018-EGP",
+      "reason": "ADV 0.1M EGP < 5.0M"
+    },
+    {
       "symbol": "SUCE",
       "reason": "ADV 5.0M EGP < 5.0M"
     },
     {
-      "symbol": "EITP",
+      "symbol": "TOUR",
+      "reason": "ADV 0.0M EGP < 5.0M"
+    },
+    {
+      "symbol": "DGTZ",
+      "reason": "ADV 1.4M EGP < 5.0M"
+    },
+    {
+      "symbol": "IRAX",
       "reason": "ADV 0.0M EGP < 5.0M"
     },
     {
@@ -823,27 +839,11 @@
       "reason": "ATR 9.5% outside 1.0-8.0%"
     },
     {
-      "symbol": "GTEX",
-      "reason": "quoted in USD - EGP-only sizing"
+      "symbol": "UPMS",
+      "reason": "ADV 0.2M EGP < 5.0M"
     },
     {
-      "symbol": "FTNS",
-      "reason": "ADV 0.4M EGP < 5.0M"
-    },
-    {
-      "symbol": "PACH",
-      "reason": "ADV 0.1M EGP < 5.0M"
-    },
-    {
-      "symbol": "IRAX",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "LKGP",
-      "reason": "ADV 0.9M EGP < 5.0M"
-    },
-    {
-      "symbol": "SMPP",
+      "symbol": "EITP",
       "reason": "ADV 0.0M EGP < 5.0M"
     }
   ],
@@ -1773,39 +1773,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "TOUR": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EGS48271C018-EGP": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "DGTZ": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "UPMS": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "INEG": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "NCGC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "TWSA": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "GGRN": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "HBCO": {
+    "FTNS": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1813,7 +1781,31 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "TORA": {
+    "PACH": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "INEG": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "GTEX": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "PHGC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "HBCO": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "TWSA": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "NCGC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1825,27 +1817,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "SUCE": {
+    "LKGP": {
       "state": "READY",
       "source": "tradingview"
     },
-    "AIDC": {
+    "TORA": {
       "state": "READY",
       "source": "tradingview"
     },
-    "EITP": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EGS370O1C013": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "PHGC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "GTEX": {
+    "SMPP": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1853,11 +1833,27 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "FTNS": {
+    "GGRN": {
       "state": "READY",
       "source": "tradingview"
     },
-    "PACH": {
+    "EGS48271C018-EGP": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "AIDC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "SUCE": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "TOUR": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "DGTZ": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1865,11 +1861,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "LKGP": {
+    "EGS370O1C013": {
       "state": "READY",
       "source": "tradingview"
     },
-    "SMPP": {
+    "UPMS": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "EITP": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1885,91 +1885,7 @@
       "state": "DROPPED",
       "reason": "screener missing ema50, sma200; fallback history too short"
     },
-    "OCAP": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
     "EEP": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "NAMI": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "SINA": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "KORA": {
-      "state": "DROPPED",
-      "reason": "screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "RMTV": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "CID": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGWA": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "MMHC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ANCC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "PMSC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "MITR": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EFAC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "POCO": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "YAYT": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGS65621C012": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "GEOS": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ACFR": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "DCCC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback missing adx, di_plus, di_minus"
-    },
-    "NFCI": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ELAB": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "NBCC": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
@@ -1977,11 +1893,7 @@
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "EGS65101C015": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ALXD": {
+    "SINA": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
@@ -1989,19 +1901,67 @@
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "SIEG": {
+    "MITR": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "HALN": {
+    "DCCC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback missing adx, di_plus, di_minus"
+    },
+    "NBCC": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "EGS65861C014": {
+    "ELAB": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGWA": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "OCAP": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "MMHC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NFCI": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ALXD": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "RMTV": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "POCO": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ACFR": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "KORA": {
+      "state": "DROPPED",
+      "reason": "screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)"
     },
     "KNGC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGS65101C015": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "YAYT": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
@@ -2013,7 +1973,43 @@
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
+    "EGS65861C014": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "GEOS": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
     "EGS72L31C011": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EFAC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "PMSC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "CID": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "HDST": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ANCC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "SIEG": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NAMI": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
@@ -2021,7 +2017,11 @@
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "HDST": {
+    "EGS65621C012": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "HALN": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     }

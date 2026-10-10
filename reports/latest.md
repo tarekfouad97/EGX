@@ -1,26 +1,26 @@
 # EGX Swing Scan - session 2026-10-07
 
-_Generated 2026-10-10 19:20 Cairo. Run status: **DEGRADED**._
+_Generated 2026-10-10 19:25 Cairo. Run status: **DEGRADED**._
 
 > ⚠ Some data came from the fallback source or was dropped. See Data quality below.
 
 **Regime: RISK-OFF** | EGX30 53,265 (-6.2% 1M) - EGX30 below 50 EMA with 20 < 50 - risk halved, breakouts suppressed
 
-Scanned 255 stocks, 100 filtered out (currency/liquidity/volatility), **9 setups**. Sizing: 100,000 EGP capital, 1.0% risk/trade x 0.5 regime multiplier.
+Scanned 255 stocks, 100 filtered out (currency/liquidity/volatility), **9 setups**. Sizing: 20,000 EGP capital, 1.0% risk/trade x 0.5 regime multiplier.
 
 AI news & fundamentals review: skipped - ANTHROPIC_API_KEY not set.
 
 | # | Ticker | Setup | Q | Close | Entry (buy-stop) | Stop | T1 | T2 | R:R T1 | Risk % | Shares | Position EGP |
 |---|--------|-------|---|-------|------------------|------|----|----|--------|--------|--------|--------------|
-| 1 | **KABO** | PULLBACK | 90 | 9.05 | 9.10 | 8.35 | 10.22 | 11.35 | 1.5R | 8.2% | 666 | 6,061 |
-| 2 | **AMER** | PULLBACK | 85 | 5.03 | 5.17 | 4.68 | 5.90 | 6.64 | 1.5R | 9.5% | 1,020 | 5,273 |
-| 3 | **SUGR** | PULLBACK | 75 | 55.76 | 56.27 | 53.30 | 60.73 | 65.18 | 1.5R | 5.3% | 168 | 9,453 |
-| 4 | **ABUK** | PULLBACK | 75 | 90.00 | 90.32 | 83.38 | 100.73 | 111.14 | 1.5R | 7.7% | 72 | 6,503 |
-| 5 | **ATQA** | PULLBACK | 75 | 12.25 | 12.36 | 11.40 | 13.80 | 15.24 | 1.5R | 7.8% | 520 | 6,427 |
-| 6 | **KZPC** | PULLBACK | 75 | 13.17 | 13.56 | 12.13 | 15.70 | 17.85 | 1.5R | 10.5% | 349 | 4,732 |
-| 7 | **DTPP** | PULLBACK | 75 | 305.00 | 320.26 | 277.47 | 384.44 | 448.63 | 1.5R | 13.4% | 11 | 3,523 |
-| 8 | **MOIN** | PULLBACK | 70 | 35.49 | 37.10 | 32.76 | 43.61 | 50.12 | 1.5R | 11.7% | 115 | 4,266 |
-| 9 | **ATLC** | PULLBACK | 70 | 6.35 | 6.49 | 5.90 | 7.38 | 8.26 | 1.5R | 9.1% | 847 | 5,497 |
+| 1 | **KABO** | PULLBACK | 90 | 9.05 | 9.10 | 8.35 | 10.22 | 11.35 | 1.5R | 8.2% | 133 | 1,210 |
+| 2 | **AMER** | PULLBACK | 85 | 5.03 | 5.17 | 4.68 | 5.90 | 6.64 | 1.5R | 9.5% | 204 | 1,055 |
+| 3 | **SUGR** | PULLBACK | 75 | 55.76 | 56.27 | 53.30 | 60.73 | 65.18 | 1.5R | 5.3% | 33 | 1,857 |
+| 4 | **ABUK** | PULLBACK | 75 | 90.00 | 90.32 | 83.38 | 100.73 | 111.14 | 1.5R | 7.7% | 14 | 1,264 |
+| 5 | **ATQA** | PULLBACK | 75 | 12.25 | 12.36 | 11.40 | 13.80 | 15.24 | 1.5R | 7.8% | 104 | 1,285 |
+| 6 | **KZPC** | PULLBACK | 75 | 13.17 | 13.56 | 12.13 | 15.70 | 17.85 | 1.5R | 10.5% | 69 | 936 |
+| 7 | **DTPP** | PULLBACK | 75 | 305.00 | 320.26 | 277.47 | 384.44 | 448.63 | 1.5R | 13.4% | 2 | 641 |
+| 8 | **MOIN** | PULLBACK | 70 | 35.49 | 37.10 | 32.76 | 43.61 | 50.12 | 1.5R | 11.7% | 23 | 853 |
+| 9 | **ATLC** | PULLBACK | 70 | 6.35 | 6.49 | 5.90 | 7.38 | 8.26 | 1.5R | 9.1% | 169 | 1,097 |
 
 ### 1. KABO - El Nasr Clothing & Textiles Co. (PULLBACK)
 Consumer Non-Durables | ATR 0.486 (5.4%/day) | ADV 24.7M EGP | RSI 50.6 | EMA10 8.973 | RS vs EGX30 +5.0pts

@@ -19,7 +19,7 @@ DEFAULTS = {
     "min_adv_egp": 5_000_000,   # avg daily value traded floor
     "min_atr_pct": 1.0,         # too quiet to swing below this
     "max_atr_pct": 8.0,         # too wild to size sensibly above this
-    "capital": 100_000,         # EGP
+    "capital": 20_000,          # EGP
     "risk_pct": 1.0,            # % of capital risked per trade
     "max_position_pct": 25.0,   # cap on a single position's value
     "max_adv_pct": 10.0,        # never be more than this % of a day's value

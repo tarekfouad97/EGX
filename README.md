@@ -61,7 +61,7 @@ The recommended way to use the AI review is the Claude Code skill in `.claude/sk
 Code, opened on this repo, run:
 
 ```
-/egx-swing-review                 # defaults: 100,000 EGP, 1% risk per trade
+/egx-swing-review                 # defaults: 20,000 EGP, 1% risk per trade
 /egx-swing-review 250000 0.5
 ```
 

@@ -8,7 +8,7 @@ on:
     inputs:
       capital:
         description: "Account size (EGP)"
-        default: "100000"
+        default: "20000"
       risk_pct:
         description: "% of capital risked per trade"
         default: "1"
@@ -51,7 +51,7 @@ jobs:
         if: always()
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # unset -> AI review skipped
-          CAPITAL: ${{ inputs.capital || '100000' }}
+          CAPITAL: ${{ inputs.capital || '20000' }}
           RISK_PCT: ${{ inputs.risk_pct || '1' }}
           TOP: ${{ inputs.top || '500' }}
           TESTS: ${{ steps.tests.outcome }}

@@ -176,7 +176,7 @@ class Plan(unittest.TestCase):
         self.assertAlmostEqual(half["shares"], full["shares"] / 2, delta=1)
 
     def test_liquidity_cap(self):
-        p = plan(base(vol_avg_10d=500))                      # ADV 50k -> 10% = 5k EGP
+        p = plan(base(vol_avg_10d=500), cfg={**CFG, "capital": 100_000})   # big account so the cap binds                      # ADV 50k -> 10% = 5k EGP
         self.assertLessEqual(p["position_egp"], 5_000)
         self.assertEqual(p["notes"], ["Size capped by liquidity limit"])
 

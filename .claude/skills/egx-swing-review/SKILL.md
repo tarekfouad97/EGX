@@ -18,7 +18,7 @@ do next session.
 above the report's share count, and never move an entry, stop or target in the risky direction. The scanner's levels
 and sizing are deterministic and tested; your value is catching what a chart cannot see.
 
-Arguments: `$ARGUMENTS` may contain capital (EGP) and risk % per trade, in that order. The defaults are 100000 and 1.
+Arguments: `$ARGUMENTS` may contain capital (EGP) and risk % per trade, in that order. The defaults are 20000 and 1.
 
 ## Step 1 - Trigger the GitHub run
 

@@ -296,7 +296,7 @@
   ],
   "scanned": 98,
   "vetoed": [],
-  "ai_review": "disabled (--no-ai)",
+  "ai_review": "skipped - ANTHROPIC_API_KEY not set",
   "as_of": "2026-10-07",
   "universe": 100,
   "data_status": {
@@ -740,7 +740,7 @@
     {
       "stage": "AI_REVIEW",
       "outcome": "SKIPPED",
-      "detail": "disabled (--no-ai)"
+      "detail": "ANTHROPIC_API_KEY not set"
     }
   ],
   "run_status": "DEGRADED",

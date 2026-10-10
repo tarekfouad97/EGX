@@ -1,6 +1,6 @@
 # EGX Swing Scan - session 2026-10-07
 
-_Generated 2026-10-10 15:48 Cairo. Run status: **DEGRADED**._
+_Generated 2026-10-10 15:49 Cairo. Run status: **DEGRADED**._
 
 > ⚠ Some data came from the fallback source or was dropped. See Data quality below.
 
@@ -8,7 +8,7 @@ _Generated 2026-10-10 15:48 Cairo. Run status: **DEGRADED**._
 
 Scanned 98 stocks, 20 filtered out (currency/liquidity/volatility), **4 setups**. Sizing: 100,000 EGP capital, 1.0% risk/trade x 0.5 regime multiplier.
 
-AI news & fundamentals review: disabled (--no-ai).
+AI news & fundamentals review: skipped - ANTHROPIC_API_KEY not set.
 
 | # | Ticker | Setup | Q | Close | Entry (buy-stop) | Stop | T1 | T2 | R:R T1 | Risk % | Shares | Position EGP |
 |---|--------|-------|---|-------|------------------|------|----|----|--------|--------|--------|--------------|
@@ -76,7 +76,7 @@ Universe 100 | screener OK 98 | recovered from fallback 0 | dropped 2
 | RECOVER | PARTIAL | 0 recovered, 2 dropped |
 | ENRICH | PARTIAL | previous-bar Stoch for 6/8 pullback candidates |
 | SCAN | OK | 4 setups from 98 stocks |
-| AI_REVIEW | SKIPPED | disabled (--no-ai) |
+| AI_REVIEW | SKIPPED | ANTHROPIC_API_KEY not set |
 
 </details>
 

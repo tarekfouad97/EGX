@@ -1,4 +1,4 @@
-# EGX Swing Scan - 2026-10-10 12:22 Cairo
+# EGX Swing Scan - 2026-10-10 12:31 Cairo
 
 **Regime: RISK-OFF** | EGX30 53,265 (-6.2% 1M) - EGX30 below 50 EMA with 20 < 50 - risk halved, breakouts suppressed
 

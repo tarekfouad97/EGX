@@ -19,7 +19,7 @@
     "min_adv_egp": 5000000,
     "min_atr_pct": 1.0,
     "max_atr_pct": 8.0,
-    "capital": 100000,
+    "capital": 100000.0,
     "risk_pct": 1.0,
     "max_position_pct": 25.0,
     "max_adv_pct": 10.0

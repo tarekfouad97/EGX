@@ -1,0 +1,51 @@
+name: EGX swing scan
+
+on:
+  schedule:
+    # Sun-Thu 13:00 UTC = 16:00 Cairo (summer) / 15:00 Cairo (winter), after the 14:30 close
+    - cron: "0 13 * * 0-4"
+  workflow_dispatch:
+    inputs:
+      capital:
+        description: "Account size (EGP)"
+        default: "100000"
+      risk_pct:
+        description: "% of capital risked per trade"
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: swing-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests
+        run: python -m unittest -v
+
+      - name: Run scan
+        run: |
+          python -m egx_swing \
+            --capital "${{ inputs.capital || '100000' }}" \
+            --risk-pct "${{ inputs.risk_pct || '1' }}" \
+            --out-dir reports > scan.md
+          cat scan.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          git diff --cached --quiet && exit 0
+          git commit -m "Swing scan $(TZ=Africa/Cairo date +%Y-%m-%d)"
+          git push

@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-26",
+  "date": "2026-10-27",
   "index": {
-    "close": 48416.9,
-    "ema20": 51825.67711645962,
-    "ema50": 52966.78790768577,
-    "sma200": 50927.69250000005,
-    "perf_1w": -4.846795890973619,
-    "perf_1m": -10.796818547785342,
-    "rsi": 29.975113130703264,
+    "close": 50104.8,
+    "ema20": 51661.78405774918,
+    "ema50": 52854.55308777653,
+    "sma200": 50971.951500000054,
+    "perf_1w": -2.1671512280653684,
+    "perf_1m": -7.328486269838766,
+    "rsi": 40.42618063288267,
     "symbol": "EGX30"
   },
   "regime": {
@@ -30,34 +30,32 @@
       "name": "Sharm Dreams Co. for Tourism Investment",
       "sector": "Consumer Services",
       "setup": "PULLBACK",
-      "quality": 75,
+      "quality": 80,
       "reasons": [
-        "Uptrend: EMA20 82.54 > EMA50 76.92 > SMA200 50.32",
-        "Pulled back toward EMA20 82.54 (low 75.36)",
-        "RSI 51 reset, Stoch %K 32 above %D 27 and rising"
+        "Uptrend: EMA20 82.46 > EMA50 77.11 > SMA200 50.60",
+        "Pulled back toward EMA20 82.46 (low 80.01)",
+        "RSI 51 reset, Stoch %K 43 above %D 34 and rising"
       ],
-      "close": 81.8,
-      "atr": 3.951031989091201,
-      "atr_pct": 4.8,
-      "adv_egp": 17385469,
-      "ema10": 83.08783173975473,
-      "rsi": 51.1,
-      "rs_vs_egx30": 16.3,
-      "entry": 82.23,
-      "stop": 73.38,
-      "t1": 95.51,
-      "t2": 108.78,
+      "close": 81.7,
+      "atr": 3.808815418441829,
+      "atr_pct": 4.7,
+      "adv_egp": 16629904,
+      "ema10": 82.83549869616296,
+      "rsi": 50.7,
+      "rs_vs_egx30": 9.5,
+      "entry": 82.36,
+      "stop": 75.2,
+      "t1": 93.1,
+      "t2": 103.84,
       "tick": 0.01,
       "decimals": 2,
-      "risk_per_share": 8.85,
-      "risk_pct_of_price": 10.8,
+      "risk_per_share": 7.16,
+      "risk_pct_of_price": 8.7,
       "rr_t1": 1.5,
-      "shares": 11,
-      "position_egp": 905,
-      "risk_egp": 97,
-      "warnings": [
-        "1M high 94.9 sits below T1 - resistance"
-      ],
+      "shares": 13,
+      "position_egp": 1071,
+      "risk_egp": 93,
+      "warnings": [],
       "notes": [],
       "fundamentals": {
         "pe_ratio": null,
@@ -66,7 +64,281 @@
         "roe": null,
         "div_yield": 0,
         "debt_to_equity": 3.28769418931474,
-        "market_cap": 4334210758.7446785,
+        "market_cap": 4328912082.799315,
+        "net_income": null,
+        "revenue": null,
+        "next_earnings": null
+      }
+    },
+    {
+      "symbol": "ETEL",
+      "name": "Telecom Egypt",
+      "sector": "Communications",
+      "setup": "BOUNCE",
+      "quality": 75,
+      "reasons": [
+        "Above SMA200 100.79 - long-term trend intact",
+        "RSI 42 (prev 30) oversold and turning up",
+        "Low 117.00 pierced lower Bollinger band 121.95"
+      ],
+      "close": 126.4,
+      "atr": 7.137334030726628,
+      "atr_pct": 5.6,
+      "adv_egp": 304854667,
+      "ema10": 132.64601494370447,
+      "rsi": 41.8,
+      "rs_vs_egx30": 0.3,
+      "entry": 128.2,
+      "stop": 111.64,
+      "t1": 144.76,
+      "t2": 177.88,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 16.56,
+      "risk_pct_of_price": 12.9,
+      "rr_t1": 1.0,
+      "shares": 6,
+      "position_egp": 769,
+      "risk_egp": 99,
+      "warnings": [],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 3.3901623603469013,
+        "eps": null,
+        "roe": null,
+        "div_yield": 1.28205128205128,
+        "debt_to_equity": 0.989140640344454,
+        "market_cap": 215773857226.57092,
+        "net_income": 20370815000,
+        "revenue": 106672946000,
+        "next_earnings": "2026-11-18"
+      }
+    },
+    {
+      "symbol": "ICID",
+      "name": "International Company for Investment & Development",
+      "sector": "Finance",
+      "setup": "PULLBACK",
+      "quality": 75,
+      "reasons": [
+        "Uptrend: EMA20 17.18 > EMA50 16.21 > SMA200 8.44",
+        "Pulled back toward EMA20 17.18 (low 15.60)",
+        "RSI 49 reset, Stoch %K 49 above %D 38 and rising"
+      ],
+      "close": 16.97,
+      "atr": 1.1580448093886846,
+      "atr_pct": 6.8,
+      "adv_egp": 5112616,
+      "ema10": 16.89903112795189,
+      "rsi": 48.6,
+      "rs_vs_egx30": 2.0,
+      "entry": 17.09,
+      "stop": 15.02,
+      "t1": 20.2,
+      "t2": 23.3,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 2.07,
+      "risk_pct_of_price": 12.1,
+      "rr_t1": 1.5,
+      "shares": 48,
+      "position_egp": 820,
+      "risk_egp": 99,
+      "warnings": [
+        "1M high 20 sits below T1 - resistance"
+      ],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "eps": null,
+        "roe": null,
+        "div_yield": 0,
+        "debt_to_equity": 0,
+        "market_cap": 1697000045.0815938,
+        "net_income": null,
+        "revenue": null,
+        "next_earnings": null
+      }
+    },
+    {
+      "symbol": "HELI",
+      "name": "Heliopolis Housing",
+      "sector": "Consumer Durables",
+      "setup": "BOUNCE",
+      "quality": 65,
+      "reasons": [
+        "Above SMA200 6.24 - long-term trend intact",
+        "RSI 35 (prev 29) oversold and turning up",
+        "Low 6.20 pierced lower Bollinger band 6.24"
+      ],
+      "close": 6.39,
+      "atr": 0.35534788474829837,
+      "atr_pct": 5.6,
+      "adv_egp": 75398208,
+      "ema10": 6.686211721168257,
+      "rsi": 34.5,
+      "rs_vs_egx30": -11.0,
+      "entry": 6.64,
+      "stop": 5.93,
+      "t1": 7.35,
+      "t2": 8.77,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 0.71,
+      "risk_pct_of_price": 10.7,
+      "rr_t1": 1.0,
+      "shares": 140,
+      "position_egp": 930,
+      "risk_egp": 99,
+      "warnings": [
+        "Earnings due 2026-11-10 - inside the holding window"
+      ],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "eps": null,
+        "roe": null,
+        "div_yield": 7.19416129032258,
+        "debt_to_equity": null,
+        "market_cap": 25593582594.498386,
+        "net_income": null,
+        "revenue": null,
+        "next_earnings": "2026-11-10"
+      }
+    },
+    {
+      "symbol": "PHAR",
+      "name": "Egyptian International Pharmaceutical Industries Co.",
+      "sector": "Health Technology",
+      "setup": "BOUNCE",
+      "quality": 65,
+      "reasons": [
+        "Above SMA200 95.32 - long-term trend intact",
+        "RSI 35 (prev 27) oversold and turning up",
+        "Low 93.10 pierced lower Bollinger band 93.17"
+      ],
+      "close": 97.39,
+      "atr": 5.329695892556267,
+      "atr_pct": 5.5,
+      "adv_egp": 45913639,
+      "ema10": 100.8747896923762,
+      "rsi": 35.3,
+      "rs_vs_egx30": -4.5,
+      "entry": 98.16,
+      "stop": 89.1,
+      "t1": 107.22,
+      "t2": 125.34,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 9.06,
+      "risk_pct_of_price": 9.2,
+      "rr_t1": 1.0,
+      "shares": 11,
+      "position_egp": 1080,
+      "risk_egp": 100,
+      "warnings": [],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 2.6325129267223986,
+        "eps": null,
+        "roe": null,
+        "div_yield": 3.7593984962406,
+        "debt_to_equity": null,
+        "market_cap": 16435122472.62449,
+        "net_income": 1441657700,
+        "revenue": 9441379305,
+        "next_earnings": "2026-11-18"
+      }
+    },
+    {
+      "symbol": "MOIN",
+      "name": "Mohandes Insurance Co.",
+      "sector": "Finance",
+      "setup": "BOUNCE",
+      "quality": 65,
+      "reasons": [
+        "Above SMA200 26.68 - long-term trend intact",
+        "RSI 36 (prev 27) oversold and turning up",
+        "Low 26.03 within 1% of lower Bollinger band 25.79"
+      ],
+      "close": 27.89,
+      "atr": 2.2067319893301405,
+      "atr_pct": 7.9,
+      "adv_egp": 6601173,
+      "ema10": 29.26063294203029,
+      "rsi": 35.9,
+      "rs_vs_egx30": -11.0,
+      "entry": 28.44,
+      "stop": 24.37,
+      "t1": 32.51,
+      "t2": 40.65,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 4.07,
+      "risk_pct_of_price": 14.3,
+      "rr_t1": 1.0,
+      "shares": 24,
+      "position_egp": 683,
+      "risk_egp": 98,
+      "warnings": [],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": 4.83871247568933,
+        "eps": null,
+        "roe": null,
+        "div_yield": 0,
+        "debt_to_equity": 0,
+        "market_cap": 7251400191.790626,
+        "net_income": 377703170,
+        "revenue": 2488632607,
+        "next_earnings": null
+      }
+    },
+    {
+      "symbol": "COPR",
+      "name": "Cooper for Commercial Investment & Real Estate Development",
+      "sector": "Finance",
+      "setup": "BOUNCE",
+      "quality": 65,
+      "reasons": [
+        "Above SMA200 0.37 - long-term trend intact",
+        "RSI 39 (prev 28) oversold and turning up",
+        "Low 0.37 within 1% of lower Bollinger band 0.37"
+      ],
+      "close": 0.402,
+      "atr": 0.030479379804674713,
+      "atr_pct": 7.6,
+      "adv_egp": 10965303,
+      "ema10": 0.4151531196268048,
+      "rsi": 38.8,
+      "rs_vs_egx30": -8.6,
+      "entry": 0.411,
+      "stop": 0.349,
+      "t1": 0.473,
+      "t2": 0.597,
+      "tick": 0.001,
+      "decimals": 3,
+      "risk_per_share": 0.062,
+      "risk_pct_of_price": 15.1,
+      "rr_t1": 1.0,
+      "shares": 1612,
+      "position_egp": 663,
+      "risk_egp": 100,
+      "warnings": [],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "eps": null,
+        "roe": null,
+        "div_yield": 0,
+        "debt_to_equity": 0,
+        "market_cap": 633810233.1290323,
         "net_income": null,
         "revenue": null,
         "next_earnings": null
@@ -79,31 +351,31 @@
       "setup": "PULLBACK",
       "quality": 65,
       "reasons": [
-        "Uptrend: EMA20 46.89 > EMA50 41.92 > SMA200 27.54",
-        "Pulled back toward EMA20 46.89 (low 43.02)",
-        "RSI 51 reset, Stoch %K 25 above %D 22 and rising"
+        "Uptrend: EMA20 46.81 > EMA50 42.08 > SMA200 27.66",
+        "Pulled back toward EMA20 46.81 (low 45.00)",
+        "RSI 51 reset, Stoch %K 30 above %D 25 and rising"
       ],
-      "close": 45.99,
-      "atr": 3.654410948654646,
-      "atr_pct": 7.9,
-      "adv_egp": 6248703,
-      "ema10": 47.520515677638265,
-      "rsi": 50.8,
-      "rs_vs_egx30": 1.9,
-      "entry": 47.07,
-      "stop": 40.09,
-      "t1": 57.54,
-      "t2": 68.01,
+      "close": 46.03,
+      "atr": 3.570524452322171,
+      "atr_pct": 7.8,
+      "adv_egp": 5476240,
+      "ema10": 47.24951282715858,
+      "rsi": 50.9,
+      "rs_vs_egx30": -4.4,
+      "entry": 47.84,
+      "stop": 40.29,
+      "t1": 59.17,
+      "t2": 70.49,
       "tick": 0.01,
       "decimals": 2,
-      "risk_per_share": 6.98,
-      "risk_pct_of_price": 14.8,
+      "risk_per_share": 7.55,
+      "risk_pct_of_price": 15.8,
       "rr_t1": 1.5,
-      "shares": 14,
-      "position_egp": 659,
+      "shares": 13,
+      "position_egp": 622,
       "risk_egp": 98,
       "warnings": [
-        "1M high 55 sits below T1 - resistance"
+        "1M high 53.9 sits below T1 - resistance"
       ],
       "notes": [],
       "fundamentals": {
@@ -118,20 +390,110 @@
         "revenue": null,
         "next_earnings": null
       }
+    },
+    {
+      "symbol": "EXPA",
+      "name": "Export Development Bank of Egypt",
+      "sector": "Finance",
+      "setup": "BOUNCE",
+      "quality": 55,
+      "reasons": [
+        "Above SMA200 13.85 - long-term trend intact",
+        "RSI 41 (prev 23) oversold and turning up",
+        "Low 13.03 within 1% of lower Bollinger band 12.93"
+      ],
+      "close": 14.09,
+      "atr": 0.7867676235601537,
+      "atr_pct": 5.6,
+      "adv_egp": 31257814,
+      "ema10": 14.114538851771686,
+      "rsi": 40.9,
+      "rs_vs_egx30": -6.9,
+      "entry": 14.19,
+      "stop": 12.43,
+      "t1": 15.95,
+      "t2": 19.47,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 1.76,
+      "risk_pct_of_price": 12.4,
+      "rr_t1": 1.0,
+      "shares": 56,
+      "position_egp": 795,
+      "risk_egp": 99,
+      "warnings": [],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": 3.482193608976102,
+        "pb_ratio": 1.0340320571954027,
+        "eps": 4.0463,
+        "roe": 29.844295802469702,
+        "div_yield": 0,
+        "debt_to_equity": 1.1976321551128901,
+        "market_cap": 25361999479.8703,
+        "net_income": 6032606000,
+        "revenue": 32986947000,
+        "next_earnings": null
+      }
+    },
+    {
+      "symbol": "OIH",
+      "name": "Orascom Investment Holding SAE",
+      "sector": "Communications",
+      "setup": "BOUNCE",
+      "quality": 55,
+      "reasons": [
+        "Above SMA200 1.51 - long-term trend intact",
+        "RSI 37 (prev 21) oversold and turning up",
+        "Low 1.52 pierced lower Bollinger band 1.61"
+      ],
+      "close": 1.66,
+      "atr": 0.08900369269010631,
+      "atr_pct": 5.4,
+      "adv_egp": 46021966,
+      "ema10": 1.7141868852160067,
+      "rsi": 37.5,
+      "rs_vs_egx30": -14.0,
+      "entry": 1.7,
+      "stop": 1.45,
+      "t1": 1.95,
+      "t2": 2.45,
+      "tick": 0.01,
+      "decimals": 2,
+      "risk_per_share": 0.25,
+      "risk_pct_of_price": 14.7,
+      "rr_t1": 1.0,
+      "shares": 400,
+      "position_egp": 680,
+      "risk_egp": 100,
+      "warnings": [],
+      "notes": [],
+      "fundamentals": {
+        "pe_ratio": null,
+        "pb_ratio": null,
+        "eps": null,
+        "roe": null,
+        "div_yield": 0,
+        "debt_to_equity": 5.75886258262945,
+        "market_cap": 8707846003.93421,
+        "net_income": null,
+        "revenue": null,
+        "next_earnings": null
+      }
     }
   ],
   "excluded": [
+    {
+      "symbol": "SCTS",
+      "reason": "ATR 8.4% outside 1.0-8.0%"
+    },
     {
       "symbol": "GPPL",
       "reason": "quoted in USD - EGP-only sizing"
     },
     {
-      "symbol": "SCTS",
-      "reason": "ATR 8.6% outside 1.0-8.0%"
-    },
-    {
       "symbol": "FAIT",
-      "reason": "ADV 2.9M EGP < 5.0M"
+      "reason": "ADV 2.8M EGP < 5.0M"
     },
     {
       "symbol": "VLMR",
@@ -139,91 +501,63 @@
     },
     {
       "symbol": "FERC",
-      "reason": "ADV 2.9M EGP < 5.0M"
+      "reason": "ADV 2.8M EGP < 5.0M"
+    },
+    {
+      "symbol": "BIOC",
+      "reason": "ATR 12.0% outside 1.0-8.0%"
     },
     {
       "symbol": "EGSA",
       "reason": "quoted in USD - EGP-only sizing"
     },
     {
-      "symbol": "BIOC",
-      "reason": "ATR 13.6% outside 1.0-8.0%"
-    },
-    {
       "symbol": "MOIL",
       "reason": "quoted in USD - EGP-only sizing"
     },
     {
-      "symbol": "GTHE",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
       "symbol": "MBSC",
-      "reason": "ATR 10.0% outside 1.0-8.0%"
+      "reason": "ATR 9.2% outside 1.0-8.0%"
     },
     {
-      "symbol": "NBKE",
-      "reason": "ADV 0.1M EGP < 5.0M"
+      "symbol": "MCQE",
+      "reason": "ATR 8.9% outside 1.0-8.0%"
     },
     {
       "symbol": "UBEE",
       "reason": "ADV 1.1M EGP < 5.0M"
     },
     {
-      "symbol": "MCQE",
-      "reason": "ATR 9.9% outside 1.0-8.0%"
-    },
-    {
       "symbol": "EGBE",
       "reason": "quoted in USD - EGP-only sizing"
     },
     {
-      "symbol": "EFIC",
-      "reason": "ATR 8.6% outside 1.0-8.0%"
+      "symbol": "EGTS",
+      "reason": "ATR 9.2% outside 1.0-8.0%"
     },
     {
       "symbol": "NIPH",
-      "reason": "ATR 11.9% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "EGTS",
-      "reason": "ATR 10.2% outside 1.0-8.0%"
+      "reason": "ATR 10.8% outside 1.0-8.0%"
     },
     {
       "symbol": "CICH",
-      "reason": "ADV 2.1M EGP < 5.0M"
-    },
-    {
-      "symbol": "ATQA",
-      "reason": "ATR 8.0% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "ALEX",
-      "reason": "ADV 0.1M EGP < 5.0M"
+      "reason": "ADV 1.8M EGP < 5.0M"
     },
     {
       "symbol": "MIPH",
-      "reason": "ADV 4.8M EGP < 5.0M"
+      "reason": "ATR 8.4% outside 1.0-8.0%"
     },
     {
       "symbol": "IFAP",
-      "reason": "ADV 4.7M EGP < 5.0M"
-    },
-    {
-      "symbol": "SVCE",
-      "reason": "ATR 8.3% outside 1.0-8.0%"
+      "reason": "ADV 4.2M EGP < 5.0M"
     },
     {
       "symbol": "PHTV",
-      "reason": "ADV 1.1M EGP < 5.0M"
+      "reason": "ADV 1.3M EGP < 5.0M"
     },
     {
       "symbol": "AMES",
-      "reason": "ATR 13.7% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "MOIN",
-      "reason": "ATR 8.5% outside 1.0-8.0%"
+      "reason": "ATR 12.3% outside 1.0-8.0%"
     },
     {
       "symbol": "SPHT",
@@ -231,7 +565,7 @@
     },
     {
       "symbol": "EGAS",
-      "reason": "ADV 3.9M EGP < 5.0M"
+      "reason": "ADV 3.6M EGP < 5.0M"
     },
     {
       "symbol": "DOMT",
@@ -239,75 +573,63 @@
     },
     {
       "symbol": "AXPH",
-      "reason": "ADV 4.6M EGP < 5.0M"
+      "reason": "ADV 4.4M EGP < 5.0M"
     },
     {
       "symbol": "MPCI",
-      "reason": "ATR 9.8% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "MPRC",
-      "reason": "ATR 8.1% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "SAIB",
-      "reason": "quoted in USD - EGP-only sizing"
+      "reason": "ATR 9.0% outside 1.0-8.0%"
     },
     {
       "symbol": "ACAP",
       "reason": "ADV 2.8M EGP < 5.0M"
     },
     {
+      "symbol": "SAIB",
+      "reason": "quoted in USD - EGP-only sizing"
+    },
+    {
       "symbol": "GSSC",
-      "reason": "ADV 1.0M EGP < 5.0M"
+      "reason": "ADV 1.1M EGP < 5.0M"
     },
     {
       "symbol": "MCRO",
-      "reason": "ATR 9.0% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "NINH",
-      "reason": "ATR 8.5% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "KABO",
-      "reason": "ATR 10.5% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "UNIT",
-      "reason": "ADV 2.0M EGP < 5.0M"
+      "reason": "ATR 8.3% outside 1.0-8.0%"
     },
     {
       "symbol": "OCPH",
-      "reason": "ADV 2.2M EGP < 5.0M"
+      "reason": "ADV 2.7M EGP < 5.0M"
     },
     {
-      "symbol": "WCDF",
-      "reason": "ADV 1.7M EGP < 5.0M"
+      "symbol": "UNIT",
+      "reason": "ADV 1.9M EGP < 5.0M"
     },
     {
-      "symbol": "AFMC",
-      "reason": "ATR 12.7% outside 1.0-8.0%"
+      "symbol": "KABO",
+      "reason": "ATR 10.2% outside 1.0-8.0%"
     },
     {
       "symbol": "AMER",
-      "reason": "ATR 11.4% outside 1.0-8.0%"
+      "reason": "ATR 10.1% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "AFMC",
+      "reason": "ATR 11.6% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "WCDF",
+      "reason": "ADV 1.3M EGP < 5.0M"
     },
     {
       "symbol": "UEFM",
       "reason": "ADV 0.9M EGP < 5.0M"
     },
     {
-      "symbol": "OFH",
-      "reason": "ATR 8.3% outside 1.0-8.0%"
-    },
-    {
       "symbol": "MFSC",
-      "reason": "ADV 1.8M EGP < 5.0M"
+      "reason": "ADV 2.0M EGP < 5.0M"
     },
     {
       "symbol": "ADCI",
-      "reason": "ADV 1.4M EGP < 5.0M"
+      "reason": "ADV 1.5M EGP < 5.0M"
     },
     {
       "symbol": "CFGH",
@@ -319,7 +641,7 @@
     },
     {
       "symbol": "CRST",
-      "reason": "ATR 16.5% outside 1.0-8.0%"
+      "reason": "ATR 14.3% outside 1.0-8.0%"
     },
     {
       "symbol": "EDFM",
@@ -327,251 +649,223 @@
     },
     {
       "symbol": "INFI",
-      "reason": "ATR 10.2% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "AIFI",
-      "reason": "ATR 8.2% outside 1.0-8.0%"
+      "reason": "ATR 9.5% outside 1.0-8.0%"
     },
     {
       "symbol": "ZEOT",
-      "reason": "ATR 10.8% outside 1.0-8.0%"
+      "reason": "ATR 10.2% outside 1.0-8.0%"
     },
     {
       "symbol": "ATLC",
-      "reason": "ATR 11.3% outside 1.0-8.0%"
+      "reason": "ATR 10.2% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "MPCO",
+      "reason": "ATR 9.5% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "DAPH",
+      "reason": "ATR 11.1% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "SMFR",
+      "reason": "ADV 2.2M EGP < 5.0M"
+    },
+    {
+      "symbol": "NARE",
+      "reason": "ADV 3.0M EGP < 5.0M"
+    },
+    {
+      "symbol": "CEFM",
+      "reason": "ADV 1.1M EGP < 5.0M"
+    },
+    {
+      "symbol": "ISMA",
+      "reason": "ATR 12.4% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "MENA",
+      "reason": "ADV 3.0M EGP < 5.0M"
     },
     {
       "symbol": "DEIN",
       "reason": "ADV 0.0M EGP < 5.0M"
     },
     {
-      "symbol": "MPCO",
-      "reason": "ATR 10.3% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "CEFM",
-      "reason": "ADV 1.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "DAPH",
-      "reason": "ATR 12.3% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "SMFR",
-      "reason": "ADV 2.3M EGP < 5.0M"
-    },
-    {
-      "symbol": "ICID",
-      "reason": "ADV 4.6M EGP < 5.0M"
-    },
-    {
-      "symbol": "NARE",
-      "reason": "ADV 3.2M EGP < 5.0M"
-    },
-    {
-      "symbol": "ISMA",
-      "reason": "ATR 14.1% outside 1.0-8.0%"
-    },
-    {
       "symbol": "ECAP",
-      "reason": "ADV 2.7M EGP < 5.0M"
+      "reason": "ADV 2.4M EGP < 5.0M"
     },
     {
-      "symbol": "MENA",
-      "reason": "ADV 2.7M EGP < 5.0M"
+      "symbol": "MOSC",
+      "reason": "ADV 3.7M EGP < 5.0M"
     },
     {
       "symbol": "NDRL",
       "reason": "quoted in USD - EGP-only sizing"
     },
     {
-      "symbol": "DCRC",
-      "reason": "ADV 0.3M EGP < 5.0M"
-    },
-    {
-      "symbol": "EALR",
-      "reason": "ADV 2.6M EGP < 5.0M"
-    },
-    {
-      "symbol": "MOSC",
-      "reason": "ADV 2.8M EGP < 5.0M"
-    },
-    {
-      "symbol": "WKOL",
-      "reason": "ATR 8.6% outside 1.0-8.0%"
-    },
-    {
       "symbol": "AALR",
-      "reason": "ATR 9.9% outside 1.0-8.0%"
+      "reason": "ATR 9.8% outside 1.0-8.0%"
     },
     {
       "symbol": "MAAL",
-      "reason": "ATR 16.3% outside 1.0-8.0%"
+      "reason": "ATR 14.5% outside 1.0-8.0%"
     },
     {
       "symbol": "GTWL",
-      "reason": "ATR 19.9% outside 1.0-8.0%"
+      "reason": "ATR 17.2% outside 1.0-8.0%"
     },
     {
-      "symbol": "MILS",
-      "reason": "ADV 5.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "ASPI",
-      "reason": "ATR 8.1% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "IDRE",
-      "reason": "ADV 3.5M EGP < 5.0M"
+      "symbol": "EALR",
+      "reason": "ADV 2.5M EGP < 5.0M"
     },
     {
       "symbol": "NCCW",
-      "reason": "ATR 11.7% outside 1.0-8.0%"
+      "reason": "ATR 10.4% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "MILS",
+      "reason": "ATR 11.4% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "IDRE",
+      "reason": "ADV 4.0M EGP < 5.0M"
     },
     {
       "symbol": "GGCC",
-      "reason": "ATR 9.9% outside 1.0-8.0%"
+      "reason": "ATR 9.4% outside 1.0-8.0%"
     },
     {
       "symbol": "ODIN",
-      "reason": "ADV 4.9M EGP < 5.0M"
+      "reason": "ATR 9.3% outside 1.0-8.0%"
     },
     {
       "symbol": "CERA",
-      "reason": "ATR 9.6% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "SIPC",
-      "reason": "ATR 12.7% outside 1.0-8.0%"
+      "reason": "ATR 8.8% outside 1.0-8.0%"
     },
     {
       "symbol": "SCFM",
-      "reason": "ADV 1.3M EGP < 5.0M"
+      "reason": "ADV 1.7M EGP < 5.0M"
+    },
+    {
+      "symbol": "SIPC",
+      "reason": "ATR 11.5% outside 1.0-8.0%"
     },
     {
       "symbol": "UEGC",
-      "reason": "ATR 9.0% outside 1.0-8.0%"
+      "reason": "ATR 8.4% outside 1.0-8.0%"
     },
     {
       "symbol": "PRCL",
-      "reason": "ATR 11.3% outside 1.0-8.0%"
+      "reason": "ATR 10.2% outside 1.0-8.0%"
     },
     {
       "symbol": "DTPP",
-      "reason": "ATR 16.5% outside 1.0-8.0%"
+      "reason": "ATR 14.8% outside 1.0-8.0%"
     },
     {
       "symbol": "CAED",
-      "reason": "ATR 13.5% outside 1.0-8.0%"
+      "reason": "ATR 12.0% outside 1.0-8.0%"
     },
     {
       "symbol": "IEEC",
-      "reason": "ATR 10.8% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "NHPS",
-      "reason": "ADV 4.8M EGP < 5.0M"
-    },
-    {
-      "symbol": "MEPA",
-      "reason": "ATR 8.7% outside 1.0-8.0%"
+      "reason": "ATR 9.8% outside 1.0-8.0%"
     },
     {
       "symbol": "ICLE",
       "reason": "ADV 0.0M EGP < 5.0M"
     },
     {
+      "symbol": "NHPS",
+      "reason": "ATR 8.1% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "OBRI",
+      "reason": "ATR 10.2% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "MBEG",
+      "reason": "ATR 14.5% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "MEPA",
+      "reason": "ATR 8.2% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "RUBX",
+      "reason": "ATR 13.7% outside 1.0-8.0%"
+    },
+    {
       "symbol": "MEGM",
       "reason": "ADV 2.5M EGP < 5.0M"
     },
     {
-      "symbol": "OBRI",
-      "reason": "ATR 11.3% outside 1.0-8.0%"
+      "symbol": "ALUM",
+      "reason": "ADV 3.0M EGP < 5.0M"
     },
     {
-      "symbol": "MBEG",
-      "reason": "ATR 16.0% outside 1.0-8.0%"
+      "symbol": "TANM",
+      "reason": "ATR 9.8% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "EBSC",
+      "reason": "ADV 2.6M EGP < 5.0M"
+    },
+    {
+      "symbol": "AFDI",
+      "reason": "ADV 2.5M EGP < 5.0M"
     },
     {
       "symbol": "RTVC",
       "reason": "ADV 1.8M EGP < 5.0M"
     },
     {
-      "symbol": "RUBX",
-      "reason": "ATR 15.2% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "ALUM",
-      "reason": "ADV 2.9M EGP < 5.0M"
-    },
-    {
-      "symbol": "AFDI",
-      "reason": "ADV 2.7M EGP < 5.0M"
+      "symbol": "APSW",
+      "reason": "ADV 0.4M EGP < 5.0M"
     },
     {
       "symbol": "RAKT",
       "reason": "ADV 0.3M EGP < 5.0M"
     },
     {
-      "symbol": "TANM",
-      "reason": "ATR 10.8% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "APSW",
-      "reason": "ADV 0.4M EGP < 5.0M"
-    },
-    {
-      "symbol": "EBSC",
-      "reason": "ADV 2.1M EGP < 5.0M"
-    },
-    {
       "symbol": "PRMH",
       "reason": "ADV 2.2M EGP < 5.0M"
     },
     {
-      "symbol": "COPR",
-      "reason": "ATR 8.1% outside 1.0-8.0%"
+      "symbol": "EASB",
+      "reason": "ADV 4.2M EGP < 5.0M"
     },
     {
       "symbol": "RREI",
-      "reason": "ATR 11.7% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "EASB",
-      "reason": "ADV 3.9M EGP < 5.0M"
-    },
-    {
-      "symbol": "SPMD",
-      "reason": "ATR 8.4% outside 1.0-8.0%"
+      "reason": "ATR 10.6% outside 1.0-8.0%"
     },
     {
       "symbol": "KWIN",
-      "reason": "ADV 2.8M EGP < 5.0M"
+      "reason": "ADV 2.9M EGP < 5.0M"
     },
     {
       "symbol": "ROTO",
-      "reason": "ATR 8.9% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "TYCN",
-      "reason": "ADV 2.7M EGP < 5.0M"
-    },
-    {
-      "symbol": "EEII",
-      "reason": "ADV 3.6M EGP < 5.0M"
+      "reason": "ATR 8.6% outside 1.0-8.0%"
     },
     {
       "symbol": "AMII",
-      "reason": "ATR 19.5% outside 1.0-8.0%"
+      "reason": "ATR 16.3% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "TYCN",
+      "reason": "ADV 3.0M EGP < 5.0M"
     },
     {
       "symbol": "MOED",
-      "reason": "ATR 10.0% outside 1.0-8.0%"
+      "reason": "ATR 9.1% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "EEII",
+      "reason": "ADV 4.8M EGP < 5.0M"
     },
     {
       "symbol": "SEIG",
-      "reason": "ADV 1.7M EGP < 5.0M"
+      "reason": "ADV 1.8M EGP < 5.0M"
     },
     {
       "symbol": "TRTO",
@@ -579,19 +873,19 @@
     },
     {
       "symbol": "EPCO",
-      "reason": "ADV 4.5M EGP < 5.0M"
+      "reason": "ADV 4.8M EGP < 5.0M"
     },
     {
       "symbol": "CCRS",
-      "reason": "ADV 5.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "ELNA",
-      "reason": "ADV 0.8M EGP < 5.0M"
+      "reason": "ATR 11.2% outside 1.0-8.0%"
     },
     {
       "symbol": "EGREF",
-      "reason": "ADV 3.2M EGP < 5.0M"
+      "reason": "ADV 2.9M EGP < 5.0M"
+    },
+    {
+      "symbol": "ELNA",
+      "reason": "ADV 0.9M EGP < 5.0M"
     },
     {
       "symbol": "ELWA",
@@ -599,7 +893,7 @@
     },
     {
       "symbol": "GRCA",
-      "reason": "ADV 3.6M EGP < 5.0M"
+      "reason": "ADV 3.5M EGP < 5.0M"
     },
     {
       "symbol": "IBCT",
@@ -615,7 +909,7 @@
     },
     {
       "symbol": "GIHD",
-      "reason": "ATR 13.3% outside 1.0-8.0%"
+      "reason": "ATR 12.1% outside 1.0-8.0%"
     },
     {
       "symbol": "NEDA",
@@ -623,23 +917,19 @@
     },
     {
       "symbol": "FNAR",
-      "reason": "ADV 1.6M EGP < 5.0M"
+      "reason": "ADV 1.5M EGP < 5.0M"
     },
     {
       "symbol": "VERT",
-      "reason": "ADV 1.3M EGP < 5.0M"
-    },
-    {
-      "symbol": "EPPK",
-      "reason": "ADV 1.1M EGP < 5.0M"
+      "reason": "ADV 1.4M EGP < 5.0M"
     },
     {
       "symbol": "RKAZ",
       "reason": "ADV 0.4M EGP < 5.0M"
     },
     {
-      "symbol": "EGS30AJ1C016-EGP",
-      "reason": "ADV 0.0M EGP < 5.0M"
+      "symbol": "EPPK",
+      "reason": "ADV 1.0M EGP < 5.0M"
     },
     {
       "symbol": "AMPI",
@@ -647,7 +937,7 @@
     },
     {
       "symbol": "BIGP",
-      "reason": "ADV 1.2M EGP < 5.0M"
+      "reason": "ADV 1.0M EGP < 5.0M"
     },
     {
       "symbol": "GMCI",
@@ -670,102 +960,50 @@
       "reason": "ADV 0.1M EGP < 5.0M"
     },
     {
-      "symbol": "EGS659O1C015",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "APPC",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "TWSA",
-      "reason": "ATR 13.8% outside 1.0-8.0%"
-    },
-    {
       "symbol": "TOUR",
       "reason": "ADV 0.0M EGP < 5.0M"
     },
     {
-      "symbol": "UPMS",
-      "reason": "ADV 0.5M EGP < 5.0M"
-    },
-    {
-      "symbol": "EGS48271C018-EGP",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "PACH",
-      "reason": "ADV 0.1M EGP < 5.0M"
-    },
-    {
-      "symbol": "TORA",
-      "reason": "ADV 0.6M EGP < 5.0M"
-    },
-    {
-      "symbol": "NCGC",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "SUCE",
-      "reason": "ADV 0.5M EGP < 5.0M"
-    },
-    {
-      "symbol": "WATP",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "INEG",
-      "reason": "ATR 10.7% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "IRAX",
-      "reason": "ADV 0.1M EGP < 5.0M"
+      "symbol": "AIDC",
+      "reason": "ATR 8.6% outside 1.0-8.0%"
     },
     {
       "symbol": "DGTZ",
-      "reason": "ADV 1.0M EGP < 5.0M"
+      "reason": "ADV 1.1M EGP < 5.0M"
+    },
+    {
+      "symbol": "HBCO",
+      "reason": "ATR 11.7% outside 1.0-8.0%"
     },
     {
       "symbol": "GTEX",
       "reason": "quoted in USD - EGP-only sizing"
     },
     {
+      "symbol": "LUTS",
+      "reason": "ATR 13.0% outside 1.0-8.0%"
+    },
+    {
+      "symbol": "INEG",
+      "reason": "ATR 9.7% outside 1.0-8.0%"
+    },
+    {
       "symbol": "FTNS",
       "reason": "ADV 0.3M EGP < 5.0M"
     },
     {
-      "symbol": "EITP",
-      "reason": "ADV 0.0M EGP < 5.0M"
+      "symbol": "TWSA",
+      "reason": "ATR 12.3% outside 1.0-8.0%"
     },
     {
-      "symbol": "SMPP",
-      "reason": "ADV 0.0M EGP < 5.0M"
-    },
-    {
-      "symbol": "AIDC",
-      "reason": "ATR 9.4% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "LKGP",
+      "symbol": "UPMS",
       "reason": "ADV 0.6M EGP < 5.0M"
-    },
-    {
-      "symbol": "LUTS",
-      "reason": "ATR 14.5% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "HBCO",
-      "reason": "ATR 12.6% outside 1.0-8.0%"
-    },
-    {
-      "symbol": "SNFI",
-      "reason": "ADV 0.1M EGP < 5.0M"
     }
   ],
-  "scanned": 255,
+  "scanned": 237,
   "vetoed": [],
   "ai_review": "skipped - ANTHROPIC_API_KEY not set",
-  "as_of": "2026-10-26",
+  "as_of": "2026-10-27",
   "universe": 292,
   "data_status": {
     "COMI": {
@@ -804,15 +1042,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ALCN": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ORAS": {
       "state": "READY",
       "source": "tradingview"
     },
     "EAST": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "ALCN": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -832,11 +1070,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "GPPL": {
+    "SCTS": {
       "state": "READY",
       "source": "tradingview"
     },
-    "SCTS": {
+    "GPPL": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -848,15 +1086,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "HRHO": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ORHD": {
       "state": "READY",
       "source": "tradingview"
     },
-    "PHDC": {
+    "HRHO": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -864,15 +1098,19 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "PHDC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "FAIT": {
       "state": "READY",
       "source": "tradingview"
     },
-    "VLMR": {
+    "OCDI": {
       "state": "READY",
       "source": "tradingview"
     },
-    "OCDI": {
+    "VLMR": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -900,10 +1138,6 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "FERC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ARCC": {
       "state": "READY",
       "source": "tradingview"
@@ -912,7 +1146,19 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "FERC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "VALU": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "SCEM": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "BIOC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -920,7 +1166,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "SCEM": {
+    "CLHO": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -932,19 +1178,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "EGSA": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "TAQA": {
       "state": "READY",
       "source": "tradingview"
     },
-    "BIOC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "CLHO": {
+    "EGSA": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -952,23 +1190,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "AMOC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "GTHE": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "SKPC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "POUL": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "PHAR": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -976,7 +1198,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ORWE": {
+    "AMOC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "SKPC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "PHAR": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -984,7 +1214,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "NBKE": {
+    "MCQE": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "ORWE": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -996,15 +1230,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "MCQE": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "EGBE": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "TALM": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1016,7 +1242,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "BINV": {
+    "TALM": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "EGTS": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1024,7 +1254,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "EGTS": {
+    "BINV": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "ATQA": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "MHOT": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1033,14 +1271,6 @@
       "source": "tradingview"
     },
     "CICH": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "MHOT": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "ATQA": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1056,7 +1286,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ALEX": {
+    "OIH": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1072,7 +1302,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "OIH": {
+    "PHTV": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1080,7 +1310,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "PHTV": {
+    "AMES": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1088,19 +1318,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "AMES": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "BONY": {
       "state": "READY",
       "source": "tradingview"
     },
-    "SUGR": {
+    "MOIN": {
       "state": "READY",
       "source": "tradingview"
     },
-    "MOIN": {
+    "SUGR": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1120,10 +1346,6 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "PRDC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "DOMT": {
       "state": "READY",
       "source": "tradingview"
@@ -1132,11 +1354,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "MPCI": {
+    "PRDC": {
       "state": "READY",
       "source": "tradingview"
     },
-    "ARAB": {
+    "MPCI": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1144,11 +1366,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "SPIN": {
+    "ARAB": {
       "state": "READY",
       "source": "tradingview"
     },
-    "SAIB": {
+    "SPIN": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1156,15 +1378,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "SDTI": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ACAP": {
       "state": "READY",
       "source": "tradingview"
     },
-    "MICH": {
+    "SAIB": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1176,7 +1394,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "AJWA": {
+    "MICH": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "SDTI": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1184,19 +1406,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "MCRO": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "NINH": {
       "state": "READY",
       "source": "tradingview"
     },
-    "KABO": {
+    "MCRO": {
       "state": "READY",
       "source": "tradingview"
     },
-    "UNIT": {
+    "AJWA": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1208,11 +1426,19 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "WCDF": {
+    "UNIT": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "KABO": {
       "state": "READY",
       "source": "tradingview"
     },
     "ACGC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "AMER": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1224,7 +1450,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "AMER": {
+    "WCDF": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1232,11 +1458,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "OFH": {
+    "MFSC": {
       "state": "READY",
       "source": "tradingview"
     },
-    "MFSC": {
+    "OFH": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1244,11 +1470,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "CFGH": {
+    "GDWA": {
       "state": "READY",
       "source": "tradingview"
     },
-    "GDWA": {
+    "CFGH": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1268,11 +1494,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "GPIM": {
+    "CRST": {
       "state": "READY",
       "source": "tradingview"
     },
-    "ETRS": {
+    "GPIM": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1280,15 +1506,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ASCM": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ICFC": {
       "state": "READY",
       "source": "tradingview"
     },
-    "CRST": {
+    "ASCM": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "ETRS": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1312,15 +1538,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "SNFC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ATLC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "DEIN": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1328,11 +1546,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "CEFM": {
+    "DAPH": {
       "state": "READY",
       "source": "tradingview"
     },
-    "DAPH": {
+    "SNFC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1340,11 +1558,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ICID": {
+    "NARE": {
       "state": "READY",
       "source": "tradingview"
     },
-    "NARE": {
+    "CEFM": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "ICID": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1352,7 +1574,15 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "MENA": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "RACC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "DEIN": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1360,7 +1590,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "MENA": {
+    "MOSC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1368,27 +1598,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "NDRL": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "DCRC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EALR": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "KRDI": {
       "state": "READY",
       "source": "tradingview"
     },
-    "MOSC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "WKOL": {
+    "NDRL": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1404,7 +1618,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "AIH": {
+    "EALR": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "WKOL": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "NCCW": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1412,15 +1634,15 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ASPI": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "IDRE": {
       "state": "READY",
       "source": "tradingview"
     },
-    "NCCW": {
+    "AIH": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "ASPI": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1436,11 +1658,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "SIPC": {
+    "SCFM": {
       "state": "READY",
       "source": "tradingview"
     },
-    "SCFM": {
+    "SIPC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1464,19 +1686,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "NHPS": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "MEPA": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "ICLE": {
       "state": "READY",
       "source": "tradingview"
     },
-    "MEGM": {
+    "NHPS": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1488,15 +1702,11 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "MEPA": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "EGS3I0S1C019": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "COSG": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "RTVC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1504,15 +1714,15 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "MEGM": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "COSG": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "ALUM": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "AFDI": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "RAKT": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1520,11 +1730,23 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "EBSC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "AFDI": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "RTVC": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "APSW": {
       "state": "READY",
       "source": "tradingview"
     },
-    "EBSC": {
+    "RAKT": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1540,11 +1762,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "RREI": {
+    "EASB": {
       "state": "READY",
       "source": "tradingview"
     },
-    "EASB": {
+    "RREI": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1560,19 +1782,19 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "TYCN": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EEII": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "AMII": {
       "state": "READY",
       "source": "tradingview"
     },
+    "TYCN": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "MOED": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "EEII": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1596,11 +1818,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "ELNA": {
+    "EGREF": {
       "state": "READY",
       "source": "tradingview"
     },
-    "EGREF": {
+    "ELNA": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1640,15 +1862,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "EPPK": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "RKAZ": {
       "state": "READY",
       "source": "tradingview"
     },
-    "EGS30AJ1C016-EGP": {
+    "EPPK": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1680,55 +1898,7 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "EGS659O1C015": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "APPC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "TWSA": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EGS370O1C013": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "ADRI": {
-      "state": "READY",
-      "source": "tradingview"
-    },
     "TOUR": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "UPMS": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EGS48271C018-EGP": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "PACH": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "PHGC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "TORA": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "NCGC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "SUCE": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1736,15 +1906,11 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "WATP": {
+    "AIDC": {
       "state": "READY",
       "source": "tradingview"
     },
-    "INEG": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "IRAX": {
+    "ADRI": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1752,27 +1918,19 @@
       "state": "READY",
       "source": "tradingview"
     },
+    "HBCO": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "EGS370O1C013": {
+      "state": "READY",
+      "source": "tradingview"
+    },
     "GTEX": {
       "state": "READY",
       "source": "tradingview"
     },
-    "FTNS": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "EITP": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "SMPP": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "AIDC": {
-      "state": "READY",
-      "source": "tradingview"
-    },
-    "LKGP": {
+    "PHGC": {
       "state": "READY",
       "source": "tradingview"
     },
@@ -1780,17 +1938,37 @@
       "state": "READY",
       "source": "tradingview"
     },
-    "HBCO": {
+    "INEG": {
       "state": "READY",
       "source": "tradingview"
     },
-    "SNFI": {
+    "FTNS": {
       "state": "READY",
       "source": "tradingview"
+    },
+    "TWSA": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "UPMS": {
+      "state": "READY",
+      "source": "tradingview"
+    },
+    "GTHE": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NBKE": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
     },
     "CPME": {
       "state": "DROPPED",
       "reason": "screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ALEX": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
     },
     "GOUR": {
       "state": "DROPPED",
@@ -1800,15 +1978,27 @@
       "state": "DROPPED",
       "reason": "screener missing sma200; fallback history too short"
     },
-    "POCO": {
+    "DCRC": {
       "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "PMSC": {
+    "LKGP": {
       "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "ACFR": {
+    "EGS30AJ1C016-EGP": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback history too short"
+    },
+    "EGS659O1C015": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback history too short"
+    },
+    "APPC": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "MLIC": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
@@ -1816,115 +2006,7 @@
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
-    "HDST": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
     "MITR": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ELAB": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "NMIN": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "NFCI": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "GROV": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ENPI": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "DCCC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback also stale (last bar 2026-10-25)"
-    },
-    "EFAC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "SIEG": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGS65621C012": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGOTH": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ALXD": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "KORA": {
-      "state": "DROPPED",
-      "reason": "screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "MLIC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "KNGC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "GEOS": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "RMTV": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "MMHC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "NAMI": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGS72L31C011": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGS65101C015": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "OCAP": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "CID": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "ANCC": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EEP": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "EGS65861C014": {
-      "state": "DROPPED",
-      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
-    },
-    "SINA": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
@@ -1932,7 +2014,163 @@
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     },
+    "PMSC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGS65621C012": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "GROV": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ANCC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ALXD": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NAMI": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "KNGC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "RMTV": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ACFR": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NFCI": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "GEOS": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "IRAX": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "KORA": {
+      "state": "DROPPED",
+      "reason": "screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "SIEG": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "PACH": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "OCAP": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "POCO": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "SMPP": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "CID": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "TORA": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NCGC": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "MMHC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "NMIN": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ELAB": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGS65101C015": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGS72L31C011": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "SUCE": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EEP": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
     "YAYT": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "DCCC": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback also stale (last bar 2026-10-26)"
+    },
+    "SNFI": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "SINA": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "HDST": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGS65861C014": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EGS48271C018-EGP": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback history too short"
+    },
+    "EGOTH": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EITP": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "WATP": {
+      "state": "DROPPED",
+      "reason": "stale bar 2026-10-26 (session 2026-10-27); fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "ENPI": {
+      "state": "DROPPED",
+      "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
+    },
+    "EFAC": {
       "state": "DROPPED",
       "reason": "screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)"
     }
@@ -1951,27 +2189,27 @@
     {
       "stage": "SESSION",
       "outcome": "OK",
-      "detail": "2026-10-26 (newest trade in screener data)"
+      "detail": "2026-10-27 (newest trade in screener data)"
     },
     {
       "stage": "VALIDATE",
       "outcome": "PARTIAL",
-      "detail": "255 ready, 37 need recovery"
+      "detail": "237 ready, 55 need recovery"
     },
     {
       "stage": "RECOVER",
       "outcome": "PARTIAL",
-      "detail": "0 recovered, 37 dropped"
+      "detail": "0 recovered, 55 dropped"
     },
     {
       "stage": "ENRICH",
       "outcome": "PARTIAL",
-      "detail": "previous-bar Stoch for 0/3 pullback candidates"
+      "detail": "previous-bar Stoch for 0/5 pullback candidates"
     },
     {
       "stage": "SCAN",
       "outcome": "OK",
-      "detail": "2 setups from 255 stocks"
+      "detail": "10 setups from 237 stocks"
     },
     {
       "stage": "AI_REVIEW",

@@ -1,6 +1,6 @@
 # EGX Swing Scan - session 2026-11-02
 
-_Generated 2026-11-02 19:35 Cairo. Run status: **DEGRADED**._
+_Generated 2026-11-03 00:06 Cairo. Run status: **DEGRADED**._
 
 > ⚠ Some data came from the fallback source or was dropped. See Data quality below.
 

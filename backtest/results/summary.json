@@ -1,0 +1,412 @@
+{
+ "period": [
+  "2023-09-26",
+  "2026-11-02"
+ ],
+ "sessions": 751,
+ "stocks": 245,
+ "raw_signals": 6068,
+ "regime_days": {
+  "RISK-ON": 490,
+  "NEUTRAL": 170,
+  "RISK-OFF": 91
+ },
+ "variants": {
+  "A_as_emailed": {
+   "trades": 647,
+   "win_rate_pct": 41.1,
+   "avg_r": -0.018,
+   "profit_factor": 0.98,
+   "total_return_pct": -8.1,
+   "cagr_pct": -2.7,
+   "max_drawdown_pct": -26.2,
+   "avg_days_held": 7.5,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "T1+T2": 63,
+    "STOP": 214,
+    "T1+TIME": 72,
+    "T1+BREAKEVEN": 23,
+    "TIME": 275
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 153,
+     "avg_r": -0.041,
+     "win_rate_pct": 39.2
+    },
+    "BOUNCE": {
+     "trades": 51,
+     "avg_r": -0.193,
+     "win_rate_pct": 37.3
+    },
+    "PULLBACK": {
+     "trades": 443,
+     "avg_r": 0.01,
+     "win_rate_pct": 42.2
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 210,
+     "avg_r": 0.134
+    },
+    "RISK-OFF": {
+     "trades": 82,
+     "avg_r": -0.281
+    },
+    "RISK-ON": {
+     "trades": 355,
+     "avg_r": -0.047
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "as_is",
+    "t1_r": 1.5,
+    "t2_r": 3.0,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999
+   }
+  },
+  "B_no_buys_in_riskoff": {
+   "trades": 553,
+   "win_rate_pct": 45.0,
+   "avg_r": 0.054,
+   "profit_factor": 1.12,
+   "total_return_pct": 24.3,
+   "cagr_pct": 7.3,
+   "max_drawdown_pct": -19.0,
+   "avg_days_held": 7.7,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "T1+T2": 55,
+    "STOP": 158,
+    "TIME": 247,
+    "T1+BREAKEVEN": 19,
+    "T1+TIME": 74
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 140,
+     "avg_r": 0.023,
+     "win_rate_pct": 42.1
+    },
+    "PULLBACK": {
+     "trades": 376,
+     "avg_r": 0.062,
+     "win_rate_pct": 44.9
+    },
+    "BOUNCE": {
+     "trades": 37,
+     "avg_r": 0.084,
+     "win_rate_pct": 56.8
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 206,
+     "avg_r": 0.099
+    },
+    "RISK-ON": {
+     "trades": 347,
+     "avg_r": 0.027
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_riskoff",
+    "t1_r": 1.5,
+    "t2_r": 3.0,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999
+   }
+  },
+  "C_riskon_only": {
+   "trades": 417,
+   "win_rate_pct": 48.0,
+   "avg_r": 0.073,
+   "profit_factor": 1.18,
+   "total_return_pct": 29.8,
+   "cagr_pct": 8.8,
+   "max_drawdown_pct": -14.7,
+   "avg_days_held": 7.4,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "STOP": 118,
+    "T1+T2": 43,
+    "TIME": 181,
+    "T1+BREAKEVEN": 30,
+    "T1+TIME": 45
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 124,
+     "avg_r": -0.037,
+     "win_rate_pct": 45.2
+    },
+    "PULLBACK": {
+     "trades": 280,
+     "avg_r": 0.121,
+     "win_rate_pct": 48.2
+    },
+    "BOUNCE": {
+     "trades": 13,
+     "avg_r": 0.102,
+     "win_rate_pct": 69.2
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 417,
+     "avg_r": 0.073
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_unless_riskon",
+    "t1_r": 1.5,
+    "t2_r": 3.0,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999
+   }
+  },
+  "D_top5_q70": {
+   "trades": 394,
+   "win_rate_pct": 40.9,
+   "avg_r": -0.069,
+   "profit_factor": 0.81,
+   "total_return_pct": -31.4,
+   "cagr_pct": -11.4,
+   "max_drawdown_pct": -38.8,
+   "avg_days_held": 7.4,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "T1+T2": 32,
+    "TIME": 168,
+    "STOP": 131,
+    "T1+BREAKEVEN": 21,
+    "T1+TIME": 42
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 137,
+     "avg_r": -0.188,
+     "win_rate_pct": 35.8
+    },
+    "PULLBACK": {
+     "trades": 243,
+     "avg_r": -0.029,
+     "win_rate_pct": 41.6
+    },
+    "BOUNCE": {
+     "trades": 14,
+     "avg_r": 0.4,
+     "win_rate_pct": 78.6
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 150,
+     "avg_r": 0.157
+    },
+    "RISK-ON": {
+     "trades": 244,
+     "avg_r": -0.208
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_riskoff",
+    "t1_r": 1.5,
+    "t2_r": 3.0,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 5,
+    "max_positions": 8,
+    "min_quality": 70
+   }
+  },
+  "E_D_plus_t1_1R": {
+   "trades": 468,
+   "win_rate_pct": 49.8,
+   "avg_r": -0.02,
+   "profit_factor": 0.95,
+   "total_return_pct": -9.8,
+   "cagr_pct": -3.3,
+   "max_drawdown_pct": -33.4,
+   "avg_days_held": 6.5,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "T1+T2": 82,
+    "TIME": 126,
+    "STOP": 149,
+    "T1+TIME": 48,
+    "T1+BREAKEVEN": 63
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 178,
+     "avg_r": -0.022,
+     "win_rate_pct": 51.7
+    },
+    "PULLBACK": {
+     "trades": 273,
+     "avg_r": -0.037,
+     "win_rate_pct": 46.9
+    },
+    "BOUNCE": {
+     "trades": 17,
+     "avg_r": 0.287,
+     "win_rate_pct": 76.5
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 161,
+     "avg_r": 0.064
+    },
+    "RISK-ON": {
+     "trades": 307,
+     "avg_r": -0.064
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_riskoff",
+    "t1_r": 1.0,
+    "t2_r": 2.0,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 5,
+    "max_positions": 8,
+    "min_quality": 70
+   }
+  },
+  "F_D_plus_t1_1.25R": {
+   "trades": 412,
+   "win_rate_pct": 44.4,
+   "avg_r": -0.036,
+   "profit_factor": 0.9,
+   "total_return_pct": -18.1,
+   "cagr_pct": -6.2,
+   "max_drawdown_pct": -42.9,
+   "avg_days_held": 7.0,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "T1+T2": 54,
+    "TIME": 146,
+    "STOP": 137,
+    "T1+BREAKEVEN": 31,
+    "T1+TIME": 44
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 149,
+     "avg_r": -0.155,
+     "win_rate_pct": 40.3
+    },
+    "PULLBACK": {
+     "trades": 253,
+     "avg_r": 0.017,
+     "win_rate_pct": 45.8
+    },
+    "BOUNCE": {
+     "trades": 10,
+     "avg_r": 0.393,
+     "win_rate_pct": 70.0
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 149,
+     "avg_r": 0.105
+    },
+    "RISK-ON": {
+     "trades": 263,
+     "avg_r": -0.117
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_riskoff",
+    "t1_r": 1.25,
+    "t2_r": 2.5,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 5,
+    "max_positions": 8,
+    "min_quality": 70
+   }
+  },
+  "G_as_emailed_t1_1R": {
+   "trades": 647,
+   "win_rate_pct": 46.4,
+   "avg_r": -0.048,
+   "profit_factor": 0.92,
+   "total_return_pct": -20.6,
+   "cagr_pct": -7.2,
+   "max_drawdown_pct": -29.3,
+   "avg_days_held": 7.0,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "T1+T2": 94,
+    "STOP": 194,
+    "T1+BREAKEVEN": 61,
+    "T1+TIME": 76,
+    "TIME": 222
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 143,
+     "avg_r": 0.006,
+     "win_rate_pct": 50.3
+    },
+    "BOUNCE": {
+     "trades": 52,
+     "avg_r": -0.262,
+     "win_rate_pct": 36.5
+    },
+    "PULLBACK": {
+     "trades": 452,
+     "avg_r": -0.04,
+     "win_rate_pct": 46.2
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 204,
+     "avg_r": 0.054
+    },
+    "RISK-OFF": {
+     "trades": 81,
+     "avg_r": -0.339
+    },
+    "RISK-ON": {
+     "trades": 362,
+     "avg_r": -0.04
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "as_is",
+    "t1_r": 1.0,
+    "t2_r": 2.0,
+    "max_hold": 10,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999
+   }
+  }
+ }
+}

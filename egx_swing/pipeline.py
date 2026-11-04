@@ -194,6 +194,33 @@ class Run:
                      f"{len(recovered)} recovered, {dropped} dropped")
         return recovered, session
 
+    def enrich_trend(self, stocks, session):
+        """50-session prior high for TREND candidates. The screener has no such column, so
+        history is fetched only for stocks in an uptrend trading near their 1-month high."""
+        def near(s):
+            return (_num(s.get("close"), s.get("sma200"), s.get("ema50"), s.get("high_1m"))
+                    and s["close"] > s["sma200"] and s["ema50"] > s["sma200"]
+                    and s["close"] >= 0.9 * s["high_1m"] and not _num(s.get("high_50_prev")))
+        need = [s for s in stocks if near(s)]
+        if not need:
+            self.log("ENRICH", "OK", "no trend candidates near a high")
+            return
+
+        def one(s):
+            try:
+                ind = indicators.compute(self._history(s["symbol"]))
+                if ind and ind["bar_date"] == session:
+                    s["high_50_prev"] = ind["high_50_prev"]
+                    return True
+            except Exception:
+                pass
+            return False
+
+        with ThreadPoolExecutor(max_workers=self.workers) as ex:
+            ok = sum(ex.map(one, need))
+        self.log("ENRICH", "OK" if ok == len(need) else "PARTIAL",
+                 f"50-session high for {ok}/{len(need)} trend candidates")
+
     def enrich(self, stocks, session):
         """Previous-bar Stoch for PULLBACK candidates (screener's [1] values are unreliable)."""
         need = [s for s in stocks if not _num(s.get("stoch_k_prev")) and pullback(s)]
@@ -222,7 +249,10 @@ class Run:
         ready, todo = self.validate(stocks, session)
         recovered, session = self.recover(todo, session)
         tradeable = ready + recovered
-        self.enrich(tradeable, session)
+        if (cfg or {}).get("strategy", "trend") == "trend":
+            self.enrich_trend(tradeable, session)
+        else:
+            self.enrich(tradeable, session)
         try:
             result = scan(tradeable, index, cfg)
             self.log("SCAN", "OK", f"{len(result['signals'])} setups from {len(tradeable)} stocks")

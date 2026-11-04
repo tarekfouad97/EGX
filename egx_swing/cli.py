@@ -59,6 +59,8 @@ def main(argv=None):
                     help="%% of capital risked per trade")
     ap.add_argument("--min-adv", type=float, default=float(DEFAULTS["min_adv_egp"]),
                     help="min avg daily value traded, EGP")
+    ap.add_argument("--strategy", choices=["trend", "swing"], default="trend",
+                    help="trend = new 50-session high + trailing stop (default, backtested); swing = old rules")
     ap.add_argument("--out-dir", help="write <session-date>.md, <session-date>.json and latest.md here")
     ap.add_argument("--input", help="offline: JSON file with {\"stocks\": [...], \"index\": {...}}")
     ap.add_argument("--json", action="store_true", help="print JSON instead of markdown")
@@ -75,7 +77,8 @@ def main(argv=None):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
-    cfg = {"capital": args.capital, "risk_pct": args.risk_pct, "min_adv_egp": args.min_adv}
+    cfg = {"capital": args.capital, "risk_pct": args.risk_pct, "min_adv_egp": args.min_adv,
+           "strategy": args.strategy}
     now = to_cairo(datetime.now(timezone.utc))
     index = {}
     try:

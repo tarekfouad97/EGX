@@ -42,6 +42,8 @@ TREND_VARIANTS = {
     "N_donch50_trail4ATR":         ("donchian", {**TREND, "trail_atr": 4.0}),
     "O_donch50_riskon_trail3ATR_max6": ("donchian", {**TREND, "gate": "no_buy_unless_riskon", "trail_atr": 3.0,
                                                      "max_positions": 6}),
+    # the exact rule the daily scanner now runs (egx_swing.setups.trend via scan())
+    "P_LIVE_scanner_trend":        ("live", {**TREND, "trail_atr": 3.0}),
 }
 
 
@@ -99,12 +101,14 @@ def main(argv=None):
     cfg = {"capital": BASE["capital"], "risk_pct": 1.0}
     sigs = generate_signals(stock_rows, irows, cfg)
     dsigs = donchian_signals(stock_rows, irows, cfg)
+    tsigs = generate_signals(stock_rows, irows, cfg, strategy="trend")   # the live scanner's trend rule
     if a.start:
         start = date.fromisoformat(a.start)
         sigs = {d: v for d, v in sigs.items() if d >= start}
         bars = {s: {d: b for d, b in bb.items() if d >= start} for s, bb in bars.items()}
     first0 = min(sigs)
     dsigs = {d: v for d, v in dsigs.items() if d >= first0}
+    tsigs = {d: v for d, v in tsigs.items() if d >= first0}
     first, last = min(sigs), max(sigs)
     n_sig = sum(len(v[1]) for v in sigs.values())
     regimes = {}
@@ -119,7 +123,7 @@ def main(argv=None):
     runs = [(n, "scan", o) for n, o in VARIANTS.items()] + [(n, src, o) for n, (src, o) in TREND_VARIANTS.items()]
     for name, src, over in runs:
         v = {**BASE, **over, "_aux": stock_rows}
-        trades, curve = simulate(sigs if src == "scan" else dsigs, bars, v)
+        trades, curve = simulate({"scan": sigs, "donchian": dsigs, "live": tsigs}[src], bars, v)
         v.pop("_aux")
         m = metrics(trades, curve, v["capital"])
         m["by_setup"] = by_setup(trades)

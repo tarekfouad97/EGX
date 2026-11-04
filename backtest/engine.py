@@ -80,6 +80,7 @@ def daily_rows(symbol, candles):
             "adx": adx[i], "di_plus": dip[i], "di_minus": dim[i], "atr": atr[i],
             "perf_1m": (c[i] / ref - 1) * 100 if ref else None,
             "high_1m": max(h[jm:i + 1]), "high_52w": max(h[jy:i + 1]),
+            "high_50_prev": max(h[i - 50:i]),
             "volume": v[i], "vol_avg_10d": sum(v[i - 9:i + 1]) / 10,
         }
     return out
@@ -103,7 +104,7 @@ def index_rows(candles):
 
 # ───────────────────────── signal generation ─────────────────────────
 
-def generate_signals(stock_rows, idx_rows, cfg):
+def generate_signals(stock_rows, idx_rows, cfg, strategy="swing"):
     """Run setups.scan() for every session. Returns {day: (regime, [signals])}."""
     days = sorted(idx_rows)
     out = {}
@@ -111,7 +112,7 @@ def generate_signals(stock_rows, idx_rows, cfg):
         stocks = [rows[day] for rows in stock_rows.values() if day in rows]
         if not stocks:
             continue
-        res = setups.scan(stocks, idx_rows[day], cfg)
+        res = setups.scan(stocks, idx_rows[day], {**cfg, "strategy": strategy})
         out[day] = (res["regime"]["regime"], res["signals"])
     return out
 

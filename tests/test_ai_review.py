@@ -5,9 +5,8 @@ from types import SimpleNamespace as NS
 from unittest import mock
 
 from egx_swing import ai_review, report
-from egx_swing.setups import scan
 
-from tests.test_setups import RISK_ON, base
+from tests.test_setups import RISK_ON, base, scan
 
 
 def verdict(v="CONFIRM", **kw):

@@ -152,5 +152,6 @@ def compute(candles):
         "atr": atr_[-1],
         "perf_1m": (c[-1] / ref[-1] - 1) * 100 if ref else None,
         "high_1m": max(m_highs), "high_52w": max(y_highs),
+        "high_50_prev": max(h[-51:-1]),     # highest high of the 50 sessions before this one
         "volume": v[-1], "vol_avg_10d": sum(v[-10:]) / 10,
     }

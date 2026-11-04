@@ -2,7 +2,12 @@ import math
 import unittest
 
 from egx_swing.setups import (DEFAULTS, bounce, breakout, market_regime, plan_trade, pullback,
-                              scan, screen, tick_size)
+                              scan as _scan, screen, tick_size)
+
+
+def scan(stocks, index, cfg=None):
+    """These tests cover the old swing rules; the scanner's default is now the trend rule."""
+    return _scan(stocks, index, {"strategy": "swing", **(cfg or {})})
 
 
 def base(**kw):

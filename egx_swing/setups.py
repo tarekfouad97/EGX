@@ -23,6 +23,7 @@ DEFAULTS = {
     "risk_pct": 1.0,            # % of capital risked per trade
     "max_position_pct": 25.0,   # cap on a single position's value
     "max_adv_pct": 10.0,        # never be more than this % of a day's value
+    "strategy": "trend",        # "trend" (default, backtested best) or "swing" (old rules)
 }
 
 
@@ -156,7 +157,28 @@ def bounce(s):
     return {"setup": "BOUNCE", "stop_raw": stop, "quality": quality, "reasons": reasons}
 
 
-SETUPS = (pullback, breakout, bounce)
+def trend(s):
+    """Trend entry (backtested Sep 2023 - Nov 2026, see backtest/results):
+    close at a new 50-session high, above SMA200, with EMA50 above SMA200.
+    No fixed targets: exit on a trailing stop TRAIL_ATR x ATR under the highest high."""
+    c, e50, sma200, atr, h50 = (s.get("close"), s.get("ema50"), s.get("sma200"), s.get("atr"),
+                                s.get("high_50_prev"))
+    if not _num(c, e50, sma200, atr, h50):
+        return None
+    if not (c >= h50 and c > sma200 and e50 > sma200):
+        return None
+    reasons = [f"New 50-session high: close {c:g} >= prior high {h50:g}",
+               f"Uptrend: close above SMA200 {sma200:.2f}, EMA50 {e50:.2f} > SMA200"]
+    return {"setup": "TREND", "stop_raw": entry_raw(s) - STOP_ATR * atr, "quality": 50, "reasons": reasons}
+
+
+STOP_ATR = 2.0      # initial stop below the entry
+TRAIL_ATR = 3.0     # trailing stop below the highest high since buying
+
+SWING_SETUPS = (pullback, breakout, bounce)
+TREND_SETUPS = (trend,)
+SETUPS = SWING_SETUPS
+STRATEGIES = {"trend": TREND_SETUPS, "swing": SWING_SETUPS}
 
 
 # ───────────────────────────── trade plan ─────────────────────────────────
@@ -174,18 +196,22 @@ def plan_trade(s, hit, cfg, risk_mult=1.0):
     r = entry - stop
     if r < tick / 2:
         return None
-    t1, t2 = _to_tick(entry + 1.5 * r, tick, "near"), _to_tick(entry + 3.0 * r, tick, "near")
+    trail = hit["setup"] == "TREND"
+    t1, t2 = (None, None) if trail else (_to_tick(entry + 1.5 * r, tick, "near"),
+                                         _to_tick(entry + 3.0 * r, tick, "near"))
     if hit["setup"] == "BOUNCE" and _num(s.get("ema20")) and s["ema20"] > entry:
         # mean-reversion target: EMA20, kept between 1R and 1.5R
         t1 = _to_tick(min(max(s["ema20"], entry + r), entry + 1.5 * r), tick, "near")
 
     warnings, notes = [], []
     h1m, h52 = s.get("high_1m"), s.get("high_52w")
-    if hit["setup"] != "BREAKOUT" and _num(h1m) and entry < h1m < t1:
+    if trail:
+        pass                                   # breakout to a new high: no overhead resistance check
+    elif hit["setup"] != "BREAKOUT" and _num(h1m) and entry < h1m < t1:
         warnings.append(f"1M high {h1m:g} sits below T1 - resistance")
     elif _num(h52) and entry < h52 < t1:
         warnings.append(f"52W high {h52:g} sits below T1 - resistance")
-    if _num(s.get("perf_1m")) and s["perf_1m"] > 25:
+    if not trail and _num(s.get("perf_1m")) and s["perf_1m"] > 25:
         warnings.append(f"Up {s['perf_1m']:.0f}% in 1M - extended")
 
     risk_budget = cfg["capital"] * cfg["risk_pct"] / 100 * risk_mult
@@ -204,7 +230,9 @@ def plan_trade(s, hit, cfg, risk_mult=1.0):
         "entry": entry, "stop": stop, "t1": t1, "t2": t2, "tick": tick, "decimals": dp,
         "risk_per_share": round(r, dp),
         "risk_pct_of_price": round(r / entry * 100, 1),
-        "rr_t1": round((t1 - entry) / r, 2),
+        "rr_t1": round((t1 - entry) / r, 2) if t1 else None,
+        "trail_atr": TRAIL_ATR if trail else None,
+        "atr_now": round(atr, dp + 1),
         "shares": shares,
         "position_egp": round(shares * entry),
         "risk_egp": round(shares * r),
@@ -243,7 +271,7 @@ def scan(stocks, index, cfg=None):
             excluded.append({"symbol": raw.get("symbol"), "reason": why})
             continue
         s = {**raw, **derived}
-        for detect in SETUPS:
+        for detect in STRATEGIES.get(cfg["strategy"], TREND_SETUPS):
             hit = detect(s)
             if not hit:
                 continue
@@ -256,7 +284,10 @@ def scan(stocks, index, cfg=None):
             rs = None
             if _num(s.get("perf_1m"), idx_perf):
                 rs = round(s["perf_1m"] - idx_perf, 1)
-                quality += 10 if rs > 3 else (-10 if rs < -3 else 0)
+                if hit["setup"] == "TREND":
+                    quality += round(rs)
+                else:
+                    quality += 10 if rs > 3 else (-10 if rs < -3 else 0)
             quality -= 5 * len(plan["warnings"])
             signals.append({
                 "symbol": s["symbol"], "name": s.get("name"), "sector": s.get("sector"),

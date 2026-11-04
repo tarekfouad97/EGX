@@ -5,6 +5,16 @@ def _m(x):
     return f"{x / 1e6:,.1f}M"
 
 
+def _tgt(s, k, d):
+    if s.get(k) is not None:
+        return f"{s[k]:.{d}f}"
+    return f"trail {s['trail_atr']:g} ATR" if k == "t1" and s.get("trail_atr") else "-"
+
+
+def _rr(s):
+    return f"{s['rr_t1']:.1f}R" if s.get("rr_t1") is not None else "-"
+
+
 def render(result, index, when):
     reg = result["regime"]
     cfg = result["config"]
@@ -40,8 +50,8 @@ def render(result, index, when):
         for i, s in enumerate(sig, 1):
             d = s["decimals"]
             out.append(f"| {i} | **{s['symbol']}** | {s['setup']} | {s['quality']} | {s['close']:.{d}f} | "
-                       f"{s['entry']:.{d}f} | {s['stop']:.{d}f} | {s['t1']:.{d}f} | {s['t2']:.{d}f} | "
-                       f"{s['rr_t1']:.1f}R | {s['risk_pct_of_price']}% | {s['shares']:,} | {s['position_egp']:,} |")
+                       f"{s['entry']:.{d}f} | {s['stop']:.{d}f} | {_tgt(s, 't1', d)} | {_tgt(s, 't2', d)} | "
+                       f"{_rr(s)} | {s['risk_pct_of_price']}% | {s['shares']:,} | {s['position_egp']:,} |")
         out.append("")
         for i, s in enumerate(sig, 1):
             d = s["decimals"] + 1
@@ -67,9 +77,13 @@ def render(result, index, when):
     out += ["## How to use",
             "- **Entry** is a buy-stop above the session's high: only trigger if price trades through it "
             "in the next session. Cancel if not filled within 2 sessions.",
-            "- **Stop** is hard. Sell half at **T1** (R:R column; 1.5R, or EMA20 for bounces), move stop to entry, "
-            "trail the rest to **T2** (3R) or exit on a close below EMA10.",
-            "- Time stop: exit after ~10 sessions if neither target nor stop is hit.",
+            ] + (["- **Stop** starts 2 ATR under the entry. There is no target: after each close raise the stop "
+                  "to the highest price since buying minus 3 ATR (the trail column), never lower it, and sell "
+                  "when it is hit. Backtested average hold ~11 sessions; winners run longer."]
+                 if cfg.get("strategy", "trend") == "trend" else
+                 ["- **Stop** is hard. Sell half at **T1** (R:R column; 1.5R, or EMA20 for bounces), move stop to "
+                  "entry, trail the rest to **T2** (3R) or exit on a close below EMA10.",
+                  "- Time stop: exit after ~10 sessions if neither target nor stop is hit."]) + [
             "", "_Analytical output only - not licensed financial advice._", ""]
     return "\n".join(out)
 

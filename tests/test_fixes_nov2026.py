@@ -39,7 +39,7 @@ class CapitalCap(unittest.TestCase):
     def test_total_positions_never_exceed_capital(self):
         stocks = [_pullback_stock(symbol=f"S{i}", stoch_k_prev=27.0, stoch_d_prev=24.0) for i in range(30)]
         index = {"close": 100.0, "ema20": 95.0, "ema50": 90.0, "perf_1m": 1.0}
-        res = setups.scan(stocks, index, {"capital": 20000.0, "risk_pct": 1.0})
+        res = setups.scan(stocks, index, {"capital": 20000.0, "risk_pct": 1.0, "strategy": "swing"})
         self.assertLessEqual(sum(s["position_egp"] for s in res["signals"]), 20000.0)
         self.assertTrue(res["over_budget"])
 

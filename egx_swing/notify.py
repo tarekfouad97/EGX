@@ -29,6 +29,15 @@ def _p(v, d=2):
     return f"{v:,.{d}f}" if _num(v) else "n/a"
 
 
+HOW_SWING = ("How: wait for the price to rise to the buy price (stop-buy order or price alert); cancel after 2 "
+             "trading days if not reached; place the stop-loss right after buying; sell half at the first target "
+             "and move the stop to your buy price.")
+HOW_TREND = ("How: wait for the price to rise to the buy price (stop-buy order or price alert); cancel after 2 "
+             "trading days if not reached; place the stop-loss right after buying. There is no profit target: "
+             "after each close, raise the stop to (highest price since you bought - the trail amount) and never "
+             "lower it. Sell when the stop is hit. Backtested holds average about 11 sessions; winners run longer.")
+
+
 def plan_rows(report):
     rows = []
     for s in report.get("signals", []):
@@ -36,7 +45,7 @@ def plan_rows(report):
         if not (n and _num(e)):
             continue
         half, rest = n // 2, n - n // 2
-        best = half * (s["t1"] - e) + rest * (s["t2"] - e)
+        best = half * (s["t1"] - e) + rest * (s["t2"] - e) if _num(s.get("t1")) and _num(s.get("t2")) else None
         rows.append({"s": s, "money": n * e, "loss": n * (e - s["stop"]), "best": best})
     return rows
 
@@ -66,22 +75,24 @@ def text_body(report, run_url=None):
         s = r["s"]
         out.append(f"{s['symbol']} ({s.get('name', '')}): buy {s['shares']} shares only once price reaches "
                    f"{_p(s['entry'])} (~{_p(r['money'], 0)} EGP). Stop {_p(s['stop'])}. "
-                   f"Sell half at {_p(s['t1'])}, rest at {_p(s['t2'])}.")
+                   + (f"Sell half at {_p(s['t1'])}, rest at {_p(s['t2'])}." if _num(s.get("t1")) else
+                      f"No target: trail the stop {s['trail_atr']:g} x ATR ({_p(s['trail_atr'] * s['atr_now'])}) "
+                      f"under the highest price since you bought."))
         out += [f"   ! {w}" for w in s.get("warnings", [])]
     if rows:
-        money, loss, best = (sum(r[k] for r in rows) for k in ("money", "loss", "best"))
+        money, loss = (sum(r[k] for r in rows) for k in ("money", "loss"))
+        bests = [r["best"] for r in rows if r["best"] is not None]
         out += ["", f"Total money used: ~{_p(money, 0)} EGP" + (f" of {_p(cap, 0)}" if _num(cap) else ""),
-                f"Most you can lose (all stops hit): ~{_p(loss, 0)} EGP",
-                f"Best case (all targets hit): +{_p(best, 0)} EGP"]
+                f"Most you can lose (all stops hit): ~{_p(loss, 0)} EGP"]
+        if bests:
+            out.append(f"Best case (all targets hit): +{_p(sum(bests), 0)} EGP")
     for s in report.get("vetoed", []):
         out.append(f"DON'T BUY {s['symbol']}: vetoed by AI review.")
     over = report.get("over_budget") or []
     if over:
         out.append("Over budget (not in the buy list - total would exceed your capital): "
                    + ", ".join(o["symbol"] for o in over))
-    out += ["", "How: wait for the price to rise to the buy price (stop-buy order or price alert); cancel after 2 "
-            "trading days if not reached; place the stop-loss right after buying; sell half at the first target "
-            "and move the stop to your buy price.", ""]
+    out += ["", HOW_TREND if any(r["s"].get("trail_atr") for r in rows) else HOW_SWING, ""]
     if run_url:
         out.append(f"Full run: {run_url}")
     out.append("Analytical output only - not licensed financial advice.")
@@ -160,12 +171,15 @@ def _card(r):
         f"<tr><td style='padding:6px 14px 4px'><table width='100%'><tr>"
         + _level("Buy at", _p(s["entry"]), C["blue"], C["blue_bg"])
         + _level("Stop-loss", _p(s["stop"]), C["red"], C["red_bg"])
-        + _level("Sell half at", _p(s["t1"]), C["green"], C["green_bg"])
-        + _level("Sell rest at", _p(s["t2"]), C["green"], C["green_bg"])
+        + (_level("Sell half at", _p(s["t1"]), C["green"], C["green_bg"])
+           + _level("Sell rest at", _p(s["t2"]), C["green"], C["green_bg"]) if _num(s.get("t1")) else
+           _level("Trail stop by", _p(s["trail_atr"] * s["atr_now"]), C["green"], C["green_bg"]))
         + f"</tr></table></td></tr>"
         f"<tr><td style='padding:4px 18px 16px;font-size:13px;color:{C['muted']}'>"
         f"Risk if stopped: <b style='color:{C['red']}'>-{_p(r['loss'], 0)} EGP</b> &nbsp;&middot;&nbsp; "
-        f"Best case: <b style='color:{C['green']}'>+{_p(r['best'], 0)} EGP</b>{warn}</td></tr>"
+        + (f"Best case: <b style='color:{C['green']}'>+{_p(r['best'], 0)} EGP</b>" if r["best"] is not None else
+           "No fixed target: raise the stop after each close, never lower it")
+        + f"{warn}</td></tr>"
         f"</table></td></tr>")
 
 
@@ -213,13 +227,15 @@ def html_body(report, run_url=None):
                     f"<div style='font-size:18px;font-weight:800;color:{C['ink']}'>No setups today</div>"
                     f"<div style='color:{C['muted']};margin-top:4px'>Cash is a position.</div></td></tr>")
     else:
-        money, loss, best = (sum(r[k] for r in rows) for k in ("money", "loss", "best"))
+        money, loss = (sum(r[k] for r in rows) for k in ("money", "loss"))
+        bests = [r["best"] for r in rows if r["best"] is not None]
         of = f"<div style='font-size:12px;color:{C['muted']}'>of {_p(cap, 0)} EGP</div>" if _num(cap) else ""
         body.append(
             f"<tr><td class='pad' style='padding:16px 18px 4px'><table width='100%'><tr>"
             + _tile("Money used", f"{_p(money, 0)}{of}", C["ink"], "#f1f5f9")
             + _tile("Most you can lose", f"-{_p(loss, 0)}", C["red"], C["red_bg"])
-            + _tile("Best case", f"+{_p(best, 0)}", C["green"], C["green_bg"])
+            + (_tile("Best case", f"+{_p(sum(bests), 0)}", C["green"], C["green_bg"]) if bests else
+               _tile("Exit", "Trailing stop", C["green"], C["green_bg"]))
             + "</tr></table></td></tr>")
         body += [_card(r) for r in rows]
     if report.get("vetoed"):

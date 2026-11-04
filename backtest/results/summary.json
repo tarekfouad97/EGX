@@ -407,6 +407,393 @@
     "max_positions": 99,
     "min_quality": -999
    }
+  },
+  "H_scan_riskon_trail3ATR": {
+   "trades": 253,
+   "win_rate_pct": 39.5,
+   "avg_r": 0.271,
+   "profit_factor": 1.59,
+   "total_return_pct": 68.0,
+   "cagr_pct": 18.2,
+   "max_drawdown_pct": -14.0,
+   "avg_days_held": 16.3,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "STOP": 64,
+    "TRAIL": 189
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 55,
+     "avg_r": 0.25,
+     "win_rate_pct": 38.2
+    },
+    "PULLBACK": {
+     "trades": 188,
+     "avg_r": 0.212,
+     "win_rate_pct": 38.8
+    },
+    "BOUNCE": {
+     "trades": 10,
+     "avg_r": 1.487,
+     "win_rate_pct": 60.0
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 253,
+     "avg_r": 0.271
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_unless_riskon",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_atr": 3.0
+   }
+  },
+  "I_scan_riskon_belowEMA50": {
+   "trades": 158,
+   "win_rate_pct": 31.6,
+   "avg_r": 0.355,
+   "profit_factor": 1.69,
+   "total_return_pct": 56.1,
+   "cagr_pct": 15.4,
+   "max_drawdown_pct": -19.0,
+   "avg_days_held": 23.7,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "STOP": 35,
+    "BELOW_EMA50": 123
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 34,
+     "avg_r": -0.317,
+     "win_rate_pct": 29.4
+    },
+    "PULLBACK": {
+     "trades": 116,
+     "avg_r": 0.578,
+     "win_rate_pct": 30.2
+    },
+    "BOUNCE": {
+     "trades": 8,
+     "avg_r": -0.02,
+     "win_rate_pct": 62.5
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 158,
+     "avg_r": 0.355
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_unless_riskon",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_ma": "ema50"
+   }
+  },
+  "J_scan_noRiskoff_trail3ATR": {
+   "trades": 353,
+   "win_rate_pct": 38.0,
+   "avg_r": 0.28,
+   "profit_factor": 1.48,
+   "total_return_pct": 72.7,
+   "cagr_pct": 19.3,
+   "max_drawdown_pct": -15.8,
+   "avg_days_held": 15.8,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "STOP": 95,
+    "TRAIL": 258
+   },
+   "by_setup": {
+    "BREAKOUT": {
+     "trades": 79,
+     "avg_r": -0.005,
+     "win_rate_pct": 29.1
+    },
+    "PULLBACK": {
+     "trades": 240,
+     "avg_r": 0.255,
+     "win_rate_pct": 40.4
+    },
+    "BOUNCE": {
+     "trades": 34,
+     "avg_r": 1.118,
+     "win_rate_pct": 41.2
+    }
+   },
+   "by_regime": {
+    "NEUTRAL": {
+     "trades": 169,
+     "avg_r": 0.626
+    },
+    "RISK-ON": {
+     "trades": 184,
+     "avg_r": -0.038
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_riskoff",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_atr": 3.0
+   }
+  },
+  "K_donch50_trail3ATR": {
+   "trades": 473,
+   "win_rate_pct": 40.6,
+   "avg_r": 0.456,
+   "profit_factor": 1.85,
+   "total_return_pct": 192.0,
+   "cagr_pct": 41.3,
+   "max_drawdown_pct": -15.7,
+   "avg_days_held": 11.5,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "TRAIL": 298,
+    "STOP": 175
+   },
+   "by_setup": {
+    "DONCHIAN": {
+     "trades": 473,
+     "avg_r": 0.456,
+     "win_rate_pct": 40.6
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 320,
+     "avg_r": 0.412
+    },
+    "NEUTRAL": {
+     "trades": 114,
+     "avg_r": 0.701
+    },
+    "RISK-OFF": {
+     "trades": 39,
+     "avg_r": 0.103
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "as_is",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_atr": 3.0
+   }
+  },
+  "L_donch50_riskon_trail3ATR": {
+   "trades": 350,
+   "win_rate_pct": 38.9,
+   "avg_r": 0.395,
+   "profit_factor": 1.72,
+   "total_return_pct": 136.3,
+   "cagr_pct": 32.0,
+   "max_drawdown_pct": -18.8,
+   "avg_days_held": 11.0,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "TRAIL": 214,
+    "STOP": 136
+   },
+   "by_setup": {
+    "DONCHIAN": {
+     "trades": 350,
+     "avg_r": 0.395,
+     "win_rate_pct": 38.9
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 350,
+     "avg_r": 0.395
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_unless_riskon",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_atr": 3.0
+   }
+  },
+  "M_donch50_belowEMA50": {
+   "trades": 193,
+   "win_rate_pct": 32.1,
+   "avg_r": 0.645,
+   "profit_factor": 2.05,
+   "total_return_pct": 138.6,
+   "cagr_pct": 32.4,
+   "max_drawdown_pct": -15.8,
+   "avg_days_held": 30.6,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "STOP": 112,
+    "BELOW_EMA50": 80,
+    "TIME": 1
+   },
+   "by_setup": {
+    "DONCHIAN": {
+     "trades": 193,
+     "avg_r": 0.645,
+     "win_rate_pct": 32.1
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 116,
+     "avg_r": 0.907
+    },
+    "NEUTRAL": {
+     "trades": 61,
+     "avg_r": 0.295
+    },
+    "RISK-OFF": {
+     "trades": 16,
+     "avg_r": 0.088
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "as_is",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_ma": "ema50"
+   }
+  },
+  "N_donch50_trail4ATR": {
+   "trades": 322,
+   "win_rate_pct": 37.9,
+   "avg_r": 0.466,
+   "profit_factor": 1.82,
+   "total_return_pct": 136.5,
+   "cagr_pct": 32.0,
+   "max_drawdown_pct": -14.9,
+   "avg_days_held": 18.2,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "TRAIL": 176,
+    "STOP": 146
+   },
+   "by_setup": {
+    "DONCHIAN": {
+     "trades": 322,
+     "avg_r": 0.466,
+     "win_rate_pct": 37.9
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 202,
+     "avg_r": 0.49
+    },
+    "NEUTRAL": {
+     "trades": 83,
+     "avg_r": 0.614
+    },
+    "RISK-OFF": {
+     "trades": 37,
+     "avg_r": -0.001
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "as_is",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 99,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_atr": 4.0
+   }
+  },
+  "O_donch50_riskon_trail3ATR_max6": {
+   "trades": 211,
+   "win_rate_pct": 40.3,
+   "avg_r": 0.537,
+   "profit_factor": 1.98,
+   "total_return_pct": 111.5,
+   "cagr_pct": 27.3,
+   "max_drawdown_pct": -15.0,
+   "avg_days_held": 12.1,
+   "fees_note": "all results are after Thndr fees",
+   "outcomes": {
+    "TRAIL": 131,
+    "STOP": 80
+   },
+   "by_setup": {
+    "DONCHIAN": {
+     "trades": 211,
+     "avg_r": 0.537,
+     "win_rate_pct": 40.3
+    }
+   },
+   "by_regime": {
+    "RISK-ON": {
+     "trades": 211,
+     "avg_r": 0.537
+    }
+   },
+   "settings": {
+    "capital": 20000.0,
+    "gate": "no_buy_unless_riskon",
+    "t1_r": 99,
+    "t2_r": 99,
+    "max_hold": 250,
+    "valid_days": 2,
+    "top_n": 99,
+    "max_positions": 6,
+    "min_quality": -999,
+    "exit": "trail",
+    "trail_atr": 3.0
+   }
   }
  }
 }

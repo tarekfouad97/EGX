@@ -116,6 +116,48 @@ def generate_signals(stock_rows, idx_rows, cfg):
     return out
 
 
+def donchian_signals(stock_rows, idx_rows, cfg, n=50, stop_atr=2.0):
+    """Trend entry: close at a new n-session high, above SMA200 and EMA50 > SMA200.
+    Same liquidity/volatility screen and sizing as the scanner; entry is a buy-stop
+    one tick-ish above today's high, stop = entry - stop_atr * ATR."""
+    cfg = {**setups.DEFAULTS, **cfg}
+    hist = {}
+    for sym, rows in stock_rows.items():
+        days = sorted(rows)
+        highs = [rows[d]["high"] for d in days]
+        for i in range(n, len(days)):
+            s = rows[days[i]]
+            if s["close"] >= max(highs[i - n:i]) and s["close"] > s["sma200"] and s["ema50"] > s["sma200"]:
+                hist.setdefault(days[i], []).append(s)
+    out = {}
+    for day in sorted(idx_rows):
+        regime = setups.market_regime(idx_rows[day])
+        sigs = []
+        for s in hist.get(day, []):
+            why, derived = setups.screen(s, cfg)
+            if why:
+                continue
+            s2 = {**s, **derived}
+            tick = setups.tick_size(s2)
+            entry = setups._to_tick(s2["high"] + 0.1 * s2["atr"], tick, "up")
+            stop = setups._to_tick(entry - stop_atr * s2["atr"], tick, "down")
+            r = entry - stop
+            if r <= 0:
+                continue
+            risk = cfg["capital"] * cfg["risk_pct"] / 100 * regime["risk_mult"]
+            shares = min(int(risk // r), int(cfg["capital"] * cfg["max_position_pct"] / 100 // entry),
+                         int(derived["adv_egp"] * cfg["max_adv_pct"] / 100 // entry))
+            if shares <= 0:
+                continue
+            idx_perf = idx_rows[day].get("perf_1m")
+            rs = (s2["perf_1m"] - idx_perf) if s2.get("perf_1m") is not None and idx_perf is not None else 0
+            sigs.append({"symbol": s2["symbol"], "setup": "DONCHIAN", "quality": round(50 + rs),
+                         "entry": entry, "stop": stop, "shares": shares})
+        sigs.sort(key=lambda x: x["quality"], reverse=True)
+        out[day] = (regime["regime"], sigs)
+    return out
+
+
 # ───────────────────────── trade simulation ─────────────────────────
 
 def _fees(value):
@@ -147,9 +189,27 @@ def simulate(signals_by_day, bars_by_symbol, variant):
             p["held"] += 1
             exits = []
             stop = p["stop"]
-            if l <= stop and not (p["fill_day"] == day and p["half"]):
+            if variant.get("exit") == "trail":
+                # trend mode: no fixed targets; a stop that only moves up, plus an optional moving-average exit
+                row = variant["_aux"].get(sym, {}).get(day)
+                if l <= stop:
+                    exits.append(("STOP" if stop <= p["stop0"] else "TRAIL", min(o, stop), p["qty"]))
+                else:
+                    p["hh"] = max(p.get("hh", p["fill"]), h)
+                    if row:
+                        k = variant.get("trail_atr")
+                        if k:
+                            p["stop"] = max(p["stop"], p["hh"] - k * row["atr"])
+                        ma = variant.get("trail_ma")
+                        if ma and c < row[ma]:
+                            exits.append((f"BELOW_{ma.upper()}", c, p["qty"]))
+            elif l <= stop and not (p["fill_day"] == day and p["half"]):
                 px = min(o, stop) if p["fill_day"] != day else stop
                 exits.append(("STOP" if not p["half"] else "BREAKEVEN", px, p["qty"]))
+            if variant.get("exit") == "trail":
+                pass
+            elif exits:
+                pass
             else:
                 if not p["half"] and h >= p["t1"]:
                     half = p["qty"] // 2

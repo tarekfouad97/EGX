@@ -1,0 +1,12 @@
+K base (n50, stop2ATR, trail3)     trades  473 win  40.6 PF 1.85 ret  192.0% DD -15.7%
+K price>=1 EGP                     trades  448 win  38.6 PF 1.55 ret  120.7% DD -18.0%
+K price>=1, ADV>=10M               trades  376 win  38.6 PF 1.35 ret   66.5% DD -24.5%
+K without CRST                     trades  472 win  41.3 PF 1.82 ret  178.6% DD -15.9%
+K n=20                             trades  501 win  36.5 PF 1.45 ret  110.1% DD -21.3%
+K n=100                            trades  394 win  40.9 PF 1.85 ret  160.1% DD -14.5%
+K trail 2.5                        trades  599 win  39.1 PF 1.65 ret  178.4% DD -19.7%
+K trail 3.5                        trades  336 win  36.9 PF 1.64 ret  113.3% DD -19.5%
+K stop 1.5ATR                      trades  515 win  36.1 PF 1.86 ret  253.7% DD -17.0%
+K stop 3ATR                        trades  511 win  45.6 PF 1.99 ret  168.3% DD -13.3%
+K price>=1, no buys RISK-OFF       trades  420 win  39.0 PF 1.56 ret  119.2% DD -13.9%
+K price>=1, max 6 positions        trades  255 win  38.8 PF 1.46 ret   56.7% DD -16.2%

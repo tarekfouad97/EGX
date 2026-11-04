@@ -11,7 +11,7 @@ import json
 from datetime import date
 from pathlib import Path
 
-from .engine import daily_rows, generate_signals, index_rows, metrics, simulate
+from .engine import daily_rows, donchian_signals, generate_signals, index_rows, metrics, simulate
 
 BASE = {"capital": 20000.0, "gate": "as_is", "t1_r": 1.5, "t2_r": 3.0, "max_hold": 10,
         "valid_days": 2, "top_n": 99, "max_positions": 99, "min_quality": -999}
@@ -26,6 +26,22 @@ VARIANTS = {
     "F_D_plus_t1_1.25R":       {"gate": "no_buy_riskoff", "top_n": 5, "min_quality": 70, "max_positions": 8,
                                 "t1_r": 1.25, "t2_r": 2.5},
     "G_as_emailed_t1_1R":      {"t1_r": 1.0, "t2_r": 2.0},
+}
+
+# Trend-following: same scanner entries or a 50-day-high breakout, but no fixed targets.
+TREND = {"exit": "trail", "max_hold": 250, "t1_r": 99, "t2_r": 99}
+TREND_VARIANTS = {
+    # scanner entries, ride the trend
+    "H_scan_riskon_trail3ATR":     ("scan", {**TREND, "gate": "no_buy_unless_riskon", "trail_atr": 3.0}),
+    "I_scan_riskon_belowEMA50":    ("scan", {**TREND, "gate": "no_buy_unless_riskon", "trail_ma": "ema50"}),
+    "J_scan_noRiskoff_trail3ATR":  ("scan", {**TREND, "gate": "no_buy_riskoff", "trail_atr": 3.0}),
+    # classic trend entry: new 50-day high
+    "K_donch50_trail3ATR":         ("donchian", {**TREND, "trail_atr": 3.0}),
+    "L_donch50_riskon_trail3ATR":  ("donchian", {**TREND, "gate": "no_buy_unless_riskon", "trail_atr": 3.0}),
+    "M_donch50_belowEMA50":        ("donchian", {**TREND, "trail_ma": "ema50"}),
+    "N_donch50_trail4ATR":         ("donchian", {**TREND, "trail_atr": 4.0}),
+    "O_donch50_riskon_trail3ATR_max6": ("donchian", {**TREND, "gate": "no_buy_unless_riskon", "trail_atr": 3.0,
+                                                     "max_positions": 6}),
 }
 
 
@@ -79,11 +95,16 @@ def main(argv=None):
             bars[sym] = {date.fromisoformat(x["date"]): (x["open"], x["high"], x["low"], x["close"]) for x in c}
     print(f"{len(stock_rows)} stocks with enough history", flush=True)
 
-    sigs = generate_signals(stock_rows, index_rows(idx), {"capital": BASE["capital"], "risk_pct": 1.0})
+    irows = index_rows(idx)
+    cfg = {"capital": BASE["capital"], "risk_pct": 1.0}
+    sigs = generate_signals(stock_rows, irows, cfg)
+    dsigs = donchian_signals(stock_rows, irows, cfg)
     if a.start:
         start = date.fromisoformat(a.start)
         sigs = {d: v for d, v in sigs.items() if d >= start}
         bars = {s: {d: b for d, b in bb.items() if d >= start} for s, bb in bars.items()}
+    first0 = min(sigs)
+    dsigs = {d: v for d, v in dsigs.items() if d >= first0}
     first, last = min(sigs), max(sigs)
     n_sig = sum(len(v[1]) for v in sigs.values())
     regimes = {}
@@ -95,9 +116,11 @@ def main(argv=None):
     out.mkdir(parents=True, exist_ok=True)
     summary = {"period": [first.isoformat(), last.isoformat()], "sessions": len(sigs),
                "stocks": len(stock_rows), "raw_signals": n_sig, "regime_days": regimes, "variants": {}}
-    for name, over in VARIANTS.items():
-        v = {**BASE, **over}
-        trades, curve = simulate(sigs, bars, v)
+    runs = [(n, "scan", o) for n, o in VARIANTS.items()] + [(n, src, o) for n, (src, o) in TREND_VARIANTS.items()]
+    for name, src, over in runs:
+        v = {**BASE, **over, "_aux": stock_rows}
+        trades, curve = simulate(sigs if src == "scan" else dsigs, bars, v)
+        v.pop("_aux")
         m = metrics(trades, curve, v["capital"])
         m["by_setup"] = by_setup(trades)
         m["by_regime"] = by_regime(trades)

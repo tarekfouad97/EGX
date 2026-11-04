@@ -20,7 +20,7 @@ A run never stops on bad data, and every run ends with a report on disk.
   feed (Yahoo as a last resort) and computes the indicators itself.
 - If that data isn't fresh for the session either, the stock is **dropped**, and the report lists it with the reason.
 - If TradingView is down entirely, the universe comes from `data/universe.json`, which is refreshed on every
-  successful run. Every stock then goes through the Yahoo fallback.
+  successful run. Every stock then goes through the history fallback.
 
 Each report carries a run status:
 
@@ -81,7 +81,7 @@ To turn it on, add two repository secrets (Settings â†’ Secrets and variables â†
 
 Without them the email step is skipped; a failed email never fails the run. Other providers work too, via the
 `SMTP_HOST` / `SMTP_PORT` environment variables (SSL, default `smtp.gmail.com:465`). The email contains the scanner's
-picks; the news-checked TAKE / TAKE SMALLER / SKIP answer comes from the `/egx-swing-review` skill.
+picks only (no news check yet).
 
 ## Run it on demand
 

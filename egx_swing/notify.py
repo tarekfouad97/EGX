@@ -246,8 +246,8 @@ def html_body(report, run_url=None):
     body.append(
         f"<tr><td class='pad' style='padding:8px 24px 20px'>"
         f"<div style='background:{C['blue_bg']};border-radius:12px;padding:12px 16px;font-size:14px;color:{C['ink']}'>"
-        f"These are the scanner's chart picks at full size. For the news-checked answer "
-        f"(TAKE / TAKE SMALLER / SKIP), run <b>/egx-swing-review</b> in Claude Code before buying.</div>"
+        f"These are the scanner's chart picks at full size, with no news check yet. "
+        f"Check company news and disclosures before buying.</div>"
         + (f"<div style='text-align:center;margin-top:18px'><a href='{e(run_url)}' style='display:inline-block;"
            f"background:{C['navy']};color:#ffffff;text-decoration:none;font-weight:700;padding:12px 22px;"
            f"border-radius:10px'>Open the full report on GitHub</a></div>" if run_url else "")

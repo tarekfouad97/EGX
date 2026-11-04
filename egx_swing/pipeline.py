@@ -5,10 +5,10 @@ Run stages (each one either succeeds, falls back, or degrades - never aborts):
     UNIVERSE --> INDEX --> SESSION --> VALIDATE --> RECOVER --> ENRICH --> SCAN --> DONE
 
     UNIVERSE  TradingView screener (retried)  -> cached universe list -> empty
-    INDEX     TradingView EGX30 (retried)     -> EGX30 from Yahoo candles -> UNKNOWN regime
+    INDEX     TradingView EGX30 (retried)     -> EGX30 from chart history -> UNKNOWN regime
     SESSION   newest trade date in primary data -> EGX30 bar date -> newest recovered bar
     VALIDATE  every stock: complete and on the session date? -> READY, else NEEDS_RECOVERY
-    RECOVER   Yahoo candles -> own indicators -> fresh and complete? -> RECOVERED, else DROPPED
+    RECOVER   TradingView chart history (Yahoo last resort) -> own indicators -> fresh and complete? -> RECOVERED, else DROPPED
     ENRICH    previous-bar Stoch for PULLBACK candidates from candles (optional)
     SCAN      setups.scan(); an unexpected error yields zero signals, not a crash
     AI_REVIEW fundamentals checks + Claude news/fundamentals verdict per pick;
@@ -113,7 +113,7 @@ class Run:
         try:
             ind = indicators.compute(self._history(self.fetch.YAHOO_INDEX))
             if ind and not missing_fields(ind, INDEX_REQUIRED):
-                self.log("INDEX", "RECOVERED", f"EGX30 computed from Yahoo candles ({ind['bar_date']})")
+                self.log("INDEX", "RECOVERED", f"EGX30 computed from chart history ({ind['bar_date']})")
                 return ind
             raise ValueError("history too short or incomplete")
         except Exception as e:
@@ -186,7 +186,7 @@ class Run:
             if miss:
                 self.status[sym] = {"state": DROPPED, "reason": f"{why}; fallback missing {', '.join(miss)}"}
                 continue
-            self.status[sym] = {"state": RECOVERED, "source": "yahoo", "reason": why}
+            self.status[sym] = {"state": RECOVERED, "source": "history", "reason": why}
             recovered.append(merged)
         dropped = len(results) - len(recovered)
         if results:

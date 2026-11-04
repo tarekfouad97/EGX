@@ -37,6 +37,19 @@ def to_cairo(utc):
     return utc.astimezone(timezone(timedelta(hours=_cairo_offset(utc))))
 
 
+LIMITS = {"capital": (5_000, 50_000_000), "risk_pct": (0.1, 3.0), "top": (10, 500), "min_adv": (0, 1e9)}
+
+
+def validate_args(args):
+    """Refuse obviously wrong inputs (e.g. capital 2,000 typed instead of 20,000)."""
+    out = []
+    for name, (lo, hi) in LIMITS.items():
+        v = getattr(args, name)
+        if not lo <= v <= hi:
+            out.append(f"--{name.replace('_', '-')} {v:g} is outside {lo:g}-{hi:g}")
+    return out
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="egx_swing", description="EGX swing-trade setup scanner")
     ap.add_argument("--top", type=int, default=500,
@@ -55,6 +68,9 @@ def main(argv=None):
                     help="skip the Claude news/fundamentals review (it also skips itself without ANTHROPIC_API_KEY)")
     ap.add_argument("--ai-max", type=int, default=8, help="max picks sent to the AI review per run (default 8)")
     args = ap.parse_args(argv)
+    problems = validate_args(args)
+    if problems:
+        ap.error("; ".join(problems))   # exits with code 2: no report, no email
 
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")

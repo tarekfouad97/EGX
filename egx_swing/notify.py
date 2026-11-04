@@ -45,7 +45,8 @@ def subject(report):
     rows = plan_rows(report)
     status = report.get("run_status", "?")
     picks = ", ".join(r["s"]["symbol"] for r in rows) or "no setups"
-    return f"EGX swing scan {report.get('as_of') or report.get('date', '')} - {picks} [{status}]"
+    flag = " [INTRADAY - NOT FINAL]" if report.get("intraday") else ""
+    return f"EGX swing scan {report.get('as_of') or report.get('date', '')} - {picks} [{status}]{flag}"
 
 
 def text_body(report, run_url=None):
@@ -56,6 +57,9 @@ def text_body(report, run_url=None):
            f"Market: {reg.get('regime', '?')} - {reg.get('note', '')}", ""]
     if report.get("run_status") == "FAILED":
         out += ["NO USABLE DATA THIS RUN - NO TRADES.", ""]
+    if report.get("intraday"):
+        out += ["WARNING: the EGX session was still open when this ran - prices and levels use an "
+                "unfinished day. Wait for the after-close run before acting.", ""]
     if not rows:
         out += ["No setups today. Cash is a position.", ""]
     for r in rows:
@@ -71,6 +75,10 @@ def text_body(report, run_url=None):
                 f"Best case (all targets hit): +{_p(best, 0)} EGP"]
     for s in report.get("vetoed", []):
         out.append(f"DON'T BUY {s['symbol']}: vetoed by AI review.")
+    over = report.get("over_budget") or []
+    if over:
+        out.append("Over budget (not in the buy list - total would exceed your capital): "
+                   + ", ".join(o["symbol"] for o in over))
     out += ["", "How: wait for the price to rise to the buy price (stop-buy order or price alert); cancel after 2 "
             "trading days if not reached; place the stop-loss right after buying; sell half at the first target "
             "and move the stop to your buy price.", ""]
@@ -195,6 +203,11 @@ def html_body(report, run_url=None):
         body.append(f"<tr><td class='pad' style='padding:16px 24px'><div style='background:{C['red_bg']};"
                     f"color:{C['red']};border-radius:12px;padding:14px 16px;font-weight:700'>"
                     f"No usable market data this run - no trades.</div></td></tr>")
+    if report.get("intraday"):
+        body.append(f"<tr><td class='pad' style='padding:16px 24px'><div style='background:{C['red_bg']};"
+                    f"color:{C['red']};border-radius:12px;padding:14px 16px;font-weight:700'>"
+                    f"Session still open when this ran - levels use an unfinished day. "
+                    f"Wait for the after-close run.</div></td></tr>")
     if not rows:
         body.append(f"<tr><td class='pad' style='padding:24px;text-align:center'>"
                     f"<div style='font-size:18px;font-weight:800;color:{C['ink']}'>No setups today</div>"

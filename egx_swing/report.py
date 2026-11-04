@@ -86,7 +86,7 @@ def _data_quality(result):
            f"Universe {result.get('universe', 0)} | screener OK {len(by.get('READY', []))} | "
            f"recovered from fallback {len(by.get('RECOVERED', []))} | dropped {len(by.get('DROPPED', []))}", ""]
     if by.get("RECOVERED"):
-        out += ["**Recovered** (indicators computed from Yahoo daily candles):", ""]
+        out += ["**Recovered** (indicators computed from daily chart history):", ""]
         out += [f"- {sym}: {why}" for sym, why in by["RECOVERED"]]
         out.append("")
     if by.get("DROPPED"):

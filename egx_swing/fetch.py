@@ -113,7 +113,22 @@ YAHOO_INDEX = "^CASE30"
 
 
 def fetch_history(symbol, timeout=20):
-    """Daily candles for an EGX ticker (or the EGX30 index), oldest first, dated in Cairo time."""
+    """Daily candles for an EGX ticker (or the EGX30 index), oldest first.
+
+    TradingView's chart feed first (Yahoo dropped most EGX tickers, so every
+    Yahoo request returned 404 in Oct 2026); Yahoo only if TradingView fails."""
+    from . import tvhistory
+    tv_sym = "EGX30" if symbol == YAHOO_INDEX else symbol
+    try:
+        bars = tvhistory.fetch_one(tv_sym, bars=300, timeout=timeout)
+        if bars:
+            return bars
+    except Exception:
+        pass
+    return _yahoo_history(symbol, timeout)
+
+
+def _yahoo_history(symbol, timeout=20):
     from datetime import datetime, timedelta, timezone
     sym = symbol if symbol.startswith("^") else f"{symbol}.CA"
     req = urllib.request.Request(YAHOO_URL.format(sym=urllib.parse.quote(sym)),

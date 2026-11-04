@@ -16,8 +16,8 @@ Full requirements, including the error-handling state machine, are in
 
 A run never stops on bad data, and every run ends with a report on disk.
 
-- If a stock's TradingView data is missing or stale, the scanner fetches its daily candles from Yahoo Finance and
-  computes the indicators itself.
+- If a stock's TradingView data is missing or stale, the scanner fetches its daily candles from TradingView's chart
+  feed (Yahoo as a last resort) and computes the indicators itself.
 - If that data isn't fresh for the session either, the stock is **dropped**, and the report lists it with the reason.
 - If TradingView is down entirely, the universe comes from `data/universe.json`, which is refreshed on every
   successful run. Every stock then goes through the Yahoo fallback.
@@ -48,35 +48,23 @@ Picks come only from the chart setups. A second layer then checks each pick befo
   The headlines it used are linked in the report. The AI can only demote or veto a pick, never add one or raise its
   rank.
 
-The in-workflow AI review is optional. The `egx-swing-review` skill (below) does the same job in your Claude chat
-without an API key. **To turn on the in-workflow review as well**, add a repository secret named `ANTHROPIC_API_KEY` (Settings → Secrets and variables →
+The in-workflow AI review is optional. **To turn on the in-workflow review as well**, add a repository secret named `ANTHROPIC_API_KEY` (Settings → Secrets and variables →
 Actions). Without it the review is skipped and the report says so; everything else still runs. Locally, run
 `pip install -r requirements.txt` and export the key. Use `--no-ai` to skip the review, or `--ai-max N` to cap how many
 picks are reviewed (default 8). Cost scales with the number of picks: at most 5 web searches per pick, and nothing on
 days with no setups.
 
-## Final answer in chat: the `egx-swing-review` skill
+## Backtest
 
-The recommended way to use the AI review is the Claude Code skill in `.claude/skills/egx-swing-review/`. In Claude
-Code, opened on this repo, run:
+`backtest/` replays these exact rules over TradingView history with Thndr fees:
 
+```bash
+python -m backtest.tvfetch --bars 800 --out data/history   # download history (standard library only)
+python -m backtest.run --history data/history --out backtest/results
+python -m backtest.robustness
 ```
-/egx-swing-review                 # defaults: 20,000 EGP, 1% risk per trade
-/egx-swing-review 250000 0.5
-```
 
-or just ask "give me today's EGX swing picks". The skill:
-
-1. triggers the GitHub workflow with your capital and risk,
-2. waits for it to finish,
-3. reads `reports/latest.json`,
-4. researches news, corporate actions and fundamentals for every pick,
-5. answers in chat with a final table: **TAKE / TAKE SMALLER / SKIP**, with entry, stop, targets, shares and linked
-   headlines.
-
-Like the in-workflow review, it can only demote or veto a pick. It needs no API key: the research runs in your Claude
-session. It triggers the workflow with the `gh` CLI or the GitHub connector; with neither, it runs the scanner
-locally.
+Results (Sep 2023 - Nov 2026) are in `backtest/results/summary.md`.
 
 ## Email
 

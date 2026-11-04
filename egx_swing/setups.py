@@ -87,9 +87,14 @@ def pullback(s):
     turning = k > d and k < 60 and (not _num(k_prev) or k > k_prev)
     if not (uptrend and near_ema and reset and turning):
         return None
+    checked = _num(k_prev)
     fresh = _num(k_prev, d_prev) and k_prev <= d_prev
-    stoch = (f"Stoch %K {k:.0f} crossed above %D {d:.0f} today" if fresh
-             else f"Stoch %K {k:.0f} above %D {d:.0f} and rising")
+    if fresh:
+        stoch = f"Stoch %K {k:.0f} crossed above %D {d:.0f} today"
+    elif checked:
+        stoch = f"Stoch %K {k:.0f} above %D {d:.0f} and rising"
+    else:   # yesterday's value unavailable: say so instead of claiming "rising"
+        stoch = f"Stoch %K {k:.0f} above %D {d:.0f} (rising not verified - no previous bar)"
     reasons = [f"Uptrend: EMA20 {e20:.2f} > EMA50 {e50:.2f} > SMA200 {sma200:.2f}",
                f"Pulled back toward EMA20 {e20:.2f} (low {low:.2f})",
                f"RSI {rsi:.0f} reset, {stoch}"]
@@ -98,7 +103,7 @@ def pullback(s):
     quality += 10 if _num(s.get("macd"), s.get("macd_signal")) and s["macd"] > s["macd_signal"] else 0
     quality += 10 if 42 <= rsi <= 52 else 0
     quality += 10 if _num(s.get("open")) and c > s["open"] else 0   # bullish candle
-    quality += 5 if fresh else 0
+    quality += 5 if fresh else (0 if checked else -10)
     stop = min(low, e50) - 0.5 * atr
     return {"setup": "PULLBACK", "stop_raw": stop, "quality": quality, "reasons": reasons}
 
@@ -265,5 +270,15 @@ def scan(stocks, index, cfg=None):
             break   # one setup per stock: first match wins (PULLBACK > BREAKOUT > BOUNCE)
 
     signals.sort(key=lambda x: x["quality"], reverse=True)
-    return {"regime": regime, "config": cfg, "signals": signals,
+    # Never ask for more money than the account holds: best-ranked picks first,
+    # the rest go to an over-budget list instead of the buy list.
+    used, kept, over = 0, [], []
+    for sig in signals:
+        if used + sig["position_egp"] <= cfg["capital"]:
+            kept.append(sig)
+            used += sig["position_egp"]
+        else:
+            over.append({"symbol": sig["symbol"], "setup": sig["setup"], "quality": sig["quality"],
+                         "position_egp": sig["position_egp"]})
+    return {"regime": regime, "config": cfg, "signals": kept, "over_budget": over,
             "excluded": excluded, "scanned": len(stocks)}

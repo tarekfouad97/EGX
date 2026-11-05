@@ -1,95 +1,123 @@
-# EGX Swing Scan - session 2026-11-04
+# EGX Swing Scan - session 2026-11-05
 
-_Generated 2026-11-04 22:14 Cairo. Run status: **DEGRADED**._
+_Generated 2026-11-05 22:27 Cairo. Run status: **DEGRADED**._
 
 > ⚠ Some data came from the fallback source or was dropped. See Data quality below.
 
-**Regime: RISK-OFF** | EGX30 50,650 (-6.1% 1M) - EGX30 below 50 EMA with 20 < 50 - risk halved, breakouts suppressed
+**Regime: RISK-OFF** | EGX30 51,153 (-4.5% 1M) - EGX30 below 50 EMA with 20 < 50 - risk halved, breakouts suppressed
 
-Scanned 256 stocks, 134 filtered out (currency/liquidity/volatility), **3 setups**. Sizing: 20,000 EGP capital, 1.0% risk/trade x 0.5 regime multiplier.
+Scanned 238 stocks, 103 filtered out (currency/liquidity/volatility), **4 setups**. Sizing: 20,000 EGP capital, 1.0% risk/trade x 0.5 regime multiplier.
 
 AI news & fundamentals review: skipped - ANTHROPIC_API_KEY not set.
 
 | # | Ticker | Setup | Q | Close | Entry (buy-stop) | Stop | T1 | T2 | R:R T1 | Risk % | Shares | Position EGP |
 |---|--------|-------|---|-------|------------------|------|----|----|--------|--------|--------|--------------|
-| 1 | **ADRI** | PULLBACK | 85 | 12.80 | 12.88 | 11.59 | 14.82 | 16.75 | 1.5R | 10.0% | 77 | 992 |
-| 2 | **TALM** | PULLBACK | 80 | 19.60 | 19.78 | 18.53 | 21.66 | 23.53 | 1.5R | 6.3% | 80 | 1,582 |
-| 3 | **AIH** | PULLBACK | 70 | 0.806 | 0.812 | 0.708 | 0.968 | 1.124 | 1.5R | 12.8% | 961 | 780 |
+| 1 | **ADRI** | PULLBACK | 75 | 13.08 | 13.57 | 11.63 | 16.48 | 19.39 | 1.5R | 14.3% | 51 | 692 |
+| 2 | **GPIM** | PULLBACK | 70 | 1.60 | 1.64 | 1.46 | 1.91 | 2.18 | 1.5R | 11.0% | 555 | 910 |
+| 3 | **ETEL** | PULLBACK | 65 | 128.55 | 133.42 | 124.87 | 146.24 | 159.07 | 1.5R | 6.4% | 11 | 1,468 |
+| 4 | **EGS370O1C013** | PULLBACK | 65 | 47.75 | 52.35 | 41.40 | 68.78 | 85.20 | 1.5R | 20.9% | 9 | 471 |
 
 ### 1. ADRI - Arab Development & Real Estate Investment (PULLBACK)
-Finance | ATR 0.765 (6.0%/day) | ADV 37.4M EGP | RSI 51.6 | EMA10 12.676 | RS vs EGX30 +9.4pts
+Finance | ATR 0.759 (5.8%/day) | ADV 41.3M EGP | RSI 54.3 | EMA10 12.749 | RS vs EGX30 +5.0pts
 
-- Uptrend: EMA20 12.75 > EMA50 11.97 > SMA200 7.98
-- Pulled back toward EMA20 12.75 (low 12.13)
-- RSI 52 reset, Stoch %K 26 above %D 20 and rising
+- Uptrend: EMA20 12.78 > EMA50 12.02 > SMA200 8.03
+- Pulled back toward EMA20 12.78 (low 12.80)
+- RSI 54 reset, Stoch %K 37 above %D 27 and rising
 - ⚠ 1M high 14.7 sits below T1 - resistance
 
 **Fundamentals:** P/E n/a | P/B n/a | EPS n/a | ROE n/a | Div yield n/a | D/E n/a | Net income n/a | Mkt cap n/a
 
-### 2. TALM - Taaleem Management Services S.A.E (PULLBACK)
-Consumer Services | ATR 1.237 (6.3%/day) | ADV 21.1M EGP | RSI 49.7 | EMA10 19.185 | RS vs EGX30 -1.8pts
+### 2. GPIM - GPI For Urban Growth (PULLBACK)
+Finance | ATR 0.100 (6.2%/day) | ADV 21.6M EGP | RSI 48.3 | EMA10 1.550 | RS vs EGX30 -10.4pts
 
-- Uptrend: EMA20 19.52 > EMA50 19.51 > SMA200 16.90
-- Pulled back toward EMA20 19.52 (low 19.15)
-- RSI 50 reset, Stoch %K 49 above %D 41 and rising
+- Uptrend: EMA20 1.61 > EMA50 1.59 > SMA200 1.11
+- Pulled back toward EMA20 1.61 (low 1.51)
+- RSI 48 reset, Stoch %K 38 above %D 30 and rising
 
-**Fundamentals:** P/E 23.46 | P/B 8.52 | EPS 0.84 | ROE 29.1% | Div yield 0.0% | D/E 1.07 | Net income 0.62B | Mkt cap 14.39B
+**Fundamentals:** P/E n/a | P/B n/a | EPS n/a | ROE n/a | Div yield 0.0% | D/E 0.00 | Net income n/a | Mkt cap 2.62B
 
-### 3. AIH - Arabia Investments Holding SAE (PULLBACK)
-Finance | ATR 0.0451 (5.6%/day) | ADV 31.7M EGP | RSI 56.1 | EMA10 0.7767 | RS vs EGX30 +11.4pts
+### 3. ETEL - Telecom Egypt (PULLBACK)
+Communications | ATR 6.250 (4.9%/day) | ADV 248.6M EGP | RSI 48.2 | EMA10 126.288 | RS vs EGX30 -10.3pts
 
-- Uptrend: EMA20 0.78 > EMA50 0.73 > SMA200 0.47
-- Pulled back toward EMA20 0.78 (low 0.77)
-- RSI 56 reset, Stoch %K 51 above %D 44 and rising
-- ⚠ 1M high 0.913 sits below T1 - resistance
-- ⚠ Loss-making (negative EPS/ROE/net income)
+- Uptrend: EMA20 129.40 > EMA50 128.21 > SMA200 102.82
+- Pulled back toward EMA20 129.40 (low 128.00)
+- RSI 48 reset, Stoch %K 38 above %D 28 and rising
+- ⚠ Earnings due 2026-11-12 - inside the holding window
 
-**Fundamentals:** P/E n/a | P/B n/a | EPS -0.15 | ROE -40.4% | Div yield 0.0% | D/E 7.13 | Net income -0.21B | Mkt cap 1.26B
+**Fundamentals:** P/E n/a | P/B 3.45 | EPS n/a | ROE n/a | Div yield 1.2% | D/E 0.99 | Net income 20.37B | Mkt cap 219.44B | Next earnings 2026-11-12
+
+### 4. EGS370O1C013 - National Printing (PULLBACK)
+Commercial Services | ATR 3.412 (7.1%/day) | ADV 5.0M EGP | RSI 56.7 | EMA10 46.653 | RS vs EGX30 +2.0pts
+
+- Uptrend: EMA20 46.58 > EMA50 43.11 > SMA200 28.53
+- Pulled back toward EMA20 46.58 (low 45.61)
+- RSI 57 reset, Stoch %K 44 above %D 36 and rising
+- ⚠ 1M high 53.5 sits below T1 - resistance
+
+**Fundamentals:** P/E n/a | P/B n/a | EPS n/a | ROE n/a | Div yield n/a | D/E n/a | Net income n/a | Mkt cap n/a
 
 ## Data quality
 
-Universe 295 | screener OK 256 | recovered from fallback 0 | dropped 39
+Universe 295 | screener OK 238 | recovered from fallback 0 | dropped 57
 
 **Dropped** (no fresh, complete data from any source):
 
 - ACFR: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- ALEX: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - ALXD: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - ANCC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- APPC: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - BQDC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - CID: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - CPME: screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)
-- DCCC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback also stale (last bar 2026-11-03)
+- DCCC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback also stale (last bar 2026-11-04)
+- DCRC: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - EEP: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - EFAC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - EGOTH: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- EGS30AJ1C016-EGP: stale bar 2026-11-04 (session 2026-11-05); fallback history too short
 - EGS3A0Y1C018: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - EGS3E071C013-EGP: screener missing sma200; fallback history too short
+- EGS48271C018-EGP: stale bar 2026-11-04 (session 2026-11-05); fallback history too short
 - EGS65101C015: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - EGS65621C012: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - EGS65861C014: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- EGS659O1C015: stale bar 2026-11-04 (session 2026-11-05); fallback history too short
 - EGS72L31C011: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - EGWA: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- EITP: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - ELAB: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - ENPI: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - GEOS: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - GOUR: screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)
 - GROV: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- GTHE: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - HDST: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- IRAX: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - KNGC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - KORA: screener missing sma200; fallback fetch failed (HTTP Error 404: Not Found)
+- LKGP: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - MITR: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - MLIC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - MMHC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - NAMI: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - NBCC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- NBKE: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
+- NCGC: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - NFCI: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - NMIN: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - OCAP: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- PACH: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - PMSC: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - POCO: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - RMTV: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - SIEG: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 - SINA: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
+- SMPP: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
+- SNFI: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
+- SUCE: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
+- TORA: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
+- WATP: stale bar 2026-11-04 (session 2026-11-05); fallback fetch failed (HTTP Error 404: Not Found)
 - YAYT: screener missing atr, vol_avg_10d, ema20, ema50 ...; fallback fetch failed (HTTP Error 404: Not Found)
 
 <details><summary>Run log</summary>
@@ -98,11 +126,11 @@ Universe 295 | screener OK 256 | recovered from fallback 0 | dropped 39
 |---|---|---|
 | UNIVERSE | OK | 295 stocks from TradingView |
 | INDEX | OK | EGX30 from TradingView |
-| SESSION | OK | 2026-11-04 (newest trade in screener data) |
-| VALIDATE | PARTIAL | 256 ready, 39 need recovery |
-| RECOVER | PARTIAL | 0 recovered, 39 dropped |
-| ENRICH | PARTIAL | previous-bar Stoch for 0/9 pullback candidates |
-| SCAN | OK | 3 setups from 256 stocks |
+| SESSION | OK | 2026-11-05 (newest trade in screener data) |
+| VALIDATE | PARTIAL | 238 ready, 57 need recovery |
+| RECOVER | PARTIAL | 0 recovered, 57 dropped |
+| ENRICH | PARTIAL | previous-bar Stoch for 0/4 pullback candidates |
+| SCAN | OK | 4 setups from 238 stocks |
 | AI_REVIEW | SKIPPED | ANTHROPIC_API_KEY not set |
 
 </details>

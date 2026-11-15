@@ -84,16 +84,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "EFIH",
-  "name": "e-finance for Digital and Financial Investments S.A.E.",
-  "sector": "Technology Services",
+  "symbol": "BQDC",
+  "name": "Banque du Caire",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "BQDC",
-  "name": "Banque du Caire",
-  "sector": "Finance",
+  "symbol": "EFIH",
+  "name": "e-finance for Digital and Financial Investments S.A.E.",
+  "sector": "Technology Services",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -115,6 +115,13 @@
   "symbol": "FWRY",
   "name": "Fawry For Banking Technology And Electronic Payment",
   "sector": "Technology Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "CANA",
+  "name": "Suez Canal Bank SAE",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -161,13 +168,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "PHDC",
-  "name": "Palm Hills Development Co.",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "BIOC",
   "name": "GlaxoSmithKline S.A.E.",
   "sector": "Distribution Services",
@@ -175,8 +175,8 @@
   "pricescale": 100
  },
  {
-  "symbol": "CANA",
-  "name": "Suez Canal Bank SAE",
+  "symbol": "PHDC",
+  "name": "Palm Hills Development Co.",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
@@ -224,9 +224,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "RAYA",
-  "name": "Raya Holding for Financial Investments SAE",
-  "sector": "Technology Services",
+  "symbol": "ARCC",
+  "name": "Arabian Cement Company",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "SCEM",
+  "name": "Sinai Cement Co.",
+  "sector": "Non-Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -238,13 +245,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "IRON",
-  "name": "Egyptian Iron & Steel",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "BTFH",
   "name": "Beltone Holding",
   "sector": "Finance",
@@ -252,15 +252,15 @@
   "pricescale": 100
  },
  {
-  "symbol": "ARCC",
-  "name": "Arabian Cement Company",
-  "sector": "Non-Energy Minerals",
+  "symbol": "RAYA",
+  "name": "Raya Holding for Financial Investments SAE",
+  "sector": "Technology Services",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "SCEM",
-  "name": "Sinai Cement Co.",
+  "symbol": "IRON",
+  "name": "Egyptian Iron & Steel",
   "sector": "Non-Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
@@ -287,6 +287,13 @@
   "pricescale": 100
  },
  {
+  "symbol": "MBSC",
+  "name": "Misr Beni Suef Cement Co. SAE",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
   "symbol": "CLHO",
   "name": "Cleopatra Hospital Company",
   "sector": "Health Services",
@@ -301,16 +308,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "TAQA",
-  "name": "TAQA Arabia",
-  "sector": "Utilities",
+  "symbol": "CCAP",
+  "name": "QALA For Financial Investments",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "CCAP",
-  "name": "QALA For Financial Investments",
-  "sector": "Finance",
+  "symbol": "TAQA",
+  "name": "TAQA Arabia",
+  "sector": "Utilities",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -322,9 +329,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "MBSC",
-  "name": "Misr Beni Suef Cement Co. SAE",
+  "symbol": "MCQE",
+  "name": "Misr Cement Co. (Qena)",
   "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "GTHE",
+  "name": "Global Telecom Holding S.A.E.",
+  "sector": "Communications",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -336,9 +350,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "GTHE",
-  "name": "Global Telecom Holding S.A.E.",
-  "sector": "Communications",
+  "symbol": "MOIL",
+  "name": "Maridive & Oil Services SAE",
+  "sector": "Industrial Services",
+  "currency": "USD",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "NBKE",
+  "name": "National Bank of Kuwait - Egypt",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -350,16 +371,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "NBKE",
-  "name": "National Bank of Kuwait - Egypt",
-  "sector": "Finance",
+  "symbol": "NIPH",
+  "name": "El-Nile Co. for Pharmaceuticals & Chemical Industries",
+  "sector": "Health Technology",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "MCQE",
-  "name": "Misr Cement Co. (Qena)",
-  "sector": "Non-Energy Minerals",
+  "symbol": "AMOC",
+  "name": "Alexandria Mineral Oils Co.",
+  "sector": "Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -369,13 +390,6 @@
   "sector": "Consumer Durables",
   "currency": "EGP",
   "pricescale": 100
- },
- {
-  "symbol": "MOIL",
-  "name": "Maridive & Oil Services SAE",
-  "sector": "Industrial Services",
-  "currency": "USD",
-  "pricescale": 1000
  },
  {
   "symbol": "SKPC",
@@ -388,20 +402,6 @@
   "symbol": "EFIC",
   "name": "Egyptian Financial & Industrial Co.",
   "sector": "Process Industries",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "AMOC",
-  "name": "Alexandria Mineral Oils Co.",
-  "sector": "Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "NIPH",
-  "name": "El-Nile Co. for Pharmaceuticals & Chemical Industries",
-  "sector": "Health Technology",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -455,13 +455,6 @@
   "pricescale": 1000
  },
  {
-  "symbol": "MHOT",
-  "name": "Misr Hotels Co.",
-  "sector": "Consumer Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "AMES",
   "name": "Alexandria New Medical Center Co.",
   "sector": "Health Services",
@@ -476,15 +469,15 @@
   "pricescale": 100
  },
  {
-  "symbol": "BINV",
-  "name": "B Investments Holding SAE",
-  "sector": "Finance",
+  "symbol": "MHOT",
+  "name": "Misr Hotels Co.",
+  "sector": "Consumer Services",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "CPME",
-  "name": "Catalyst Partners Middle East",
+  "symbol": "BINV",
+  "name": "B Investments Holding SAE",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
@@ -504,8 +497,8 @@
   "pricescale": 100
  },
  {
-  "symbol": "CICH",
-  "name": "CI Capital Holding for Financial Investments",
+  "symbol": "CPME",
+  "name": "Catalyst Partners Middle East",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
@@ -518,8 +511,22 @@
   "pricescale": 100
  },
  {
+  "symbol": "CICH",
+  "name": "CI Capital Holding for Financial Investments",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
   "symbol": "ALEX",
   "name": "Alexandria Cement Co.",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "SVCE",
+  "name": "South Valley Cement Co.",
   "sector": "Non-Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
@@ -532,37 +539,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "MIPH",
-  "name": "Minapharm Pharmaceuticals",
-  "sector": "Health Technology",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "SVCE",
-  "name": "South Valley Cement Co.",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "CPCI",
   "name": "Kahira Pharmaceuticals & Chemical Industries Co.",
   "sector": "Health Technology",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "IFAP",
-  "name": "International Agricultural Products",
-  "sector": "Process Industries",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "MOIN",
-  "name": "Mohandes Insurance Co.",
-  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -574,9 +553,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "MPCI",
-  "name": "Memphis Pharmaceutical & Chemical Industries",
+  "symbol": "MIPH",
+  "name": "Minapharm Pharmaceuticals",
   "sector": "Health Technology",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "MOIN",
+  "name": "Mohandes Insurance Co.",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -584,6 +570,20 @@
   "symbol": "PHTV",
   "name": "Pyramisa Hotels",
   "sector": "Consumer Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "IFAP",
+  "name": "International Agricultural Products",
+  "sector": "Process Industries",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "MPCI",
+  "name": "Memphis Pharmaceutical & Chemical Industries",
+  "sector": "Health Technology",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -609,16 +609,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "MPRC",
-  "name": "Egyptian Media Production City",
-  "sector": "Consumer Services",
+  "symbol": "EGAS",
+  "name": "Egypt Gas Co.",
+  "sector": "Utilities",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "EGAS",
-  "name": "Egypt Gas Co.",
-  "sector": "Utilities",
+  "symbol": "ISMQ",
+  "name": "Iron & Steel for Mines & Quarries",
+  "sector": "Non-Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -630,9 +630,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "ISMQ",
-  "name": "Iron & Steel for Mines & Quarries",
-  "sector": "Non-Energy Minerals",
+  "symbol": "MPRC",
+  "name": "Egyptian Media Production City",
+  "sector": "Consumer Services",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -714,16 +714,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "NINH",
-  "name": "Nozha International Hospital",
-  "sector": "Health Services",
+  "symbol": "MICH",
+  "name": "Misr Chemical Industries Ltd.",
+  "sector": "Process Industries",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "MICH",
-  "name": "Misr Chemical Industries Ltd.",
-  "sector": "Process Industries",
+  "symbol": "NINH",
+  "name": "Nozha International Hospital",
+  "sector": "Health Services",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -770,13 +770,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "SAIB",
-  "name": "Societe Arabe Internationale de Banque",
-  "sector": "Finance",
-  "currency": "USD",
-  "pricescale": 100
- },
- {
   "symbol": "SDTI",
   "name": "Sharm Dreams Co. for Tourism Investment",
   "sector": "Consumer Services",
@@ -784,15 +777,15 @@
   "pricescale": 100
  },
  {
-  "symbol": "DSCW",
-  "name": "Dice Sports & Casual Wear Manufacturers SAE",
-  "sector": "Consumer Non-Durables",
-  "currency": "EGP",
+  "symbol": "SAIB",
+  "name": "Societe Arabe Internationale de Banque",
+  "sector": "Finance",
+  "currency": "USD",
   "pricescale": 100
  },
  {
-  "symbol": "KABO",
-  "name": "El Nasr Clothing & Textiles Co.",
+  "symbol": "DSCW",
+  "name": "Dice Sports & Casual Wear Manufacturers SAE",
   "sector": "Consumer Non-Durables",
   "currency": "EGP",
   "pricescale": 100
@@ -808,6 +801,13 @@
   "symbol": "WCDF",
   "name": "Middle & West Delta Flour Mills Co.",
   "sector": "Process Industries",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "KABO",
+  "name": "El Nasr Clothing & Textiles Co.",
+  "sector": "Consumer Non-Durables",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -840,13 +840,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "OFH",
-  "name": "O B Financial Holding",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
   "symbol": "MFSC",
   "name": "Misr Duty Free Shops Co.",
   "sector": "Retail Trade",
@@ -861,16 +854,16 @@
   "pricescale": 100
  },
  {
+  "symbol": "OFH",
+  "name": "O B Financial Holding",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
   "symbol": "CRST",
   "name": "Creast Mark For Contracting And Real Estate Development",
   "sector": "Industrial Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "ADCI",
-  "name": "Arab Pharmaceuticals",
-  "sector": "Health Technology",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -882,11 +875,11 @@
   "pricescale": 100
  },
  {
-  "symbol": "GDWA",
-  "name": "Gadwa For Industrial Development",
-  "sector": "Producer Manufacturing",
+  "symbol": "ADCI",
+  "name": "Arab Pharmaceuticals",
+  "sector": "Health Technology",
   "currency": "EGP",
-  "pricescale": 1000
+  "pricescale": 100
  },
  {
   "symbol": "INFI",
@@ -894,6 +887,13 @@
   "sector": "Consumer Non-Durables",
   "currency": "EGP",
   "pricescale": 100
+ },
+ {
+  "symbol": "GDWA",
+  "name": "Gadwa For Industrial Development",
+  "sector": "Producer Manufacturing",
+  "currency": "EGP",
+  "pricescale": 1000
  },
  {
   "symbol": "ELKA",
@@ -952,18 +952,18 @@
   "pricescale": 100
  },
  {
-  "symbol": "NAHO",
-  "name": "Naeem Holding Co.",
-  "sector": "Finance",
-  "currency": "USD",
-  "pricescale": 1000
- },
- {
   "symbol": "ETRS",
   "name": "Egyptian Transport And Commercial Services Co. (Egytrans Nosco)",
   "sector": "Transportation",
   "currency": "EGP",
   "pricescale": 100
+ },
+ {
+  "symbol": "NAHO",
+  "name": "Naeem Holding Co.",
+  "sector": "Finance",
+  "currency": "USD",
+  "pricescale": 1000
  },
  {
   "symbol": "ZEOT",
@@ -980,16 +980,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "MPCO",
-  "name": "Mansourah Poultry Co.",
-  "sector": "Process Industries",
+  "symbol": "EDFM",
+  "name": "East Delta Flour Mills Co.",
+  "sector": "Consumer Non-Durables",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "EDFM",
-  "name": "East Delta Flour Mills Co.",
-  "sector": "Consumer Non-Durables",
+  "symbol": "DAPH",
+  "name": "Development & Engineering Consultants",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1008,15 +1008,22 @@
   "pricescale": 100
  },
  {
-  "symbol": "DAPH",
-  "name": "Development & Engineering Consultants",
-  "sector": "Finance",
+  "symbol": "MPCO",
+  "name": "Mansourah Poultry Co.",
+  "sector": "Process Industries",
   "currency": "EGP",
   "pricescale": 100
  },
  {
   "symbol": "ISMA",
   "name": "Ismailia Misr Poultry",
+  "sector": "Process Industries",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "SNFC",
+  "name": "Sharkia National Food",
   "sector": "Process Industries",
   "currency": "EGP",
   "pricescale": 100
@@ -1036,15 +1043,15 @@
   "pricescale": 100
  },
  {
-  "symbol": "SNFC",
-  "name": "Sharkia National Food",
-  "sector": "Process Industries",
+  "symbol": "ICID",
+  "name": "International Company for Investment & Development",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "ICID",
-  "name": "International Company for Investment & Development",
+  "symbol": "MENA",
+  "name": "Mena Touristic & Real Estate Investment",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
@@ -1064,6 +1071,20 @@
   "pricescale": 100
  },
  {
+  "symbol": "RACC",
+  "name": "Raya Contact Center",
+  "sector": "Commercial Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EALR",
+  "name": "El Arabia for Land Reclamation",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
   "symbol": "AALR",
   "name": "General Co. for Land Reclamation Development & Reconstruction",
   "sector": "Finance",
@@ -1078,30 +1099,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "EALR",
-  "name": "El Arabia for Land Reclamation",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "RACC",
-  "name": "Raya Contact Center",
-  "sector": "Commercial Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "ECAP",
   "name": "El Ezz Ceramics & Porcelain Co. (Gemma)",
   "sector": "Producer Manufacturing",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "WKOL",
-  "name": "Wadi Kom Ombo Land Reclamation",
-  "sector": "Industrial Services",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1113,9 +1113,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "ADPC",
-  "name": "Arab Dairy Products Co. Arab Dairy - Panda",
-  "sector": "Consumer Non-Durables",
+  "symbol": "WKOL",
+  "name": "Wadi Kom Ombo Land Reclamation",
+  "sector": "Industrial Services",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1134,9 +1134,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "MENA",
-  "name": "Mena Touristic & Real Estate Investment",
-  "sector": "Finance",
+  "symbol": "ADPC",
+  "name": "Arab Dairy Products Co. Arab Dairy - Panda",
+  "sector": "Consumer Non-Durables",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1155,13 +1155,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "KRDI",
-  "name": "Al Khair River for Development Agriculture Investment and Environmental Services",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
   "symbol": "SIPC",
   "name": "Sabaa International Company for Pharmaceutial and Chemical Industry",
   "sector": "Health Technology",
@@ -1169,8 +1162,8 @@
   "pricescale": 100
  },
  {
-  "symbol": "AIH",
-  "name": "Arabia Investments Holding SAE",
+  "symbol": "KRDI",
+  "name": "Al Khair River for Development Agriculture Investment and Environmental Services",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 1000
@@ -1183,8 +1176,8 @@
   "pricescale": 100
  },
  {
-  "symbol": "ASPI",
-  "name": "Aspire Capital Holding for Financial Investments",
+  "symbol": "AIH",
+  "name": "Arabia Investments Holding SAE",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 1000
@@ -1195,6 +1188,13 @@
   "sector": "Consumer Services",
   "currency": "EGP",
   "pricescale": 100
+ },
+ {
+  "symbol": "ASPI",
+  "name": "Aspire Capital Holding for Financial Investments",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 1000
  },
  {
   "symbol": "ODIN",
@@ -1260,16 +1260,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "PRCL",
-  "name": "General Co. for Ceramic & Porcelain Products",
-  "sector": "Retail Trade",
+  "symbol": "NHPS",
+  "name": "National Housing for Professional Syndicates",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "NHPS",
-  "name": "National Housing for Professional Syndicates",
-  "sector": "Finance",
+  "symbol": "PRCL",
+  "name": "General Co. for Ceramic & Porcelain Products",
+  "sector": "Retail Trade",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1295,16 +1295,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "TANM",
-  "name": "Tanmiya for Real Estate Investment",
-  "sector": "Finance",
+  "symbol": "ALUM",
+  "name": "Arab Aluminum Co. SAE",
+  "sector": "Non-Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "ALUM",
-  "name": "Arab Aluminum Co. SAE",
-  "sector": "Non-Energy Minerals",
+  "symbol": "TANM",
+  "name": "Tanmiya for Real Estate Investment",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1323,13 +1323,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "PRMH",
-  "name": "Prime Holding",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "AFDI",
   "name": "Alahly For Development & Investment",
   "sector": "Finance",
@@ -1337,15 +1330,22 @@
   "pricescale": 100
  },
  {
-  "symbol": "KWIN",
-  "name": "El Kahera El Watania Investment",
+  "symbol": "TYCN",
+  "name": "Tycoon Holding Company For Financial Investments",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "TYCN",
-  "name": "Tycoon Holding Company For Financial Investments",
+  "symbol": "PRMH",
+  "name": "Prime Holding",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "KWIN",
+  "name": "El Kahera El Watania Investment",
   "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
@@ -1372,9 +1372,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "APSW",
-  "name": "Arab Polvara Spinning & Weaving Co.",
-  "sector": "Process Industries",
+  "symbol": "AMII",
+  "name": "Arabian Metal Industries and Industrial Investments",
+  "sector": "Producer Manufacturing",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1386,16 +1386,16 @@
   "pricescale": 1000
  },
  {
-  "symbol": "RREI",
-  "name": "Arab Real Estate Investment Co.",
-  "sector": "Consumer Durables",
+  "symbol": "APSW",
+  "name": "Arab Polvara Spinning & Weaving Co.",
+  "sector": "Process Industries",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "AMII",
-  "name": "Arabian Metal Industries and Industrial Investments",
-  "sector": "Producer Manufacturing",
+  "symbol": "RREI",
+  "name": "Arab Real Estate Investment Co.",
+  "sector": "Consumer Durables",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1484,16 +1484,16 @@
   "pricescale": 100
  },
  {
-  "symbol": "LKGP",
-  "name": "The Holding Company for Financial Investment - The Lakah Group",
-  "sector": "Health Services",
+  "symbol": "GRCA",
+  "name": "Grand Investment Capital",
+  "sector": "Finance",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "GRCA",
-  "name": "Grand Investment Capital",
-  "sector": "Finance",
+  "symbol": "ELNA",
+  "name": "El Nasr for Manufacturing Agricultural Crops",
+  "sector": "Process Industries",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1503,13 +1503,6 @@
   "sector": "Commercial Services",
   "currency": "USD",
   "pricescale": 1000
- },
- {
-  "symbol": "ELNA",
-  "name": "El Nasr for Manufacturing Agricultural Crops",
-  "sector": "Process Industries",
-  "currency": "EGP",
-  "pricescale": 100
  },
  {
   "symbol": "GIHD",
@@ -1575,13 +1568,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "EGS30AJ1C016-EGP",
-  "name": "International Dry Ice Co.",
-  "sector": "Process Industries",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "EPPK",
   "name": "El Ahram Co. for Printing & Packing",
   "sector": "Process Industries",
@@ -1596,6 +1582,13 @@
   "pricescale": 1000
  },
  {
+  "symbol": "GMCI",
+  "name": "GMC Group for Industrial Commercial & Financial Investments",
+  "sector": "Distribution Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
   "symbol": "AMPI",
   "name": "AL Moasher Pay for Electronic Payment and Collection (S.A.E)",
   "sector": "Technology Services",
@@ -1603,9 +1596,9 @@
   "pricescale": 100
  },
  {
-  "symbol": "GMCI",
-  "name": "GMC Group for Industrial Commercial & Financial Investments",
-  "sector": "Distribution Services",
+  "symbol": "EGS30AJ1C016-EGP",
+  "name": "International Dry Ice Co.",
+  "sector": "Process Industries",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1652,34 +1645,6 @@
   "pricescale": 100
  },
  {
-  "symbol": "YAYT",
-  "name": "Spring & Transportation Needs Manufacturing Co.",
-  "sector": "Producer Manufacturing",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "TORA",
-  "name": "Tourah Cement Co",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "SMPP",
-  "name": "Modern Shorouk Printing & Packaging",
-  "sector": "Consumer Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EFAC",
-  "name": "Egyptian Ferro All Egp10",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "EGS72L31C011",
   "name": "SOLARSOL For Energy",
   "sector": "Utilities",
@@ -1687,184 +1652,9 @@
   "pricescale": 1000
  },
  {
-  "symbol": "DGTZ",
-  "name": "Digitize for Investment And Technology",
-  "sector": "Technology Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "LUTS",
-  "name": "Lotus For Agricultural Investments And Development",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "GTEX",
-  "name": "G-TEX for Commercial and Industrial Investments S.A.E",
-  "sector": "Finance",
-  "currency": "USD",
-  "pricescale": 1000
- },
- {
-  "symbol": "EGWA",
-  "name": "General Warehouses of Egypt",
-  "sector": "Transportation",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
   "symbol": "UPMS",
   "name": "Union Pharmacist Company For Medical Services And Investment",
   "sector": "Health Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "ELAB",
-  "name": "Egyptian Linear Alkyl Benzene Company",
-  "sector": null,
-  "currency": "USD",
-  "pricescale": 1000
- },
- {
-  "symbol": "EGS65621C012",
-  "name": "El Nasr Housing & Egp5",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "APPF",
-  "name": "Alamal Alsharif for Plastics",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EGS65101C015",
-  "name": "National Investment & Reconstruction",
-  "sector": "Industrial Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "HBCO",
-  "name": "Heibco for Commercial Investments & Real Estate Development",
-  "sector": "Industrial Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "CID",
-  "name": "Chemical Development Industries (CID)",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "MITR",
-  "name": "Misr Travel&Touris Egp6",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EITP",
-  "name": "Egyptian International Tourism Projects",
-  "sector": "Consumer Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "ADRI",
-  "name": "Arab Development & Real Estate Investment",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "SIEG",
-  "name": "Egyptian Company for Pipes and Cement Products -Siegwart",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "PMSC",
-  "name": "Petroleum Marine Services Company",
-  "sector": null,
-  "currency": "USD",
-  "pricescale": 100
- },
- {
-  "symbol": "POCO",
-  "name": "Port Said Container And Cargo Handling",
-  "sector": "Transportation",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "EGOTH",
-  "name": "El Masreyah Touris Egp100",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EGS48271C018-EGP",
-  "name": "Egypt - South Africa for Communication",
-  "sector": "Communications",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "NAMI",
-  "name": "National Asset Management And Investment",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EEP",
-  "name": "Egypt Education Platform - EEP",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "SINA",
-  "name": "Sinai Manganese Company",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "KNGC",
-  "name": "EL- Nasr Glass And Crystal",
-  "sector": "Consumer Durables",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EGS370O1C013",
-  "name": "National Printing",
-  "sector": "Commercial Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "TOUR",
-  "name": "Tourism Urbanization",
-  "sector": "Consumer Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "NBCC",
-  "name": "ALNASR For Building And Construction Company",
-  "sector": null,
   "currency": "EGP",
   "pricescale": 100
  },
@@ -1876,149 +1666,23 @@
   "pricescale": 1000
  },
  {
-  "symbol": "PHGC",
-  "name": "Premium Healthcare Group",
+  "symbol": "LKGP",
+  "name": "The Holding Company for Financial Investment - The Lakah Group",
   "sector": "Health Services",
   "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "KORA",
-  "name": "KORRA",
-  "sector": "Utilities",
-  "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "ACFR",
-  "name": "Alexandria Company For Refractories",
+  "symbol": "SINA",
+  "name": "Sinai Manganese Company",
   "sector": "Non-Energy Minerals",
   "currency": "EGP",
   "pricescale": 100
  },
  {
-  "symbol": "NCGC",
-  "name": "Nile Cotton Ginning",
-  "sector": "Process Industries",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "OCAP",
-  "name": "OG Capital For Investments SPAC",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "ALXD",
-  "name": "Alexandria For Investment and Urban Development",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "IRAX",
-  "name": "El Ezz Aldekhela Steel-Alexandria",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "EGS65861C014",
-  "name": "Egyptian Contracting Co.-AL- ABD",
-  "sector": "Industrial Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "ENPI",
-  "name": "Engineering for the Petroleum and Process Industries",
-  "sector": null,
-  "currency": "USD",
-  "pricescale": 1000
- },
- {
-  "symbol": "HDST",
-  "name": "HEDGESTONE INVESTMENT",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "MLIC",
-  "name": "Misr Life Insurance",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "PACH",
-  "name": "Paints & Chemical Industries Co.",
-  "sector": "Process Industries",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "MMHC",
-  "name": "El Mamoura Company For Construction & Tourism Development",
-  "sector": null,
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "SUCE",
-  "name": "Suez Cement Co.",
-  "sector": "Non-Energy Minerals",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "SNFI",
-  "name": "Souhag National Food Industries",
-  "sector": "Consumer Non-Durables",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "FTNS",
-  "name": "Fitness Prime",
-  "sector": "Technology Services",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "AIDC",
-  "name": "Arabia for Investment and Development",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "DCCC",
-  "name": "Damietta Container and Cargo Handling",
-  "sector": "Transportation",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "INEG",
-  "name": "Integrated Engineering Group S.A.E",
-  "sector": "Producer Manufacturing",
-  "currency": "EGP",
-  "pricescale": 1000
- },
- {
-  "symbol": "TWSA",
-  "name": "Tawasoa Factoring",
-  "sector": "Finance",
-  "currency": "EGP",
-  "pricescale": 100
- },
- {
-  "symbol": "ANCC",
-  "name": "ALNAHDA Industrial Co.",
-  "sector": "Non-Energy Minerals",
+  "symbol": "GGRN",
+  "name": "Gogreen for Agricultural Investment and Development Company",
+  "sector": "Commercial Services",
   "currency": "EGP",
   "pricescale": 100
  },
@@ -2030,8 +1694,29 @@
   "pricescale": 1000
  },
  {
-  "symbol": "NMIN",
-  "name": "El Nasr Mining Co Egp10",
+  "symbol": "EGS65621C012",
+  "name": "El Nasr Housing & Egp5",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "POCO",
+  "name": "Port Said Container And Cargo Handling",
+  "sector": "Transportation",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "INEG",
+  "name": "Integrated Engineering Group S.A.E",
+  "sector": "Producer Manufacturing",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "EFAC",
+  "name": "Egyptian Ferro All Egp10",
   "sector": null,
   "currency": "EGP",
   "pricescale": 100
@@ -2044,6 +1729,139 @@
   "pricescale": 100
  },
  {
+  "symbol": "NMIN",
+  "name": "El Nasr Mining Co Egp10",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "DCCC",
+  "name": "Damietta Container and Cargo Handling",
+  "sector": "Transportation",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EGS48271C018-EGP",
+  "name": "Egypt - South Africa for Communication",
+  "sector": "Communications",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "AIDC",
+  "name": "Arabia for Investment and Development",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "NAMI",
+  "name": "National Asset Management And Investment",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "OCAP",
+  "name": "OG Capital For Investments SPAC",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "APPF",
+  "name": "Alamal Alsharif for Plastics",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "KORA",
+  "name": "KORRA",
+  "sector": "Utilities",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "SUCE",
+  "name": "Suez Cement Co.",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EGS370O1C013",
+  "name": "National Printing",
+  "sector": "Commercial Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "DGTZ",
+  "name": "Digitize for Investment And Technology",
+  "sector": "Technology Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "MITR",
+  "name": "Misr Travel&Touris Egp6",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EGS65101C015",
+  "name": "National Investment & Reconstruction",
+  "sector": "Industrial Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EITP",
+  "name": "Egyptian International Tourism Projects",
+  "sector": "Consumer Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "CID",
+  "name": "Chemical Development Industries (CID)",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "SNFI",
+  "name": "Souhag National Food Industries",
+  "sector": "Consumer Non-Durables",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EGS65861C014",
+  "name": "Egyptian Contracting Co.-AL- ABD",
+  "sector": "Industrial Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "TORA",
+  "name": "Tourah Cement Co",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "ELAB",
+  "name": "Egyptian Linear Alkyl Benzene Company",
+  "sector": null,
+  "currency": "USD",
+  "pricescale": 1000
+ },
+ {
   "symbol": "WATP",
   "name": "Modern Co. for Water Proofing",
   "sector": "Process Industries",
@@ -2051,9 +1869,191 @@
   "pricescale": 100
  },
  {
-  "symbol": "GGRN",
-  "name": "Gogreen for Agricultural Investment and Development Company",
-  "sector": "Commercial Services",
+  "symbol": "SIEG",
+  "name": "Egyptian Company for Pipes and Cement Products -Siegwart",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EGOTH",
+  "name": "El Masreyah Touris Egp100",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "NCGC",
+  "name": "Nile Cotton Ginning",
+  "sector": "Process Industries",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "PMSC",
+  "name": "Petroleum Marine Services Company",
+  "sector": null,
+  "currency": "USD",
+  "pricescale": 100
+ },
+ {
+  "symbol": "ADRI",
+  "name": "Arab Development & Real Estate Investment",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "ENPI",
+  "name": "Engineering for the Petroleum and Process Industries",
+  "sector": null,
+  "currency": "USD",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "TOUR",
+  "name": "Tourism Urbanization",
+  "sector": "Consumer Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "ALXD",
+  "name": "Alexandria For Investment and Urban Development",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "LUTS",
+  "name": "Lotus For Agricultural Investments And Development",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "PACH",
+  "name": "Paints & Chemical Industries Co.",
+  "sector": "Process Industries",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "YAYT",
+  "name": "Spring & Transportation Needs Manufacturing Co.",
+  "sector": "Producer Manufacturing",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "IRAX",
+  "name": "El Ezz Aldekhela Steel-Alexandria",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "HDST",
+  "name": "HEDGESTONE INVESTMENT",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "FTNS",
+  "name": "Fitness Prime",
+  "sector": "Technology Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "TWSA",
+  "name": "Tawasoa Factoring",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "MLIC",
+  "name": "Misr Life Insurance",
+  "sector": "Finance",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "EEP",
+  "name": "Egypt Education Platform - EEP",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "ACFR",
+  "name": "Alexandria Company For Refractories",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "KNGC",
+  "name": "EL- Nasr Glass And Crystal",
+  "sector": "Consumer Durables",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "ANCC",
+  "name": "ALNAHDA Industrial Co.",
+  "sector": "Non-Energy Minerals",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "MMHC",
+  "name": "El Mamoura Company For Construction & Tourism Development",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "GTEX",
+  "name": "G-TEX for Commercial and Industrial Investments S.A.E",
+  "sector": "Finance",
+  "currency": "USD",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "PHGC",
+  "name": "Premium Healthcare Group",
+  "sector": "Health Services",
+  "currency": "EGP",
+  "pricescale": 1000
+ },
+ {
+  "symbol": "SMPP",
+  "name": "Modern Shorouk Printing & Packaging",
+  "sector": "Consumer Services",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "NBCC",
+  "name": "ALNASR For Building And Construction Company",
+  "sector": null,
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "EGWA",
+  "name": "General Warehouses of Egypt",
+  "sector": "Transportation",
+  "currency": "EGP",
+  "pricescale": 100
+ },
+ {
+  "symbol": "HBCO",
+  "name": "Heibco for Commercial Investments & Real Estate Development",
+  "sector": "Industrial Services",
   "currency": "EGP",
   "pricescale": 100
  }
